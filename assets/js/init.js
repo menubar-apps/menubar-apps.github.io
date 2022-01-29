@@ -19,9 +19,9 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
 
     let currentPage = document.location.hash.replace('#tab', '').replace(/[\s+_]/g, '-').toLowerCase();
-    if (currentPage === 'main') currentPage = 'awesome-wm-widgets';
-    ga('set', 'page', currentPage);
-    ga('send', 'pageview');
+    if (currentPage === 'main') currentPage = '';
+    // ga('set', 'page', currentPage);
+    // ga('send', 'pageview');
 
     $('li.tab > a').click(function(event){
         event.preventDefault();//stop browser to take action for clicked anchor
