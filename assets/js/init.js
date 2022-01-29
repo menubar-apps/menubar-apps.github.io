@@ -23,6 +23,13 @@ $(document).ready(function(){
     // ga('set', 'page', currentPage);
     // ga('send', 'pageview');
 
+    gtag('event', 'page_view', {
+        page_title: currentPage,
+        page_location: '',
+        page_path: '',
+        send_to: 'G-KF6GFCEWBS'
+      })
+
     $('li.tab > a').click(function(event){
         event.preventDefault();//stop browser to take action for clicked anchor
 
