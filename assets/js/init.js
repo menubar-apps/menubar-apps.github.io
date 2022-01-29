@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hash)
         $('a[href=' + hash +']').click();
     else
-        $('a[href=#tabMain]').click();
+        $('a[href=#menubar-apps]').click();
 });
 
 $(document).ready(function(){
@@ -44,6 +44,7 @@ $(document).ready(function(){
         let target_tab_selector = $(this).attr('href');
         $(target_tab_selector).removeClass('hide');
         $(target_tab_selector).addClass('active fade-in');
+        window.location.hash = '#' + currentPage;
     });
 });
 

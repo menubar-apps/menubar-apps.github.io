@@ -29,7 +29,7 @@
 
     <ul id="slide-out" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
         <!-- <ul class="collapsible collapsible-accordion"> -->
-            <li class="tab col s2"><a class="tab white-text" href="#tabMain">Menubar Apps</a></li>
+            <li class="tab col s2"><a class="tab white-text" href="#menubar-apps">Menubar Apps</a></li>
             <li><div class="divider"></div></li>    
             <li>
                 <!-- <a class="collapsible-hxeader">Widgets</a> -->
@@ -37,7 +37,7 @@
                     <ul>
                         {% for widget in site.widgets %}
                         <li class="tab col s2 sidenav-close">
-                            <a class="tab" href="#tab{{ widget.title | replace: ' ', '_' }}">
+                            <a class="tab" href="#{{ widget.title | replace: ' ', '-' | downcase }}">
                                 {{ widget.title | replace: 'Cpu', 'CPU' | replace: 'Ram', 'RAM' | replace: 'Fs', 'FS' | replace: 'Todo', 'ToDo'}}
                             </a>
                         </li>
@@ -46,54 +46,6 @@
                 <!-- </div> -->
             </li>
             
-            <!-- <li>
-                <a class="collapsible-header">Prompts</a>
-                <div class="collapsible-body">
-                    <ul>
-                        {% for prompt in site.prompts %}
-                        <li class="tab col s2 sidenav-close">
-                            <a class="tab" href="#tab{{ prompt.title | replace: ' ', '_' }}">
-                                {{ prompt.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </li> -->
-
-
-            <!-- <li>
-                <a class="collapsible-header">Tips and tricks</a>
-                <div class="collapsible-body">
-                    <ul>
-                        {% for tip in site.tips %}
-                        <li class="tab col s2 sidenav-close">
-                            <a class="tab" href="#tab{{ tip.title | replace: ' ', '_' }}">
-                                {{ tip.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </li>
-
-            <li>
-                <a class="collapsible-header">Snippets</a>
-                <div class="collapsible-body">
-                    <ul>
-                        {% for snippet in site.snippets %}
-                        <li class="tab col s2 sidenav-close">
-                            <a class="tab" href="#tab{{ snippet.title | replace: ' ', '_' }}">
-                                {{ snippet.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </li> -->
-            
-        <!-- </ul> -->
-
         <li><div class="divider"></div></li>
         <li><a class="subheader white-text">Links</a></li>
 
@@ -106,31 +58,13 @@
         <div class="section">
             <div class="row">
 
-                <div id="tabMain" class="widget col s12 hide">
+                <div id="menubar-apps" class="widget col s12 hide">
                     {{site.main[0].content}}
                 </div>
 
                 {% for widget in site.widgets %}
-                <div id="tab{{ widget.title | replace: ' ', '_' }}" class="widget col s12 hide">{{
-                    widget.content }}
-                </div>
-                {% endfor %}
-
-                {% for prompt in site.prompts %}
-                <div id="tab{{ prompt.title | replace: ' ', '_' }}" class="widget col s12 hide">{{
-                    prompt.content }}
-                </div>
-                {% endfor %}
-
-                {% for tip in site.tips %}
-                <div id="tab{{ tip.title | replace: ' ', '_' }}" class="widget col s12 hide">{{
-                    tip.content }}
-                </div>
-                {% endfor %}
-
-                {% for snippet in site.snippets %}
-                <div id="tab{{ snippet.title | replace: ' ', '_' }}" class="widget col s12 hide">{{
-                    snippet.content }}
+                <div id="{{ widget.title | replace: ' ', '-' | downcase}}" class="widget col s12 hide">
+                    {{widget.content }}
                 </div>
                 {% endfor %}
 
