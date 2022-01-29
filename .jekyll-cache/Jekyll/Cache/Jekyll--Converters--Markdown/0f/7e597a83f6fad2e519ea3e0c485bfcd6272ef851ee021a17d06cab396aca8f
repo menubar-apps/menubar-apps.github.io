@@ -1,0 +1,46 @@
+I"@<h1 id="filesystem-widget">Filesystem Widget</h1>
+
+<p>This widget shows file system disk space usage which is based on the <code class="language-plaintext highlighter-rouge">df</code> output. When clicked another widget appears with more detailed information. By default, it monitors the “/” mount. It can be configured with a list of mounts to monitor though only the first will show in the wibar. To have multiple mounts displayed on the wibar simply define multiple <code class="language-plaintext highlighter-rouge">fs_widgets</code> with different mounts as arguments.</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/fs-widget/screenshot.png" alt="" /></p>
+
+<h2 id="customizations">Customizations</h2>
+
+<p>It is possible to customize widget by providing a table with all or some of the following config parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mounts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{'/'}</code></td>
+      <td>Table with mounts to monitor, check the output from a <code class="language-plaintext highlighter-rouge">df</code> command for available options (column ‘Mounted on’)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timeout</code></td>
+      <td>60</td>
+      <td>How often in seconds the widget refreshes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="installation">Installation</h2>
+
+<p>Clone/download repo and use the widget in <strong>rc.lua</strong>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">local</span> <span class="n">fs_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.fs-widget.fs-widget"</span><span class="p">)</span>
+  <span class="o">...</span>
+  <span class="n">s</span><span class="p">.</span><span class="n">mywibox</span><span class="p">:</span><span class="n">setup</span> <span class="p">{</span>
+      <span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+      <span class="p">{</span> <span class="c1">-- Right widgets</span>
+      <span class="n">fs_widget</span><span class="p">(),</span> <span class="c1">--default</span>
+      <span class="n">fs_widget</span><span class="p">({</span> <span class="n">mounts</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'/'</span><span class="p">,</span> <span class="s1">'/mnt/music'</span> <span class="p">}</span> <span class="p">}),</span> <span class="c1">-- multiple mounts</span>
+  <span class="o">...</span>
+</code></pre></div></div>
+:ET

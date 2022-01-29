@@ -1,0 +1,26 @@
+I"�<h1 id="to-time-ago">To time ago</h1>
+
+<blockquote class="filename">
+  <p>Converts seconds to “time ago” represenation, like ‘1 hour ago’</p>
+</blockquote>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">to_time_ago</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">days</span> <span class="o">=</span> <span class="n">seconds</span> <span class="o">/</span> <span class="mi">86400</span>
+    <span class="k">if</span> <span class="n">days</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">days</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">days</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">days</span> <span class="o">..</span> <span class="p">(</span><span class="n">days</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' day'</span> <span class="ow">or</span> <span class="s1">' days'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+
+    <span class="kd">local</span> <span class="n">hours</span> <span class="o">=</span> <span class="p">(</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span>
+    <span class="k">if</span> <span class="n">hours</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">hours</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">hours</span> <span class="o">..</span> <span class="p">(</span><span class="n">hours</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' hour'</span> <span class="ow">or</span> <span class="s1">' hours'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+
+    <span class="kd">local</span> <span class="n">minutes</span> <span class="o">=</span> <span class="p">((</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span>
+    <span class="k">if</span> <span class="n">minutes</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">minutes</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">minutes</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">minutes</span> <span class="o">..</span> <span class="p">(</span><span class="n">minutes</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' minute'</span> <span class="ow">or</span> <span class="s1">' minutes'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,17 @@
+I"u<h1 id="awesome-wm-widgets">Awesome WM Widgets</h1>
+
+<p>This is a project page of the github <a href="https://github.com/streetturtle/awesome-wm-widgets">repo</a> with set of widgets for Awesome Window Manager plus few articles on widget creation/customization.</p>
+
+<h1 id="installation">Installation</h1>
+
+<p>Clone repository under ~/.config/awesome folder. Then follow a README file of the widget.</p>
+
+<h1 id="support">Support</h1>
+
+<p>If you find anything useful here, you can:</p>
+<ul>
+  <li>star a repo - this really motivates me to work on this project</li>
+  <li>or <a class="social-link" href="https://www.buymeacoffee.com/streetturtle"><img style="display:inline" src="https://img.shields.io/badge/-buy%20me%20a%20coffee-3B4252?style=flat&amp;logo=Buy-Me-A-Coffee" /></a></li>
+  <li>or even become a <a href="https://github.com/sponsors/streetturtle">sponsor</a></li>
+</ul>
+:ET

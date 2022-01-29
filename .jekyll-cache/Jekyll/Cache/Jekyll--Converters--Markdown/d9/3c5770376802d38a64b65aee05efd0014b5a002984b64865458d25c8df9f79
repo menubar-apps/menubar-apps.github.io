@@ -1,0 +1,280 @@
+I"�6<h1 id="volume-widget">Volume widget</h1>
+
+<p>Volume widget based on <a href="https://linux.die.net/man/1/amixer">amixer</a> (is used for controlling the audio volume) and <a href="https://linux.die.net/man/1/pacmd">pacmd</a> (is used for selecting a sink/source). Also, the widget provides an easy way to customize how it looks, following types are supported out-of-the-box:</p>
+
+<p><img src="screenshots/variations.png" alt="types" /></p>
+
+<p>From left to right: <code class="language-plaintext highlighter-rouge">horizontal_bar</code>, <code class="language-plaintext highlighter-rouge">vertical_bar</code>, <code class="language-plaintext highlighter-rouge">icon</code>, <code class="language-plaintext highlighter-rouge">icon_and_text</code>, <code class="language-plaintext highlighter-rouge">arc</code></p>
+
+<p>A right-click on the widget opens a popup where you can choose a sink/source:<br />
+<img src="screenshots/volume-sink-sources.png" alt="sink-sources" /></p>
+
+<p>Left click toggles mute and middle click opens a mixer (<a href="https://freedesktop.org/software/pulseaudio/pavucontrol/">pavucontrol</a> by default).</p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+  <li>switch between sinks/sources by right click on the widget;</li>
+  <li>more responsive than previous versions of volume widget, which were refreshed once a second;</li>
+  <li>5 predefined customizable looks;</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Clone the repo under <strong>~/.config/awesome/</strong> and add widget in <strong>rc.lua</strong>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">volume_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">'awesome-wm-widgets.volume-widget.volume'</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+	<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    	<span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+        <span class="o">...</span>
+        <span class="c1">-- default</span>
+        <span class="n">volume_widget</span><span class="p">(),</span>
+        <span class="c1">-- customized</span>
+        <span class="n">volume_widget</span><span class="p">{</span>
+            <span class="n">widget_type</span> <span class="o">=</span> <span class="s1">'arc'</span>
+        <span class="p">},</span>
+</code></pre></div></div>
+
+<p>Note that widget uses following command the get the current volume: <code class="language-plaintext highlighter-rouge">amixer -D pulse sget Master</code>, so please make sure that it works for you, otherwise you need to set parameter <code class="language-plaintext highlighter-rouge">device = 'default'</code>.</p>
+
+<h3 id="shortcuts">Shortcuts</h3>
+
+<p>To improve responsiveness of the widget when volume level is changed by a shortcut use corresponding methods of the widget:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"]"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="n">volume_widget</span><span class="p">:</span><span class="n">inc</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">end</span><span class="p">),</span>
+<span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"["</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="n">volume_widget</span><span class="p">:</span><span class="n">dec</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">end</span><span class="p">),</span>
+<span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="n">volume_widget</span><span class="p">:</span><span class="n">toggle</span><span class="p">()</span> <span class="k">end</span><span class="p">),</span>
+</code></pre></div></div>
+
+<h2 id="customization">Customization</h2>
+
+<p>It is possible to customize the widget by providing a table with all or some of the following config parameters:</p>
+
+<h3 id="generic-parameter">Generic parameter</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mixer_cmd</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pavucontrol</code></td>
+      <td>command to run on middle click (e.g. a mixer program)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">step</code></td>
+      <td><code class="language-plaintext highlighter-rouge">5</code></td>
+      <td>How much the volume is raised or lowered at once (in %)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">widget_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">icon_and_text</code></td>
+      <td>Widget type, one of <code class="language-plaintext highlighter-rouge">horizontal_bar</code>, <code class="language-plaintext highlighter-rouge">vertical_bar</code>, <code class="language-plaintext highlighter-rouge">icon</code>, <code class="language-plaintext highlighter-rouge">icon_and_text</code>, <code class="language-plaintext highlighter-rouge">arc</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">device</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pulse</code></td>
+      <td>Select the device name to control</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Depends on the chosen widget type add parameters from the corresponding section below:</p>
+
+<h4 id="icon-parameters"><code class="language-plaintext highlighter-rouge">icon</code> parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon_dir</code></td>
+      <td><code class="language-plaintext highlighter-rouge">./icons</code></td>
+      <td>Path to the folder with icons</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note:</em> if you are changing icons, the folder should contain following .svg images:</p>
+<ul>
+  <li>audio-volume-high-symbolic</li>
+  <li>audio-volume-medium-symbolic</li>
+  <li>audio-volume-low-symbolic</li>
+  <li>audio-volume-muted-symbolic</li>
+</ul>
+
+<h4 id="icon_and_text-parameters"><code class="language-plaintext highlighter-rouge">icon_and_text</code> parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon_dir</code></td>
+      <td><code class="language-plaintext highlighter-rouge">./icons</code></td>
+      <td>Path to the folder with icons</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">font</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.font</code></td>
+      <td>Font name and size, like <code class="language-plaintext highlighter-rouge">Play 12</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="arc-parameters"><code class="language-plaintext highlighter-rouge">arc</code> parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">thickness</code></td>
+      <td>2</td>
+      <td>Thickness of the arc</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">main_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_color</code></td>
+      <td>Color of the arc</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bg_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#ffffff11</code></td>
+      <td>Color of the arc’s background</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mute_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_urgent</code></td>
+      <td>Color of the arc when mute</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">size</code></td>
+      <td>18</td>
+      <td>Size of the widget</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="horizontal_bar-parameters"><code class="language-plaintext highlighter-rouge">horizontal_bar</code> parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">main_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_normal</code></td>
+      <td>Color of the bar</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mute_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_urgent</code></td>
+      <td>Color of the bar when mute</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bg_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">'#ffffff11'</code></td>
+      <td>Color of the bar’s background</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">width</code></td>
+      <td><code class="language-plaintext highlighter-rouge">50</code></td>
+      <td>The bar width</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">margins</code></td>
+      <td><code class="language-plaintext highlighter-rouge">10</code></td>
+      <td>Top and bottom margins (if your wibar is 22 px high, bar will be 2 px = 22 - 2*10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shape</code></td>
+      <td><code class="language-plaintext highlighter-rouge">'bar'</code></td>
+      <td><a href="https://awesomewm.org/doc/api/libraries/gears.shape.html">gears.shape</a>, could be <code class="language-plaintext highlighter-rouge">octogon</code>, <code class="language-plaintext highlighter-rouge">hexagon</code>, <code class="language-plaintext highlighter-rouge">powerline</code>, etc</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">with_icon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Show volume icon</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note:</em> I didn’t figure out how does the <code class="language-plaintext highlighter-rouge">forced_height</code> property of progressbar widget work (maybe it doesn’t work at all), thus there is a workaround with margins.</p>
+
+<h4 id="vertical_bar-parameters"><code class="language-plaintext highlighter-rouge">vertical_bar</code> parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">main_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_normal</code></td>
+      <td>Color of the bar</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mute_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_urgent</code></td>
+      <td>Color of the bar when mute</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bg_color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">'#ffffff11'</code></td>
+      <td>Color of the bar’s background</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">width</code></td>
+      <td><code class="language-plaintext highlighter-rouge">10</code></td>
+      <td>The bar width</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">margins</code></td>
+      <td><code class="language-plaintext highlighter-rouge">20</code></td>
+      <td>Top and bottom margins (if your wibar is 22 px high, bar will be 2 px = 22 - 2*10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shape</code></td>
+      <td><code class="language-plaintext highlighter-rouge">'bar'</code></td>
+      <td><a href="https://awesomewm.org/doc/api/libraries/gears.shape.html">gears.shape</a>, could be <code class="language-plaintext highlighter-rouge">octogon</code>, <code class="language-plaintext highlighter-rouge">hexagon</code>, <code class="language-plaintext highlighter-rouge">powerline</code>, etc</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">with_icon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Show volume icon</td>
+    </tr>
+  </tbody>
+</table>
+:ET

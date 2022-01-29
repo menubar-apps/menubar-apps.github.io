@@ -1,0 +1,106 @@
+I"*<h1 id="cpu-widget">CPU widget</h1>
+
+<p><a href="https://github.com/streetturtle/awesome-wm-widgets/labels/cpu"><img src="https://img.shields.io/github/issues-raw/streetturtle/awesome-wm-widgets/cpu" alt="GitHub issues by-label" /></a></p>
+
+<p>This widget shows the average CPU load among all cores of the machine:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/cpu-widget/cpu.gif" alt="screenshot" /></p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>To measure the load I took Paul Colby’s bash <a href="http://colby.id.au/calculating-cpu-usage-from-proc-stat/">script</a> and rewrote it in Lua, which was quite simple.
+So awesome simply reads the first line of /proc/stat:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /proc/stat | <span class="nb">grep</span> <span class="s1">'^cpu '</span>
+cpu  197294 718 50102 2002182 3844 0 2724 0 0 0
+</code></pre></div></div>
+
+<p>and calculates the percentage.</p>
+
+<h2 id="customization">Customization</h2>
+
+<p>It is possible to customize widget by providing a table with all or some of the following config parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">width</code></td>
+      <td>50</td>
+      <td>Width of the widget</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">step_width</code></td>
+      <td>2</td>
+      <td>Width of the step</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">step_spacing</code></td>
+      <td>1</td>
+      <td>Space size between steps</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.fg_normal</code></td>
+      <td>Color of the graph</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enable_kill_button</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>Show button which kills the process</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">process_info_max_length</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-1</code></td>
+      <td>Truncate the process information. Some processes may have a very long list of parameters which won’t fit in the screen, this options allows to truncate it to the given length.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timeout</code></td>
+      <td>1</td>
+      <td>How often in seconds the widget refreshes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example">Example</h3>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cpu_widget</span><span class="p">({</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="n">step_width</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">step_spacing</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">'#434c5e'</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>The config above results in the following widget:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/cpu-widget/custom.png" alt="custom" /></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Clone/download repo and use widget in <strong>rc.lua</strong>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">cpu_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.cpu-widget.cpu-widget"</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+	<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    	<span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+		<span class="o">...</span>
+		<span class="c1">-- default</span>
+		<span class="n">cpu_widget</span><span class="p">(),</span>
+		<span class="c1">-- or custom</span>
+		<span class="n">cpu_widget</span><span class="p">({</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span>
+            <span class="n">step_width</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">step_spacing</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">'#434c5e'</span>
+        <span class="p">})</span>
+		<span class="o">...</span>
+</code></pre></div></div>
+:ET

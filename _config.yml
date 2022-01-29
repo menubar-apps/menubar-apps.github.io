@@ -1,0 +1,16 @@
+baseurl: /awesome-wm-widgets
+
+collections:
+  main:
+  tips:
+  prompts:
+  widgets:
+  snippets:
+#    output: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+

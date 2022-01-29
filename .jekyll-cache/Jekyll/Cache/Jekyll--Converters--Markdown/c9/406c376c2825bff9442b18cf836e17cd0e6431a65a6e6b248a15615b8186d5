@@ -1,0 +1,25 @@
+I"}<h1 id="mpris-widget-in-progress">MPRIS Widget (In progress)</h1>
+
+<p>Music Player Info widget cy @mgabs</p>
+
+<h1 id="prerequisite">Prerequisite</h1>
+
+<p>Install <code class="language-plaintext highlighter-rouge">playerctl</code> (mpris implementation), should be available in repo, e.g for Ubuntu:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>playerctl
+</code></pre></div></div>
+
+<h2 id="installation">Installation</h2>
+
+<p>To use this widget clone repo under <strong>~/.config/awesome/</strong> and then add it in <strong>rc.lua</strong>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">mpris_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.mpris-widget"</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+	<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+		<span class="o">...</span>
+    <span class="n">mpris_widget</span><span class="p">(),</span>
+		<span class="o">...</span>
+</code></pre></div></div>
+:ET

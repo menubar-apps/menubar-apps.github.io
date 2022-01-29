@@ -1,0 +1,294 @@
+I"u<h1 id="lists">Lists</h1>
+
+<p>This type of UI element is also called menu (for example in GTK).
+As an example let’s create a bookmarks widget - a widget will show a static list of sites. If item in the list is clicked - the site will be opened in the browser. You can find the created widget <a href="https://github.com/streetturtle/awesome-wm-tutorials/tree/master/bookmark-widget">here</a></p>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>Create a bookmark-widget.lua file under ~/.config/awesome/tutorials folder. Then include it in your rc.lua and add widget to the wibox:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">bookmark_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"tutorials.bookmark-widget.bookmark-widget"</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    <span class="o">...</span>
+    <span class="n">bookmark_widget</span>
+</code></pre></div></div>
+
+<p>To have a list popup, first we need to have an “anchor” widget, clicking on which should toggle the visibility of the list, so let’s create it, it will be an icon:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">awful</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awful"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">wibox</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"wibox"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">gears</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"gears"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">beautiful</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"beautiful"</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">HOME</span> <span class="o">=</span> <span class="nb">os.getenv</span><span class="p">(</span><span class="s1">'HOME'</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">ICON_DIR</span> <span class="o">=</span> <span class="n">HOME</span> <span class="o">..</span> <span class="s1">'/home-dev/awesome-wm-widget-tutorial/awesome-wm-widgets/bookmark-widget/icons/'</span>
+
+<span class="kd">local</span> <span class="n">bookmark_widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="s1">'bookmark.svg'</span><span class="p">,</span>
+        <span class="n">resize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">margins</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+<span class="p">}</span>
+
+<span class="c1">-- code mentioned below goes here</span>
+
+<span class="k">return</span> <span class="n">bookmark_widget</span>
+</code></pre></div></div>
+
+<p>Now restart awesome and boom! - you have a widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/1.png" alt="1" class="center-image" /></p>
+
+<h2 id="widget-structure">Widget structure</h2>
+
+<p>We are going to use an <a href="https://awesomewm.org/doc/api/classes/awful.popup.html">awful.popup</a> as it’s quite easy to show/hide it and also to place it on the screen. On the popup we’ll add text and image widgets, arranged in a vertical list using <a href="https://awesomewm.org/doc/api/classes/wibox.layout.fixed.html">layout.fixed</a> layout plus <a href="https://awesomewm.org/doc/api/classes/wibox.container.margin.html">container.margin</a> and <a href="https://awesomewm.org/doc/api/classes/wibox.container.background.html">container.background</a> to make it look nice and to change the background color on mouse hover:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/bookmark_structure.png" alt="widget structure" class="center-image" /></p>
+
+<h2 id="lets-start">Let’s start</h2>
+
+<p>Each item in the list will have three components: an icon, a text and an url to open when the item is clicked. Let’s represent it in lua:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">menu_items</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Reddit'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'reddit.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://www.reddit.com/'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'StackOverflow'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'stackoverflow.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://github.com/'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'GitHub'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'github.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://stackoverflow.com/'</span> <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then let’s define a popup and rows (which will hold the vertical layout), to which we will add items later on:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">awful</span><span class="p">.</span><span class="n">popup</span> <span class="p">{</span>
+    <span class="n">ontop</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">visible</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- should be hidden when created</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">end</span><span class="p">,</span>
+    <span class="n">border_width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">border_color</span> <span class="o">=</span> <span class="n">beautiful</span><span class="p">.</span><span class="n">bg_focus</span><span class="p">,</span>
+    <span class="n">maximum_width</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="p">{</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">},</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="kd">local</span> <span class="n">rows</span> <span class="o">=</span> <span class="p">{</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">vertical</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we’ll just traverse over the <code class="language-plaintext highlighter-rouge">menu_items</code>, create a row (let’s start with a simple textbox widget), add it to rows and then add rows to the popup:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">item</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">menu_items</span><span class="p">)</span> <span class="k">do</span>
+
+    <span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">}</span>
+    <span class="nb">table.insert</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">popup</span><span class="p">:</span><span class="n">setup</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The last thing left is to toggle popup visibility on mouse click on the <code class="language-plaintext highlighter-rouge">bookmark_widget</code>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bookmark_widget</span><span class="p">:</span><span class="n">buttons</span><span class="p">(</span>
+    <span class="n">awful</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">table</span><span class="p">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">awful</span><span class="p">.</span><span class="n">button</span><span class="p">({},</span> <span class="mi">1</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="k">then</span>
+                <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span>
+            <span class="k">else</span>
+                 <span class="n">popup</span><span class="p">:</span><span class="n">move_next_to</span><span class="p">(</span><span class="n">mouse</span><span class="p">.</span><span class="n">current_widget_geometry</span><span class="p">)</span>
+            <span class="k">end</span>
+    <span class="k">end</span><span class="p">))</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Restart awesome and click on the widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/1_1.png" alt="1" class="center-image" /></p>
+
+<h2 id="make-it-pretty">Make it pretty</h2>
+
+<p>To add an icon let’s wrap textbox in a fixed.horizontal layout and add an imagebox with an icon in front of it. Note that it’s important to set the maximum height and width of the image, otherwise it will take up all available space:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+        <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/2.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Looks ok, but icon and text are too close to each other. One way to fix it is to use a <a href="https://awesomewm.org/doc/api/classes/wibox.layout.fixed.html#wibox.layout.fixed.spacing">spacing</a> property of the fixed layout, which sets the distance between widgets:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+        <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="c1">-- &lt;--</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/3.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Now let’s add margins around each item:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+            <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+    <span class="p">},</span>
+    <span class="n">margins</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/4.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>One more step is to wrap margins in a background. Visually it won’t change anything (unless you want to change the default color, which is <code class="language-plaintext highlighter-rouge">bg_normal</code> from your theme), but it will be useful later, when we will add mouse hover effect to the menu item</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="p">{</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+                <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+            <span class="p">},</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+        <span class="p">},</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="n">beautiful</span><span class="p">.</span><span class="n">bg_normal</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">background</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/4.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Looks good now! Let’s add some interactivity, like changing background on mouse hover, note that <code class="language-plaintext highlighter-rouge">c</code> in the callback function’s parameter is a <code class="language-plaintext highlighter-rouge">row</code>, defined above, which is a background widget, so we can set the background color with <code class="language-plaintext highlighter-rouge">set_bg</code> method:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="n">beautiful</span><span class="p">.</span><span class="n">bg_focus</span><span class="p">)</span> 
+<span class="k">end</span><span class="p">)</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="n">beautiful</span><span class="p">.</span><span class="n">bg_normal</span><span class="p">)</span> 
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/5.gif" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Let’s also change a cursor:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">mouse</span><span class="p">.</span><span class="n">current_wibox</span>
+    <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span> <span class="o">=</span> <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span><span class="p">,</span> <span class="n">wb</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="s2">"hand1"</span>
+<span class="k">end</span><span class="p">)</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">old_wibox</span> <span class="k">then</span>
+        <span class="n">old_wibox</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">old_cursor</span>
+        <span class="n">old_wibox</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/6.gif" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="make-it-work">Make it work</h2>
+
+<p>The last bit is to open the link, when mouse is clicked. We’ll use the <a href="https://awesomewm.org/doc/api/classes/wibox.container.background.html#wibox.container.background:buttons">buttons</a> method which accepts a table of buttons. First parameter is a table with modifiers (we use none), second is a button number (1 is a left mouse button), third parameter is a callback function which is called on press action. When mouse button is clicked we want to hide the popup and open the link in the default browser. <a href="https://linux.die.net/man/1/xdg-open">xdg-open</a> is used exactly for that:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row</span><span class="p">:</span><span class="n">buttons</span><span class="p">(</span>
+    <span class="n">awful</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">table</span><span class="p">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">awful</span><span class="p">.</span><span class="n">button</span><span class="p">({},</span> <span class="mi">1</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+            <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span>
+            <span class="n">awful</span><span class="p">.</span><span class="n">spawn</span><span class="p">.</span><span class="n">with_shell</span><span class="p">(</span><span class="s1">'xdg-open '</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">end</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="future-improvements">Future improvements</h2>
+
+<p>The menu or list widget, created above, looks pretty standard, as it has icon and text. However, playing with different layouts you can add more items to it, for example you may follow material design <a href="https://material.io/components/lists#types">guidance</a> and create lists with many components, like three-lines lists with visuals and controls. As an example here is a list from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/gitlab-widget">gitlab</a> widget:</p>
+
+<p><img src="https://github.com/streetturtle/awesome-wm-widgets/raw/master/gitlab-widget/screenshot.png" alt="" /></p>
+
+<p>And another one from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/github-activity-widget">github-activity-widget</a>:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/github.png" alt="1" class="center-image" /></p>
+
+<p>And one more from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/docker-widget">docker</a> widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/docker.png" alt="1" class="center-image" /></p>
+
+<p>Widget described above can be found <a href="https://github.com/streetturtle/awesome-wm-tutorials/tree/master/bookmark-widget">here</a></p>
+:ET

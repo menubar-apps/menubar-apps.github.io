@@ -1,0 +1,81 @@
+I"�<h1 id="jira-widget">Jira widget</h1>
+
+<p>The widget shows the number of tickets assigned to the user (or any other result of a JQL query, see customization section) and when clicked shows them in the list, grouped by the ticket status. Left-click on the item opens the issue in the default browser:</p>
+
+<p align="center">
+<img alt="screenshot" src="https://raw.githubusercontent.com/streetturtle/awesome-wm-widgets/master/jira-widget/screenshot/screenshot.png" />
+</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>Widget uses cURL to query Jira’s <a href="https://developer.atlassian.com/server/jira/platform/rest-apis/">REST API</a>. In order to be authenticated, widget uses a <a href="https://ec.haxx.se/usingcurl/usingcurl-netrc">netrc</a> feature of the cURL, which is basically to store basic auth credentials in a .netrc file in home folder.</p>
+
+<p>If you are on Atlassian Cloud, then instead of providing a password in netrc file you can set an <a href="https://confluence.atlassian.com/cloud/api-tokens-938839638.html">API token</a> which is a safer option, as you can revoke/change the token at any time.</p>
+
+<h2 id="customization">Customization</h2>
+
+<p>It is possible to customize widget by providing a table with all or some of the following config parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">host</code></td>
+      <td>Required</td>
+      <td>Ex: <em>http://jira.tmnt.com</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">query</code></td>
+      <td><code class="language-plaintext highlighter-rouge">jql=assignee=currentuser() AND resolution=Unresolved</code></td>
+      <td>JQL query</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">~/.config/awesome/awesome-wm-widgets/jira-widget/jira-mark-gradient-blue.svg</code></td>
+      <td>Path to the icon</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timeout</code></td>
+      <td>600</td>
+      <td>How often in seconds the widget refreshes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="installation">Installation</h2>
+
+<p>Create a .netrc file in your home directory with following content:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machine turtlejira.com
+login mikey@tmnt.com
+password cowabunga
+</code></pre></div></div>
+
+<p>Then change file’s permissions to 600 (so only you can read/write it):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 ~/.netrc
+</code></pre></div></div>
+<p>And test if it works by calling the API (<code class="language-plaintext highlighter-rouge">-n</code> option is to use the .netrc file for authentication):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-n</span> <span class="s1">'https://turtleninja.com/rest/api/2/search?jql=assignee=currentuser()+AND+resolution=Unresolved'</span>
+</code></pre></div></div>
+
+<p>Clone/download repo and use the widget in <strong>rc.lua</strong>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">jira_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.jira-widget.jira"</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+	<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    	<span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+		<span class="o">...</span>
+		<span class="c1">-- default</span>
+		<span class="n">jira_widget</span><span class="p">({</span><span class="n">host</span> <span class="o">=</span> <span class="s1">'http://jira.tmnt.com'</span><span class="p">}),</span>
+		<span class="o">...</span>
+</code></pre></div></div>
+:ET

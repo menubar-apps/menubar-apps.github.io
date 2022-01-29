@@ -1,0 +1,77 @@
+I"Ä<h1 id="logout-menu-widget">Logout Menu Widget</h1>
+
+<p>This widget shows a menu with options to log out from the current session, lock, reboot, suspend and power off the computer, similar to <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/logout-popup-widget">logout-popup-widget</a>:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/logout-menu-widget/logout-menu.gif" alt="demo" /></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Clone this repo (if not cloned yet) under <strong>./.config/awesome/</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ./.config/awesome/
+git clone https://github.com/streetturtle/awesome-wm-widgets
+</code></pre></div></div>
+<p>Then add the widget to the wibar:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">logout_menu_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.logout-menu-widget.logout-menu"</span><span class="p">)</span>
+
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+    <span class="p">{</span> <span class="c1">-- Right widgets</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+        <span class="o">...</span>
+        <span class="c1">-- default</span>
+        <span class="n">logout_menu_widget</span><span class="p">(),</span>
+        <span class="c1">-- custom</span>
+        <span class="n">logout_menu_widget</span><span class="p">{</span>
+            <span class="n">font</span> <span class="o">=</span> <span class="s1">'Play 14'</span><span class="p">,</span>
+            <span class="n">onlock</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span> <span class="n">awful</span><span class="p">.</span><span class="n">spawn</span><span class="p">.</span><span class="n">with_shell</span><span class="p">(</span><span class="s1">'i3lock-fancy'</span><span class="p">)</span> <span class="k">end</span>
+        <span class="p">}</span>
+        <span class="o">...</span>
+</code></pre></div></div>
+
+<h2 id="customization">Customization</h2>
+
+<p>It is possible to customize the widget by providing a table with all or some of the following config parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">font</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beautiful.font</code></td>
+      <td>Font of the menu items</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onlogout</code></td>
+      <td><code class="language-plaintext highlighter-rouge">function() awesome.quit() end</code></td>
+      <td>Function which is called when the logout item is clicked</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onlock</code></td>
+      <td><code class="language-plaintext highlighter-rouge">function() awful.spawn.with_shell("i3lock") end</code></td>
+      <td>Function which is called when the lock item is clicked</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onreboot</code></td>
+      <td><code class="language-plaintext highlighter-rouge">function() awful.spawn.with_shell("reboot") end</code></td>
+      <td>Function which is called when the reboot item is clicked</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onsuspend</code></td>
+      <td><code class="language-plaintext highlighter-rouge">function() awful.spawn.with_shell("systemctl suspend") end</code></td>
+      <td>Function which is called when the suspend item is clicked</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">onpoweroff</code></td>
+      <td><code class="language-plaintext highlighter-rouge">function() awful.spawn.with_shell("shutdown now") end</code></td>
+      <td>Function which is called when the poweroff item is clicked</td>
+    </tr>
+  </tbody>
+</table>
+:ET

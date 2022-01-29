@@ -1,0 +1,188 @@
+I"Z<h1 id="awesome-buttons">Awesome Buttons</h1>
+
+<p>Here I want to share a way of creating fancy looking interactive buttons:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons.png" alt="awesome-buttons" class="center-image" /></p>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>Add the section below to your rc.lua, which will be used as a canvas:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">buttons_example</span> <span class="o">=</span> <span class="n">wibox</span> <span class="p">{</span>
+    <span class="n">visible</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#2E3440'</span><span class="p">,</span>
+    <span class="n">ontop</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="mf">1E00</span><span class="p">,</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+
+<span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">-- &lt;- code examples go here</span>
+
+<span class="n">buttons_example</span><span class="p">:</span><span class="n">setup</span> <span class="p">{</span>
+    <span class="n">button</span><span class="p">,</span>
+    <span class="n">valigh</span> <span class="o">=</span> <span class="s1">'center'</span><span class="p">,</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">place</span>
+<span class="p">}</span>
+
+<span class="n">awful</span><span class="p">.</span><span class="n">placement</span><span class="p">.</span><span class="n">top</span><span class="p">(</span><span class="n">buttons_example</span><span class="p">,</span> <span class="p">{</span> <span class="n">margins</span> <span class="o">=</span> <span class="p">{</span><span class="n">top</span> <span class="o">=</span> <span class="mi">40</span><span class="p">},</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">awful</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">focused</span><span class="p">()})</span>
+</code></pre></div></div>
+
+<h2 id="button">Button</h2>
+
+<p>Buttons usually consist of text, icon or both. Let’s start with a simple text button:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">{</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">"I'm a button!"</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-1.png" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<p>For the image button replace the textbox by the imagebox. For the icon and text button, combine both of them in the fixed horizontal layout:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">icon</span><span class="p">,</span>
+            <span class="n">resize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+        <span class="p">},</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s1">'Click me!'</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">align</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next step is to add some margins and a background. For background we’ll use <code class="language-plaintext highlighter-rouge">wibox.container.background</code>, it allows to set the background itself (<code class="language-plaintext highlighter-rouge">bg = '#4C566A'</code>). By using alpha channel it’s possible to make a transparent background (<code class="language-plaintext highlighter-rouge">bg = '#00000000'</code>) which will be useful in the next step when adding hover effect. Apart from a background, it also sets shape and borders, which allows to create ‘outline’ buttons (<code class="language-plaintext highlighter-rouge">shape_border_width = 1, shape_border_color = '#4C566A'</code>). These three types are shown in the example below:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s2">"I'm a button!"</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#4C566A'</span><span class="p">,</span> <span class="c1">-- basic</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#00000000'</span><span class="p">,</span> <span class="c1">--tranparent</span>
+    <span class="n">shape_border_width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shape_border_color</span> <span class="o">=</span> <span class="s1">'#4C566A'</span><span class="p">,</span> <span class="c1">-- outline</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> 
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+    <span class="k">end</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">background</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-2.png" alt="awesome-buttons" class="center-image" />
+<img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-3.png" alt="awesome-buttons" class="center-image" />
+<img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-4.png" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="hover-effects">Hover effects</h2>
+
+<p>Now the button looks like a button, but doesn’t behave like one. First thing is to change colors when mouse cursor hovers over the button. To do it we can leverage the signals: <code class="language-plaintext highlighter-rouge">mouse::enter</code> and <code class="language-plaintext highlighter-rouge">mouse::leave</code>. When using signals, we have access the to widget, so it’s pretty simple to change the color. Below I use alpha channel to darken the color of the button a bit, for all three types of button discussed above it works well:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#4C566A'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_tranparent</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_tranparent</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000000'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_outline</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_outline</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000000'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-5.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Note that you need to set the initial color of the button for the <code class="language-plaintext highlighter-rouge">mouse::leave</code> signal.</p>
+
+<p>Second thing is to change the cursor:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">mouse</span><span class="p">.</span><span class="n">current_wibox</span>
+    <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span> <span class="o">=</span> <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span><span class="p">,</span> <span class="n">wb</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="s2">"hand1"</span> 
+<span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#4C566A'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">old_wibox</span> <span class="k">then</span>
+        <span class="n">old_wibox</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">old_cursor</span>
+        <span class="n">old_wibox</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-6.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="button-click-effects">Button click effects</h2>
+
+<p>Another effect is changing the color of the button when the button is pressed/released:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::press"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#000000"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::release"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000066'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-7.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="onclick-action">Onclick action</h2>
+
+<p>To perform some action when the button is clicked you need to handle press/release signal. The important part here is to properly handle the button which was used, otherwise any click will trigger the function execution:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::press"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span>  <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Left click'</span><span class="p">}</span> 
+    <span class="k">elseif</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">then</span> <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Wheel click'</span><span class="p">}</span> 
+    <span class="k">elseif</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">then</span> <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Right click'</span><span class="p">}</span> 
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<p>As you can see it is pretty easy to create interactive nice-looking buttons. But if you use multiple buttons in your widget, you may have quite a lot of boilerplate code. To solve this issue I created an <a href="https://github.com/streetturtle/awesome-buttons">awesome-buttons</a> library, which simplifies this process:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_text</span><span class="p">{</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">'flat'</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'Ola'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f8f'</span><span class="p">,</span> <span class="n">text_size</span> <span class="o">=</span> <span class="mi">12</span> <span class="p">},</span>
+<span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_icon</span><span class="p">{</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">'outline'</span><span class="p">,</span> <span class="n">icon</span> <span class="o">=</span> <span class="s1">'zoom-in'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f8f'</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">'rounded_rect'</span> <span class="p">},</span>
+<span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_icon_and_text</span><span class="p">{</span> <span class="n">icon</span> <span class="o">=</span> <span class="s1">'check-circle'</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'With Icon!'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f48'</span> <span class="p">},</span>
+</code></pre></div></div>
+
+<p>Please refer to the repo’s README for more details. It is still in progress.</p>
+:ET

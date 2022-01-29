@@ -1,0 +1,141 @@
+I"ù<h1 id="battery-widget">Battery widget</h1>
+
+<p>Simple and easy-to-install widget for Awesome Window Manager.</p>
+
+<p>This widget consists of:</p>
+
+<ul>
+  <li>an icon which shows the battery level:
+ <img src="../awesome-wm-widgets/assets/img/widgets/screenshots/battery-widget/bat-wid-1.png" alt="Battery Widget" /></li>
+  <li>a pop-up window, which shows up when you hover over an icon:
+ <img src="../awesome-wm-widgets/assets/img/widgets/screenshots/battery-widget/bat-wid-2.png" alt="Battery Widget" />
+ Alternatively you can use a tooltip (check the code):
+ <img src="../awesome-wm-widgets/assets/img/widgets/screenshots/battery-widget/bat-wid-22.png" alt="Battery Widget" /></li>
+  <li>a pop-up warning message which appears on bottom right corner when battery level is less that 15% (you can get the image <a href="https://vk.com/images/stickers/1933/512.png">here</a>):
+ <img src="../awesome-wm-widgets/assets/img/widgets/screenshots/battery-widget/bat-wid-3.png" alt="Battery Widget" /></li>
+</ul>
+
+<p>Note that widget uses the Arc icon theme, so it should be <a href="https://github.com/horst3180/arc-icon-theme#installation">installed</a> first under <strong>/usr/share/icons/Arc/</strong> folder.</p>
+
+<h2 id="customization">Customization</h2>
+
+<p>It is possible to customize widget by providing a table with all or some of the following config parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">font</code></td>
+      <td>Play 8</td>
+      <td>Fond</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">path_to_icons</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/usr/share/icons/Arc/status/symbolic/</code></td>
+      <td>Path to the folder with icons*</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">show_current_level</code></td>
+      <td>false</td>
+      <td>Show current charge level</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">margin_right</code></td>
+      <td>0</td>
+      <td>The right margin of the widget</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">margin_left</code></td>
+      <td>0</td>
+      <td>The left margin of the widget</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">display_notification</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>Display a notification on mouseover</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">notification_position</code></td>
+      <td><code class="language-plaintext highlighter-rouge">top_right</code></td>
+      <td>The notification position</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timeout</code></td>
+      <td>10</td>
+      <td>How often in seconds the widget refreshes</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">warning_msg_title</code></td>
+      <td><em>Huston, we have a problem</em></td>
+      <td>Title of the warning popup</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">warning_msg_text</code></td>
+      <td><em>Battery is dying</em></td>
+      <td>Text of the warning popup</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">warning_msg_position</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bottom_right</code></td>
+      <td>Position of the warning popup</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">warning_msg_icon</code></td>
+      <td>~/.config/awesome/awesome-wm-widgets/battery-widget/spaceman.jpg</td>
+      <td>Icon of the warning popup</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enable_battery_warning</code></td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Display low battery warning</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*Note: the widget expects following icons to be present in the folder:</p>
+
+<ul>
+  <li>battery-caution-charging-symbolic.svg</li>
+  <li>battery-empty-charging-symbolic.svg</li>
+  <li>battery-full-charged-symbolic.svg</li>
+  <li>battery-full-symbolic.svg</li>
+  <li>battery-good-symbolic.svg</li>
+  <li>battery-low-symbolic.svg</li>
+  <li>battery-caution-symbolic.svg</li>
+  <li>battery-empty-symbolic.svg</li>
+  <li>battery-full-charging-symbolic.svg</li>
+  <li>battery-good-charging-symbolic.svg</li>
+  <li>battery-low-charging-symbolic.svg</li>
+  <li>battery-missing-symbolic.svg</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>This widget reads the output of acpi tool.</p>
+
+<ul>
+  <li>install <code class="language-plaintext highlighter-rouge">acpi</code> and check the output:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>acpi
+<span class="nv">$ </span>acpi
+Battery 0: Discharging, 66%, 02:34:06 remaining
+</code></pre></div></div>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">battery_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.battery-widget.battery"</span><span class="p">)</span>
+
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+	<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    	<span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+		<span class="o">...</span>
+		<span class="n">battery_widget</span><span class="p">(),</span>
+		<span class="o">...</span>
+</code></pre></div></div>
+:ET

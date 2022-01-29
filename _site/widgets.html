@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--&lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-57641651-4"></script>-->
+<!--<script>-->
+  <!--window.dataLayer = window.dataLayer || [];-->
+  <!--function gtag(){dataLayer.push(arguments);}-->
+  <!--gtag('js', new Date());-->
+
+  <!--gtag('config', 'UA-57641651-4');-->
+<!--</script>-->
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57641651-4', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta name="theme-color" content="#222222">
+    <title>Widgets for Awesome WM</title>
+    <meta name="description" content="Several simple basic widgets for Awesome Window Manager - battery widget, brightness widget,
+    email widget, volume widget, weather-widget, spotify/rhythmbox widget"/>
+
+    <link rel="manifest" href="/awesome-wm-widgets/manifest.webmanifest">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/awesome-wm-widgets/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/awesome-wm-widgets/assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/awesome-wm-widgets/assets/img/favicon-16x16.png">
+    
+    <!-- CSS  -->
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link href="/awesome-wm-widgets/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/awesome-wm-widgets/assets/css/materialize.min.css" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+    <link href="/awesome-wm-widgets/assets/css/style.css" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+    <link href="/awesome-wm-widgets/assets/css/syntax1.css" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+          <link rel="preconnect" href="https://fonts.googleapis.com"> 
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/awesome-wm-widgets/assets/js/materialize.min.js"></script>
+    <script src="/awesome-wm-widgets/assets/js/particles.min.js"></script>
+    <script src="/awesome-wm-widgets/assets/js/init.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</head>
+
+<body>
+<header>
+    <div class="topnav">
+        <div class="container">
+            <div class="site-header">
+                <div id="header" class="header center white-text">
+                    <a href="http://0.0.0.0:4000/awesome-wm-widgets/"><span
+                            style="font-family: 'Lilita One', cursive;">MENUBAR APPS</span></a>
+                </div>
+                <div id="description" class="header center white-text">
+                    Collection of MacOS menu bar applications
+                </div>
+            </div>
+            <div id="particles-js"></div>
+            
+            <a href="#" data-target="slide-out" class="top-nav sidenav-trigger full hide-on-large-only"><i class="fa fa-bars"></i></a>
+            
+        </div>
+
+    </div>
+</header>
+
+<main>
+    <a href="https://github.com/streetturtle/AwesomeWM" class="github-corner"
+   aria-label="View source on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250"
+         style="fill:#151513; color:#fff; position: absolute; top: 3px; border: 0; right: 0;"
+         aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;"
+              class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+
+<style>.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    20%, 60% {
+        transform: rotate(-25deg)
+    }
+    40%, 80% {
+        transform: rotate(10deg)
+    }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+}</style>
+
+
+    <ul id="slide-out" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
+        <!-- <ul class="collapsible collapsible-accordion"> -->
+            <li class="tab col s2"><a class="tab white-text" href="#tabMain">Menubar Apps</a></li>
+            <li><div class="divider"></div></li>    
+            <li>
+                <!-- <a class="collapsible-hxeader">Widgets</a> -->
+                <!-- <div class="collapsible-body"> -->
+                    <ul>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabIssue_Bar">
+                                Issue Bar
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabPull_Bar">
+                                Pull Bar
+                            </a>
+                        </li>
+                        
+                    </ul>
+                <!-- </div> -->
+            </li>
+            
+            <!-- <li>
+                <a class="collapsible-header">Prompts</a>
+                <div class="collapsible-body">
+                    <ul>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabSpotify_Shell">
+                                Spotify Shell
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabTranslate_Shell">
+                                Translate Shell
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li> -->
+
+
+            <!-- <li>
+                <a class="collapsible-header">Tips and tricks</a>
+                <div class="collapsible-body">
+                    <ul>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabAwesome_Buttons">
+                                Awesome Buttons
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabAwesome_Taglist">
+                                Awesome Taglist
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabFade_Effect">
+                                Fade Effect
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabLists">
+                                Lists
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabSystray_Tip">
+                                Systray Tip
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <a class="collapsible-header">Snippets</a>
+                <div class="collapsible-body">
+                    <ul>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabEllipsize">
+                                Ellipsize
+                            </a>
+                        </li>
+                        
+                        <li class="tab col s2 sidenav-close">
+                            <a class="tab" href="#tabTo_Time_Ago">
+                                To Time Ago
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li> -->
+            
+        <!-- </ul> -->
+
+        <li><div class="divider"></div></li>
+        <li><a class="subheader white-text">Links</a></li>
+
+        <div class="sidenav-footer">
+            <ul>
+       <li><a class="github-button" href="https://github.com/streetturtle" data-show-count="true"
+                     aria-label="Follow @streetturtle on GitHub">Follow me</a></li>
+       <li><a class="social-link" href="https://www.buymeacoffee.com/streetturtle"><img src="https://img.shields.io/badge/-buy%20me%20a%20coffee-3B4252?style=flat&logo=Buy-Me-A-Coffee"></a></li>
+</ul>
+        </div>
+    </ul>
+
+    <div class="container">
+        <div class="section">
+            <div class="row">
+
+                <div id="tabMain" class="widget col s12 hide">
+                    <h1 id="macos-menu-bar-apps">MacOS menu bar apps</h1>
+
+<p>This is a project page of the github <a href="https://github.com/menubar-apps">organization</a> which contains multiple MacOS application. Most of them are open-source so feel free to download them and boost your productivity!</p>
+
+<h1 id="support">Support</h1>
+
+<p>If you find anything useful here, you can:</p>
+<ul>
+  <li>add a start to a repo inside the organization</li>
+  <li>or <a class="social-link" href="https://www.buymeacoffee.com/streetturtle"><img style="display:inline" src="https://img.shields.io/badge/-buy%20me%20a%20coffee-3B4252?style=flat&amp;logo=Buy-Me-A-Coffee" /></a></li>
+  <li>or even become a <a href="https://github.com/sponsors/streetturtle">sponsor</a></li>
+</ul>
+
+                </div>
+
+                
+                <div id="tabIssue_Bar" class="widget col s12 hide"><h1 id="issuebar">IssueBar</h1>
+
+<p>GitHub Issues in your menu bar! Keep track of created or assigned issues:</p>
+
+<p align="center">
+  <img width="488" alt="Screen Shot 2022-01-28 at 8 09 31 PM" src="https://user-images.githubusercontent.com/9363150/151640930-daeca9fe-c752-45be-b633-204d18e16c6c.png" />
+</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Show assigned or created github issues</li>
+  <li>Each issue shows title, number, how long ago it was created</li>
+  <li>Open issue in browser when clicked</li>
+  <li>Optionally show labels</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li><a href="https://github.com/menubar-apps/IssueBar/releases/latest/download/pullBar.zip">Download</a> the latest release</li>
+  <li>Extract it and move to the Application folder</li>
+  <li><a href="https://github.com/settings/tokens/new?scopes=repo">Generate</a> a github access token and paste it in the application preferences with your github username</li>
+  <li>Done!</li>
+</ol>
+
+<p align="center">
+  <img width="632" alt="Screen Shot 2022-01-28 at 8 10 03 PM" src="https://user-images.githubusercontent.com/9363150/151640968-ec939c7e-d19f-4a08-a9ea-3483d3b3961c.png" />
+</p>
+
+                </div>
+                
+                <div id="tabPull_Bar" class="widget col s12 hide"><h1 id="pullbar">PullBar</h1>
+
+<p>GitHub Pull requests in your menu bar! Keep track of created, assigned and review requested Pull Requests:</p>
+
+<p align="center">
+  <img width="453" alt="Screen Shot 2022-01-28 at 7 52 35 PM" src="https://user-images.githubusercontent.com/9363150/151640176-ddd1e4e7-d05c-4ac4-857c-54b2271dd23a.png" />
+  </p>
+
+<h1 id="installation">Installation</h1>
+
+<p><a href="https://github.com/menubar-apps/PullBar/releases/latest/download/pullBar.zip">Download</a> the latest release, extract it and drag-and-drop to the Application folder.</p>
+
+<p>Then <a href="https://github.com/settings/tokens/new?scopes=repo">generate</a> a github access token and paste it in the application preferences with your github username:</p>
+
+<p align="center">
+  <img width="612" alt="Screen Shot 2022-01-01 at 5 33 28 PM" src="https://user-images.githubusercontent.com/9363150/147861494-c3803e40-309f-4b5b-8098-51c7d747db52.png" />
+</p>
+
+                </div>
+                
+
+                
+                <div id="tabSpotify_Shell" class="widget col s12 hide"><h1 id="spotify-shell">Spotify Shell</h1>
+
+<p><img src="/awesome-wm-widgets/assets/img/prompts/spotify-shell.gif" alt="demo" class="center-image" /></p>
+
+<h2 id="features">Features</h2>
+
+<ol>
+  <li>Supports following commands (same as <code class="highlighter-rouge">sp</code> client):
+    <ul>
+      <li><code class="highlighter-rouge">play</code>/<code class="highlighter-rouge">pause</code>/<code class="highlighter-rouge">next</code>;</li>
+      <li>any other string will start a search and play the first result for a given search query;</li>
+      <li>feh - shows the current artwork with <code class="highlighter-rouge">feh</code>;</li>
+    </ul>
+  </li>
+  <li>
+    <p>Stores history and allows navigate through it;</p>
+  </li>
+  <li>Highly customizable</li>
+</ol>
+
+<h2 id="controls">Controls</h2>
+
+<p>Keyboard navigation (copied from <a href="https://awesomewm.org/doc/api/libraries/awful.prompt.html"><code class="highlighter-rouge">awful.prompt</code></a> API documentation page):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CTRL+A</td>
+      <td>beginning-of-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+B</td>
+      <td>backward-char</td>
+    </tr>
+    <tr>
+      <td>CTRL+C</td>
+      <td>cancel</td>
+    </tr>
+    <tr>
+      <td>CTRL+D</td>
+      <td>delete-char</td>
+    </tr>
+    <tr>
+      <td>CTRL+E</td>
+      <td>end-of-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+J</td>
+      <td>accept-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+M</td>
+      <td>accept-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+F</td>
+      <td>move-cursor-right</td>
+    </tr>
+    <tr>
+      <td>CTRL+H</td>
+      <td>backward-delete-char</td>
+    </tr>
+    <tr>
+      <td>CTRL+K</td>
+      <td>kill-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+U</td>
+      <td>unix-line-discard</td>
+    </tr>
+    <tr>
+      <td>CTRL+W</td>
+      <td>unix-word-rubout</td>
+    </tr>
+    <tr>
+      <td>CTRL+BACKSPAC</td>
+      <td>unix-word-rubout</td>
+    </tr>
+    <tr>
+      <td>SHIFT+INSERT</td>
+      <td>paste</td>
+    </tr>
+    <tr>
+      <td>HOME</td>
+      <td>beginning-of-line</td>
+    </tr>
+    <tr>
+      <td>END</td>
+      <td>end-of-line</td>
+    </tr>
+    <tr>
+      <td>CTRL+R</td>
+      <td>reverse history search, matches any history entry containing search term.</td>
+    </tr>
+    <tr>
+      <td>CTRL+S</td>
+      <td>forward history search, matches any history entry containing search term.</td>
+    </tr>
+    <tr>
+      <td>CTRL+UP</td>
+      <td>ZSH up line or search, matches any history entry starting with search term.</td>
+    </tr>
+    <tr>
+      <td>CTRL+DOWN</td>
+      <td>ZSH down line or search, matches any history entry starting with search term.</td>
+    </tr>
+    <tr>
+      <td>CTRL+DELETE</td>
+      <td>delete the currently visible history entry from history file. This does not delete new commands or history entries under user editing.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>
+    <p>Install <a href="https://gist.github.com/streetturtle/fa6258f3ff7b17747ee3">sp</a> - CLI client for <a href="https://www.spotify.com/ca-en/download/linux/">Spotify for Linux</a>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">sudo </span>git clone https://gist.github.com/fa6258f3ff7b17747ee3.git ~/dev/
+ <span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> ~/dev/sp /usr/local/bin/
+</code></pre></div>    </div>
+
+    <p>Check if it works by running <code class="highlighter-rouge">sp help</code>.</p>
+  </li>
+  <li>
+    <p>Get an ‘id’ and ‘secret’ from <a href="https://beta.developer.spotify.com/documentation/general/guides/app-settings/">developer.spotify.com</a> and paste it in the header of the <code class="highlighter-rouge">sp</code> (<code class="highlighter-rouge">SP_ID</code> and <code class="highlighter-rouge">SP_SECRET</code>) - this enables search feature.</p>
+  </li>
+  <li>
+    <p>Clone this repo under <strong>~/.config/awesome/</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/awesome/
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Require spotify-shell at the beginning of <strong>rc.lua</strong>:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">local</span> <span class="n">spotify_shell</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.spotify-shell.spotify-shell"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add a shortcut which will show Spotify Shell widget:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span><span class="p">,</span> <span class="p">},</span> <span class="s2">"d"</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="n">spotify_shell</span><span class="p">.</span><span class="n">launch</span><span class="p">()</span> <span class="k">end</span><span class="p">,</span> <span class="p">{</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"spotify shell"</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="s2">"music"</span><span class="p">}),</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>It uses icon from <a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme">Papirus Icon Theme</a>. So you should either install this icon theme, or download an icon you want to use and provide path to it in <strong>spotify-shell.lua</strong>.</p>
+  </li>
+</ol>
+
+                </div>
+                
+                <div id="tabTranslate_Shell" class="widget col s12 hide"><h1 id="translate-shell">Translate Shell</h1>
+
+<p>This widget allows quickly translate words or phrases without opening a browser - just using Awesome. To provide direction of the translation add the 2 letters code of the source and target languages at the end of the phrase, for example <em>hello enfr</em> will translate <em>hello</em> from English to French. This widget is based on <a href="https://tech.yandex.com/translate/">Yandex.Translate API</a>.</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/prompts/translate-shell.gif" alt="demo" class="center-image" /></p>
+
+<h2 id="controls">Controls</h2>
+
+<ul>
+  <li><kbd>Mod4</kbd> + <kbd>c</kbd> - opens a translate prompt;</li>
+  <li>left click on the popup widget - copies the translation to the clipboard and closes widget;</li>
+  <li>right click on the popup widget - copies text to translate to the clipboard and closes widget.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>
+    <p>Clone repo under <strong>~/.config/awesome/</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/awesome/
+</code></pre></div>    </div>
+  </li>
+  <li>Get an <a href="https://translate.yandex.com/developers/keys">API key</a> and paste it in <strong>translate.lua</strong> as value of the <code class="highlighter-rouge">API_KEY</code> variable</li>
+  <li>
+    <p>Require widget in <strong>rc.lua</strong>:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">local</span> <span class="n">translate</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.translate-widget.translate"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add a shortcut to run translate prompt:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"c"</span><span class="p">,</span>
+           <span class="k">function</span><span class="p">()</span>
+               <span class="n">translate</span><span class="p">.</span><span class="n">show_translate_prompt</span><span class="p">()</span>
+           <span class="k">end</span><span class="p">,</span>
+           <span class="p">{</span> <span class="n">description</span> <span class="o">=</span> <span class="s2">"run translate prompt"</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="s2">"launcher"</span> <span class="p">}</span>
+ <span class="p">),</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+                </div>
+                
+
+                
+                <div id="tabAwesome_Buttons" class="widget col s12 hide"><h1 id="awesome-buttons">Awesome Buttons</h1>
+
+<p>Here I want to share a way of creating fancy looking interactive buttons:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons.png" alt="awesome-buttons" class="center-image" /></p>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>Add the section below to your rc.lua, which will be used as a canvas:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">buttons_example</span> <span class="o">=</span> <span class="n">wibox</span> <span class="p">{</span>
+    <span class="n">visible</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#2E3440'</span><span class="p">,</span>
+    <span class="n">ontop</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="mf">1E00</span><span class="p">,</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+
+<span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">-- &lt;- code examples go here</span>
+
+<span class="n">buttons_example</span><span class="p">:</span><span class="n">setup</span> <span class="p">{</span>
+    <span class="n">button</span><span class="p">,</span>
+    <span class="n">valigh</span> <span class="o">=</span> <span class="s1">'center'</span><span class="p">,</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">place</span>
+<span class="p">}</span>
+
+<span class="n">awful</span><span class="p">.</span><span class="n">placement</span><span class="p">.</span><span class="n">top</span><span class="p">(</span><span class="n">buttons_example</span><span class="p">,</span> <span class="p">{</span> <span class="n">margins</span> <span class="o">=</span> <span class="p">{</span><span class="n">top</span> <span class="o">=</span> <span class="mi">40</span><span class="p">},</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">awful</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">focused</span><span class="p">()})</span>
+</code></pre></div></div>
+
+<h2 id="button">Button</h2>
+
+<p>Buttons usually consist of text, icon or both. Let’s start with a simple text button:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">{</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">"I'm a button!"</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-1.png" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<p>For the image button replace the textbox by the imagebox. For the icon and text button, combine both of them in the fixed horizontal layout:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">icon</span><span class="p">,</span>
+            <span class="n">resize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+        <span class="p">},</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s1">'Click me!'</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">align</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next step is to add some margins and a background. For background we’ll use <code class="highlighter-rouge">wibox.container.background</code>, it allows to set the background itself (<code class="highlighter-rouge">bg = '#4C566A'</code>). By using alpha channel it’s possible to make a transparent background (<code class="highlighter-rouge">bg = '#00000000'</code>) which will be useful in the next step when adding hover effect. Apart from a background, it also sets shape and borders, which allows to create ‘outline’ buttons (<code class="highlighter-rouge">shape_border_width = 1, shape_border_color = '#4C566A'</code>). These three types are shown in the example below:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">button</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="s2">"I'm a button!"</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#4C566A'</span><span class="p">,</span> <span class="c1">-- basic</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="s1">'#00000000'</span><span class="p">,</span> <span class="c1">--tranparent</span>
+    <span class="n">shape_border_width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shape_border_color</span> <span class="o">=</span> <span class="s1">'#4C566A'</span><span class="p">,</span> <span class="c1">-- outline</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> 
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> 
+    <span class="k">end</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">background</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-2.png" alt="awesome-buttons" class="center-image" />
+<img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-3.png" alt="awesome-buttons" class="center-image" />
+<img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-4.png" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="hover-effects">Hover effects</h2>
+
+<p>Now the button looks like a button, but doesn’t behave like one. First thing is to change colors when mouse cursor hovers over the button. To do it we can leverage the signals: <code class="highlighter-rouge">mouse::enter</code> and <code class="highlighter-rouge">mouse::leave</code>. When using signals, we have access the to widget, so it’s pretty simple to change the color. Below I use alpha channel to darken the color of the button a bit, for all three types of button discussed above it works well:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#4C566A'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_tranparent</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_tranparent</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000000'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_outline</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_outline</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000000'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-5.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Note that you need to set the initial color of the button for the <code class="highlighter-rouge">mouse::leave</code> signal.</p>
+
+<p>Second thing is to change the cursor:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#00000066"</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">mouse</span><span class="p">.</span><span class="n">current_wibox</span>
+    <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span> <span class="o">=</span> <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span><span class="p">,</span> <span class="n">wb</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="s2">"hand1"</span> 
+<span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#4C566A'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">old_wibox</span> <span class="k">then</span>
+        <span class="n">old_wibox</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">old_cursor</span>
+        <span class="n">old_wibox</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-6.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="button-click-effects">Button click effects</h2>
+
+<p>Another effect is changing the color of the button when the button is pressed/released:</p>
+
+<div class="row">
+  <div class="col s8">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::press"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s2">"#000000"</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::release"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="s1">'#00000066'</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s4">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/awesome-buttons/ab-7.gif" alt="awesome-buttons" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="onclick-action">Onclick action</h2>
+
+<p>To perform some action when the button is clicked you need to handle press/release signal. The important part here is to properly handle the button which was used, otherwise any click will trigger the function execution:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button_basic</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::press"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span> 
+    <span class="k">if</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span>  <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Left click'</span><span class="p">}</span> 
+    <span class="k">elseif</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">then</span> <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Wheel click'</span><span class="p">}</span> 
+    <span class="k">elseif</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">then</span> <span class="n">naughty</span><span class="p">.</span><span class="n">notify</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s1">'Right click'</span><span class="p">}</span> 
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<p>As you can see it is pretty easy to create interactive nice-looking buttons. But if you use multiple buttons in your widget, you may have quite a lot of boilerplate code. To solve this issue I created an <a href="https://github.com/streetturtle/awesome-buttons">awesome-buttons</a> library, which simplifies this process:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_text</span><span class="p">{</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">'flat'</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'Ola'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f8f'</span><span class="p">,</span> <span class="n">text_size</span> <span class="o">=</span> <span class="mi">12</span> <span class="p">},</span>
+<span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_icon</span><span class="p">{</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">'outline'</span><span class="p">,</span> <span class="n">icon</span> <span class="o">=</span> <span class="s1">'zoom-in'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f8f'</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="s1">'rounded_rect'</span> <span class="p">},</span>
+<span class="n">awesomebuttons</span><span class="p">.</span><span class="n">with_icon_and_text</span><span class="p">{</span> <span class="n">icon</span> <span class="o">=</span> <span class="s1">'check-circle'</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'With Icon!'</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'#f48'</span> <span class="p">},</span>
+</code></pre></div></div>
+
+<p>Please refer to the repo’s README for more details. It is still in progress.</p>
+
+                </div>
+                
+                <div id="tabAwesome_Taglist" class="widget col s12 hide"><h1 id="awesome-taglist">Awesome Taglist</h1>
+
+<p>Here is nice-looking and super easy way to customize taglist. The idea is simple - literally write ‘awesome’ or ‘awesomewm’ (if you want to keep 9 tags) in the taglist using characters from the Awesome logo.</p>
+
+<p>To do it you need to install a font which was generated from the svg images of the letters from the logo. Download it from <a href="/awesome-wm-widgets/assets/fonts/awesomewm-font.ttf">here</a> and place it under <strong>~/.local/share/fonts</strong>. Then name your tags in rc.lua using it. The font has two types of letters: uppercase are for the bold characters:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awful</span><span class="p">.</span><span class="n">tag</span><span class="p">({</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"S"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">},</span>
+</code></pre></div></div>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/awesome-taglist-1.png" alt="awesome-taglist" class="center-image" /></p>
+
+<p>and lowercase for the outline characters:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awful</span><span class="p">.</span><span class="n">tag</span><span class="p">({</span> <span class="s2">"a"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">,</span> <span class="s2">"o"</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">},</span>
+</code></pre></div></div>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/awesome-taglist-2.png" alt="awesome-taglist" class="center-image" /></p>
+
+<p>To have same colors as on the screenshots, use following configuration:</p>
+
+<blockquote class="filename">
+  <p>theme.lua</p>
+</blockquote>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">theme</span><span class="p">.</span><span class="n">taglist_fg_focus</span>    <span class="o">=</span> <span class="s2">"#3992af"</span>
+<span class="n">theme</span><span class="p">.</span><span class="n">taglist_fg_occupied</span> <span class="o">=</span> <span class="s2">"#164b5d"</span>
+<span class="n">theme</span><span class="p">.</span><span class="n">taglist_fg_urgent</span>   <span class="o">=</span> <span class="s2">"#ED7572"</span>
+<span class="n">theme</span><span class="p">.</span><span class="n">taglist_fg_empty</span>    <span class="o">=</span> <span class="s2">"#828282"</span>
+<span class="n">theme</span><span class="p">.</span><span class="n">taglist_spacing</span>     <span class="o">=</span> <span class="mi">2</span>
+<span class="n">theme</span><span class="p">.</span><span class="n">taglist_font</span>        <span class="o">=</span> <span class="s2">"awesomewm 11"</span>
+</code></pre></div></div>
+
+                </div>
+                
+                <div id="tabFade_Effect" class="widget col s12 hide"><h1 id="fade-effect-on-a-widget">Fade effect on a widget</h1>
+
+<p>Here is a nice fade-out / fade-in effect which can be applied on text/image widgets (or any other widget which supports opacity). It can be used either on click or on hover actions:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/snippets/fade.gif" alt="fade" class="center-image" /></p>
+
+<blockquote class="filename">
+  <p>Fade effect on a widget</p>
+</blockquote>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">fade_widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="s1">'icon'</span><span class="p">,</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="s1">'/usr/share/icons/Yaru/24x24/apps/org.gnome.PowerStats.png'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="s1">'text'</span><span class="p">,</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">'Click to fade'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+    <span class="n">toggle_fade</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">is_fade</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'icon'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">set_opacity</span><span class="p">(</span><span class="n">is_fade</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'icon'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">emit_signal</span><span class="p">(</span><span class="s1">'widget::redraw_needed'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'text'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">set_opacity</span><span class="p">(</span><span class="n">is_fade</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'text'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">emit_signal</span><span class="p">(</span><span class="s1">'widget::redraw_needed'</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+
+<span class="c1">-- on click</span>
+<span class="kd">local</span> <span class="n">faded</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'button::press'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">faded</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">faded</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="ow">not</span> <span class="n">faded</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+
+<span class="c1">-- on hover</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'mouse::enter'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'mouse::leave'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>Let’s start by creating a simple widget which has an icon and some text:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">fade_widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="s1">'/usr/share/icons/Yaru/24x24/apps/org.gnome.PowerStats.png'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">'Click to fade'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Fade effect can be achieved by lowering the opacity of the widget. Luckily both <a href="https://awesomewm.org/doc/api/classes/wibox.widget.textbox.html">textbox</a> and <a href="https://awesomewm.org/doc/api/classes/wibox.widget.imagebox.html">imagebox</a> have opacity property, which is set to 1 by default. The cleanest way to change widget’s property (or properties of nested widgets) is to add a function which will hide all the ugliness of accessing the nested widgets inside and expose a clean API outside:</p>
+
+<figure class="highlight">
+  <pre><code class="language-lua" data-lang="lua"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="kd">local</span> <span class="n">fade_widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="s1">'icon'</span><span class="p">,</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="s1">'/usr/share/icons/Yaru/24x24/apps/org.gnome.PowerStats.png'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="s1">'text'</span><span class="p">,</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">'Click to fade'</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+    <span class="n">toggle_fade</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">is_fade</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'icon'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">set_opacity</span><span class="p">(</span><span class="n">is_fade</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'icon'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">emit_signal</span><span class="p">(</span><span class="s1">'widget::redraw_needed'</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'text'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">set_opacity</span><span class="p">(</span><span class="n">is_fade</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">:</span><span class="n">get_children_by_id</span><span class="p">(</span><span class="s1">'text'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span><span class="n">emit_signal</span><span class="p">(</span><span class="s1">'widget::redraw_needed'</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</figure>
+
+<p>Few things to note here:</p>
+
+<ul>
+  <li>Added widget identifiers (line 3, 8) so that we can access them later - line 15-18. We are using JavaScript-like syntax, described in section <em>Accessing widgets</em> of the <a href="https://awesomewm.org/apidoc/documentation/03-declarative-layout.md.html">documentation</a></li>
+  <li>When changing text in textbox the widget is redrawn automatically (same for the image in imagebox), however when changing opacity the redraw is not triggered, this is why we call it explicitly - line 16, 18.</li>
+</ul>
+
+<p>Now we can easily trigger the fade effect on the widget by calling a <code class="highlighter-rouge">toggle_fade(true)</code> method. The only thing left is to add a mouse handler:</p>
+
+<ul>
+  <li>to toggle on mouse click</li>
+</ul>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">faded</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'button::press'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">faded</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">faded</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="ow">not</span> <span class="n">faded</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+<ul>
+  <li>to toggle on hover:</li>
+</ul>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fade_widget</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'mouse::enter'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+<span class="n">fade_widget</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s1">'mouse::leave'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">:</span><span class="n">toggle_fade</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+
+                </div>
+                
+                <div id="tabLists" class="widget col s12 hide"><h1 id="lists">Lists</h1>
+
+<p>This type of UI element is also called menu (for example in GTK).
+As an example let’s create a bookmarks widget - a widget will show a static list of sites. If item in the list is clicked - the site will be opened in the browser. You can find the created widget <a href="https://github.com/streetturtle/awesome-wm-tutorials/tree/master/bookmark-widget">here</a></p>
+
+<h2 id="prerequisite">Prerequisite</h2>
+
+<p>Create a bookmark-widget.lua file under ~/.config/awesome/tutorials folder. Then include it in your rc.lua and add widget to the wibox:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">bookmark_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"tutorials.bookmark-widget.bookmark-widget"</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+<span class="p">{</span> <span class="c1">-- Right widgets</span>
+    <span class="o">...</span>
+    <span class="n">bookmark_widget</span>
+</code></pre></div></div>
+
+<p>To have a list popup, first we need to have an “anchor” widget, clicking on which should toggle the visibility of the list, so let’s create it, it will be an icon:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">awful</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awful"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">wibox</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"wibox"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">gears</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"gears"</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">beautiful</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"beautiful"</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">HOME</span> <span class="o">=</span> <span class="nb">os.getenv</span><span class="p">(</span><span class="s1">'HOME'</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">ICON_DIR</span> <span class="o">=</span> <span class="n">HOME</span> <span class="o">..</span> <span class="s1">'/home-dev/awesome-wm-widget-tutorial/awesome-wm-widgets/bookmark-widget/icons/'</span>
+
+<span class="kd">local</span> <span class="n">bookmark_widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="s1">'bookmark.svg'</span><span class="p">,</span>
+        <span class="n">resize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">margins</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+<span class="p">}</span>
+
+<span class="c1">-- code mentioned below goes here</span>
+
+<span class="k">return</span> <span class="n">bookmark_widget</span>
+</code></pre></div></div>
+
+<p>Now restart awesome and boom! - you have a widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/1.png" alt="1" class="center-image" /></p>
+
+<h2 id="widget-structure">Widget structure</h2>
+
+<p>We are going to use an <a href="https://awesomewm.org/doc/api/classes/awful.popup.html">awful.popup</a> as it’s quite easy to show/hide it and also to place it on the screen. On the popup we’ll add text and image widgets, arranged in a vertical list using <a href="https://awesomewm.org/doc/api/classes/wibox.layout.fixed.html">layout.fixed</a> layout plus <a href="https://awesomewm.org/doc/api/classes/wibox.container.margin.html">container.margin</a> and <a href="https://awesomewm.org/doc/api/classes/wibox.container.background.html">container.background</a> to make it look nice and to change the background color on mouse hover:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/bookmark_structure.png" alt="widget structure" class="center-image" /></p>
+
+<h2 id="lets-start">Let’s start</h2>
+
+<p>Each item in the list will have three components: an icon, a text and an url to open when the item is clicked. Let’s represent it in lua:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">menu_items</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'Reddit'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'reddit.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://www.reddit.com/'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'StackOverflow'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'stackoverflow.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://github.com/'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'GitHub'</span><span class="p">,</span> <span class="n">icon_name</span> <span class="o">=</span> <span class="s1">'github.svg'</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">'https://stackoverflow.com/'</span> <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Then let’s define a popup and rows (which will hold the vertical layout), to which we will add items later on:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">popup</span> <span class="o">=</span> <span class="n">awful</span><span class="p">.</span><span class="n">popup</span> <span class="p">{</span>
+    <span class="n">ontop</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">visible</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">-- should be hidden when created</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">gears</span><span class="p">.</span><span class="n">shape</span><span class="p">.</span><span class="n">rounded_rect</span><span class="p">(</span><span class="n">cr</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">end</span><span class="p">,</span>
+    <span class="n">border_width</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">border_color</span> <span class="o">=</span> <span class="n">beautiful</span><span class="p">.</span><span class="n">bg_focus</span><span class="p">,</span>
+    <span class="n">maximum_width</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="p">{</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="p">},</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="kd">local</span> <span class="n">rows</span> <span class="o">=</span> <span class="p">{</span> <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">vertical</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we’ll just traverse over the <code class="highlighter-rouge">menu_items</code>, create a row (let’s start with a simple textbox widget), add it to rows and then add rows to the popup:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">item</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">menu_items</span><span class="p">)</span> <span class="k">do</span>
+
+    <span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">}</span>
+    <span class="nb">table.insert</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">popup</span><span class="p">:</span><span class="n">setup</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The last thing left is to toggle popup visibility on mouse click on the <code class="highlighter-rouge">bookmark_widget</code>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bookmark_widget</span><span class="p">:</span><span class="n">buttons</span><span class="p">(</span>
+    <span class="n">awful</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">table</span><span class="p">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">awful</span><span class="p">.</span><span class="n">button</span><span class="p">({},</span> <span class="mi">1</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="k">then</span>
+                <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span>
+            <span class="k">else</span>
+                 <span class="n">popup</span><span class="p">:</span><span class="n">move_next_to</span><span class="p">(</span><span class="n">mouse</span><span class="p">.</span><span class="n">current_widget_geometry</span><span class="p">)</span>
+            <span class="k">end</span>
+    <span class="k">end</span><span class="p">))</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Restart awesome and click on the widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/1_1.png" alt="1" class="center-image" /></p>
+
+<h2 id="make-it-pretty">Make it pretty</h2>
+
+<p>To add an icon let’s wrap textbox in a fixed.horizontal layout and add an imagebox with an icon in front of it. Note that it’s important to set the maximum height and width of the image, otherwise it will take up all available space:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+        <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/2.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Looks ok, but icon and text are too close to each other. One way to fix it is to use a <a href="https://awesomewm.org/doc/api/classes/wibox.layout.fixed.html#wibox.layout.fixed.spacing">spacing</a> property of the fixed layout, which sets the distance between widgets:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+        <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+    <span class="p">},</span>
+    <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="c1">-- &lt;--</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/3.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Now let’s add margins around each item:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+            <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+        <span class="p">},</span>
+        <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+    <span class="p">},</span>
+    <span class="n">margins</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/4.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>One more step is to wrap margins in a background. Visually it won’t change anything (unless you want to change the default color, which is <code class="highlighter-rouge">bg_normal</code> from your theme), but it will be useful later, when we will add mouse hover effect to the menu item</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">row</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span> <span class="p">{</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="p">{</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">ICON_DIR</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">icon_name</span><span class="p">,</span>
+                <span class="n">forced_width</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="n">forced_height</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">imagebox</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textbox</span>
+            <span class="p">},</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="n">layout</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">fixed</span><span class="p">.</span><span class="n">horizontal</span>
+        <span class="p">},</span>
+        <span class="n">margins</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">margin</span>
+    <span class="p">},</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="n">beautiful</span><span class="p">.</span><span class="n">bg_normal</span><span class="p">,</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">container</span><span class="p">.</span><span class="n">background</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/4.png" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Looks good now! Let’s add some interactivity, like changing background on mouse hover, note that <code class="highlighter-rouge">c</code> in the callback function’s parameter is a <code class="highlighter-rouge">row</code>, defined above, which is a background widget, so we can set the background color with <code class="highlighter-rouge">set_bg</code> method:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="n">beautiful</span><span class="p">.</span><span class="n">bg_focus</span><span class="p">)</span> 
+<span class="k">end</span><span class="p">)</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+    <span class="n">c</span><span class="p">:</span><span class="n">set_bg</span><span class="p">(</span><span class="n">beautiful</span><span class="p">.</span><span class="n">bg_normal</span><span class="p">)</span> 
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/5.gif" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<p>Let’s also change a cursor:</p>
+
+<div class="row">
+  <div class="col s6">
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::enter"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">mouse</span><span class="p">.</span><span class="n">current_wibox</span>
+    <span class="n">old_cursor</span><span class="p">,</span> <span class="n">old_wibox</span> <span class="o">=</span> <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span><span class="p">,</span> <span class="n">wb</span>
+    <span class="n">wb</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="s2">"hand1"</span>
+<span class="k">end</span><span class="p">)</span>
+<span class="n">row</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"mouse::leave"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">old_wibox</span> <span class="k">then</span>
+        <span class="n">old_wibox</span><span class="p">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">old_cursor</span>
+        <span class="n">old_wibox</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </div>
+  <div class="col s6">
+    <p><img src="/awesome-wm-widgets/assets/img/tips/lists/6.gif" alt="1" class="center-image" /></p>
+  </div>
+</div>
+
+<h2 id="make-it-work">Make it work</h2>
+
+<p>The last bit is to open the link, when mouse is clicked. We’ll use the <a href="https://awesomewm.org/doc/api/classes/wibox.container.background.html#wibox.container.background:buttons">buttons</a> method which accepts a table of buttons. First parameter is a table with modifiers (we use none), second is a button number (1 is a left mouse button), third parameter is a callback function which is called on press action. When mouse button is clicked we want to hide the popup and open the link in the default browser. <a href="https://linux.die.net/man/1/xdg-open">xdg-open</a> is used exactly for that:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">row</span><span class="p">:</span><span class="n">buttons</span><span class="p">(</span>
+    <span class="n">awful</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">table</span><span class="p">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">awful</span><span class="p">.</span><span class="n">button</span><span class="p">({},</span> <span class="mi">1</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+            <span class="n">popup</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">popup</span><span class="p">.</span><span class="n">visible</span>
+            <span class="n">awful</span><span class="p">.</span><span class="n">spawn</span><span class="p">.</span><span class="n">with_shell</span><span class="p">(</span><span class="s1">'xdg-open '</span> <span class="o">..</span> <span class="n">item</span><span class="p">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">end</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="future-improvements">Future improvements</h2>
+
+<p>The menu or list widget, created above, looks pretty standard, as it has icon and text. However, playing with different layouts you can add more items to it, for example you may follow material design <a href="https://material.io/components/lists#types">guidance</a> and create lists with many components, like three-lines lists with visuals and controls. As an example here is a list from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/gitlab-widget">gitlab</a> widget:</p>
+
+<p><img src="https://github.com/streetturtle/awesome-wm-widgets/raw/master/gitlab-widget/screenshot.png" alt="" /></p>
+
+<p>And another one from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/github-activity-widget">github-activity-widget</a>:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/github.png" alt="1" class="center-image" /></p>
+
+<p>And one more from <a href="https://github.com/streetturtle/awesome-wm-widgets/tree/master/docker-widget">docker</a> widget:</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/lists/docker.png" alt="1" class="center-image" /></p>
+
+<p>Widget described above can be found <a href="https://github.com/streetturtle/awesome-wm-tutorials/tree/master/bookmark-widget">here</a></p>
+
+                </div>
+                
+                <div id="tabSystray_Tip" class="widget col s12 hide"><h1 id="toggable-systray">Toggable Systray</h1>
+
+<p>Here is a trick to toggle system tray visibility in Awesome using keyboard shortcut. The reason to do that is pretty simple - it looks ugly in some themes. In my case I don’t like two things about it:</p>
+
+<ul>
+  <li>
+    <p>I didn’t manage to make it transparent which is quite important since I am using transparent tasklist and widgets. I tried <code class="highlighter-rouge">wibox.widget.systray.opacity</code> property which doesn’t work as well as setting an alpha channel for <code class="highlighter-rouge">beautiful.bg_systray</code>.</p>
+  </li>
+  <li>
+    <p>Colors of the apps are very different from theme colors which makes systray look flashy and disturbing:</p>
+  </li>
+</ul>
+
+<p><img src="/awesome-wm-widgets/assets/img/tips/systray.png" alt="systray screenshot" /></p>
+
+<p>On the other hand not showing it at all will make interaction with some apps pretty difficult. So having a keyboard shortcut which toggles its visibility sounds like a good solution for the problems mentioned above.</p>
+
+<p>To do it create a systray widget inside <code class="highlighter-rouge">awful.screen.connect_for_each_screen</code> function:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awful</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">connect_for_each_screen</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="o">...</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">systray</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">systray</span><span class="p">()</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">systray</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="o">...</span>
+</code></pre></div></div>
+
+<p>Then add it to the the wibox: replace default <code class="highlighter-rouge">wibox.widget.systray()</code> by <code class="highlighter-rouge">s.systray</code> inside <code class="highlighter-rouge">s.mywibox:setup</code> method:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span><span class="p">.</span><span class="n">mywibox</span><span class="p">:</span><span class="n">setup</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">mytasklist</span><span class="p">,</span> <span class="c1">-- Middle widget</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">systray</span>
+    <span class="o">...</span>
+</code></pre></div></div>
+
+<p>Almost done, the only thing left is a shortcut, I use <code class="key highlighter-rouge">mod</code> + <code class="key highlighter-rouge">=</code>:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"="</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span>
+    <span class="n">awful</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">focused</span><span class="p">().</span><span class="n">systray</span><span class="p">.</span><span class="n">visible</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">awful</span><span class="p">.</span><span class="n">screen</span><span class="p">.</span><span class="n">focused</span><span class="p">().</span><span class="n">systray</span><span class="p">.</span><span class="n">visible</span>
+    <span class="k">end</span><span class="p">,</span> <span class="p">{</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"Toggle systray visibility"</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="s2">"custom"</span><span class="p">})</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+                
+                <div id="tabEllipsize" class="widget col s12 hide"><h1 id="ellipsize">Ellipsize</h1>
+
+<blockquote class="filename">
+  <p>Ellipsizes string to a given length</p>
+</blockquote>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">ellipsize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="n">len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="ow">and</span> <span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">text</span><span class="p">:</span><span class="n">sub</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="o">..</span> <span class="s1">'...'</span>
+        <span class="ow">or</span> <span class="n">text</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+                </div>
+                
+                <div id="tabTo_Time_Ago" class="widget col s12 hide"><h1 id="to-time-ago">To time ago</h1>
+
+<blockquote class="filename">
+  <p>Converts seconds to “time ago” represenation, like ‘1 hour ago’</p>
+</blockquote>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">to_time_ago</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">days</span> <span class="o">=</span> <span class="n">seconds</span> <span class="o">/</span> <span class="mi">86400</span>
+    <span class="k">if</span> <span class="n">days</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">days</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">days</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">days</span> <span class="o">..</span> <span class="p">(</span><span class="n">days</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' day'</span> <span class="ow">or</span> <span class="s1">' days'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+
+    <span class="kd">local</span> <span class="n">hours</span> <span class="o">=</span> <span class="p">(</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3600</span>
+    <span class="k">if</span> <span class="n">hours</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">hours</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">hours</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">hours</span> <span class="o">..</span> <span class="p">(</span><span class="n">hours</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' hour'</span> <span class="ow">or</span> <span class="s1">' hours'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+
+    <span class="kd">local</span> <span class="n">minutes</span> <span class="o">=</span> <span class="p">((</span><span class="n">seconds</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span>
+    <span class="k">if</span> <span class="n">minutes</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="n">minutes</span> <span class="o">=</span> <span class="nb">math.floor</span><span class="p">(</span><span class="n">minutes</span> <span class="o">+</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">minutes</span> <span class="o">..</span> <span class="p">(</span><span class="n">minutes</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s1">' minute'</span> <span class="ow">or</span> <span class="s1">' minutes'</span><span class="p">)</span> <span class="o">..</span> <span class="s1">' ago'</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer class="page-footer grey darken-4">
+    <div class="footer-copyright">
+        <div class="container">
+            <!--Made by <a class="orange-text text-lighten-3" href="http://github.com/streetturtle">Pavel Makhov</a>-->
+            <span>Made with
+                <a href="http://materializecss.com/"
+                   title="MaterializeCSS"
+                   target="_blank"><img
+                        src="/awesome-wm-widgets/assets/img/materialize-logo.png"
+                        class="materialcss-icon"></a>,
+                <a href="https://jekyllrb.com/" title="Jekyll" target="_blank"><img
+                        src="/awesome-wm-widgets/assets/img/jekyll-logo.png" class="jekyll-icon"></a>and
+                <a href="https://open.spotify.com/user/11133734108/playlist/2431O2512ZRN5OQb0NmokO?si=vwfSWeGBRv6opdJ_V6nvbQ"
+                   title="Spotify Playlist" target="_blank"><i class="fa fa-spotify fa-2x" style="color: #1db954"></i></a>
+            </span>
+            <span class="right cprght"><a href="https://pavelmakhov.com/">Pavel Makhov</a> © 2022</span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

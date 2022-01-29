@@ -1,0 +1,168 @@
+I"G<h1 id="calendar-widget">Calendar Widget</h1>
+
+<p>Calendar widget for Awesome WM - slightly improved version of the <code class="language-plaintext highlighter-rouge">wibox.widget.calendar</code>.</p>
+
+<h2 id="features">Features</h2>
+
+<h3 id="customization">Customization</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>theme</td>
+      <td><code class="language-plaintext highlighter-rouge">naughty</code></td>
+      <td>The theme to use</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td><code class="language-plaintext highlighter-rouge">top</code></td>
+      <td>The position of the popup</td>
+    </tr>
+    <tr>
+      <td>radius</td>
+      <td>8</td>
+      <td>The popup radius</td>
+    </tr>
+    <tr>
+      <td>start_sunday</td>
+      <td>false</td>
+      <td>Start the week on Sunday</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>themes:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Screenshot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>nord</td>
+          <td><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/nord.png" alt="nord_theme" /></td>
+        </tr>
+        <tr>
+          <td>outrun</td>
+          <td><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/outrun.png" alt="outrun_theme" /></td>
+        </tr>
+        <tr>
+          <td>light</td>
+          <td><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/light.png" alt="outrun_theme" /></td>
+        </tr>
+        <tr>
+          <td>dark</td>
+          <td><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/dark.png" alt="outrun_theme" /></td>
+        </tr>
+        <tr>
+          <td>naughty (default)</td>
+          <td>from local theme</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>setup widget placement</p>
+  </li>
+</ul>
+
+<p>top center - in case you clock is centered:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/calendar_top.png" alt="calendar_top" /></p>
+
+<p>top right - for default awesome config:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/calendar_top_right.png" alt="calendar_top_right" /></p>
+
+<p>bottom right - in case your wibar at the bottom:</p>
+
+<p><img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/calendar_bottom_right.png" alt="calendar_bottom_right" /></p>
+
+<ul>
+  <li>
+    <p>setup first day of week</p>
+
+    <p>By setting <code class="language-plaintext highlighter-rouge">start_sunday</code> to true:
+<img src="../awesome-wm-widgets/assets/img/widgets/screenshots/calendar-widget/calendar_start_sunday.png" alt="calendar_start_sunday" /></p>
+  </li>
+  <li>
+    <p>mouse support:
+ move to the next and previous month. Using mouse buttons or scroll wheel.</p>
+
+    <p>You can configure this by specifying the button to move to next/previous.
+ Usually these are configured as follows. If you want to use other mouse buttons, you can find their number using <code class="language-plaintext highlighter-rouge">xev</code>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>number</th>
+          <th>button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4</td>
+          <td>scroll up</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>scroll down</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>left click</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>right click</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>middles click</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>By default <code class="language-plaintext highlighter-rouge">previous_month_button</code> is 5, <code class="language-plaintext highlighter-rouge">next_month_button</code> is 4.</p>
+  </li>
+</ul>
+
+<h2 id="how-to-use">How to use</h2>
+
+<p>This widget needs an ‘anchor’ - another widget which triggers visibility of the calendar. Default <code class="language-plaintext highlighter-rouge">mytextclock</code> is the perfect candidate!
+Just after mytextclock is instantiated, create the widget and add the mouse listener to it.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">calendar_widget</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.calendar-widget.calendar"</span><span class="p">)</span>
+<span class="c1">-- ...</span>
+<span class="c1">-- Create a textclock widget</span>
+<span class="n">mytextclock</span> <span class="o">=</span> <span class="n">wibox</span><span class="p">.</span><span class="n">widget</span><span class="p">.</span><span class="n">textclock</span><span class="p">()</span>
+<span class="c1">-- default</span>
+<span class="kd">local</span> <span class="n">cw</span> <span class="o">=</span> <span class="n">calendar_widget</span><span class="p">()</span>
+<span class="c1">-- or customized</span>
+<span class="kd">local</span> <span class="n">cw</span> <span class="o">=</span> <span class="n">calendar_widget</span><span class="p">({</span>
+    <span class="n">theme</span> <span class="o">=</span> <span class="s1">'outrun'</span><span class="p">,</span>
+    <span class="n">placement</span> <span class="o">=</span> <span class="s1">'bottom_right'</span><span class="p">,</span>
+    <span class="n">start_sunday</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+<span class="c1">-- with customized next/previous (see table above)</span>
+    <span class="n">previous_month_button</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">next_month_button</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">mytextclock</span><span class="p">:</span><span class="n">connect_signal</span><span class="p">(</span><span class="s2">"button::press"</span><span class="p">,</span>
+    <span class="k">function</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">button</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span> <span class="n">cw</span><span class="p">.</span><span class="n">toggle</span><span class="p">()</span> <span class="k">end</span>
+    <span class="k">end</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

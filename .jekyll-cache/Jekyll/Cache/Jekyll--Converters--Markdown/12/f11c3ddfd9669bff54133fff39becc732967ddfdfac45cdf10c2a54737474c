@@ -1,0 +1,44 @@
+I"T<h1 id="translate-shell">Translate Shell</h1>
+
+<p>This widget allows quickly translate words or phrases without opening a browser - just using Awesome. To provide direction of the translation add the 2 letters code of the source and target languages at the end of the phrase, for example <em>hello enfr</em> will translate <em>hello</em> from English to French. This widget is based on <a href="https://tech.yandex.com/translate/">Yandex.Translate API</a>.</p>
+
+<p><img src="/awesome-wm-widgets/assets/img/prompts/translate-shell.gif" alt="demo" class="center-image" /></p>
+
+<h2 id="controls">Controls</h2>
+
+<ul>
+  <li><kbd>Mod4</kbd> + <kbd>c</kbd> - opens a translate prompt;</li>
+  <li>left click on the popup widget - copies the translation to the clipboard and closes widget;</li>
+  <li>right click on the popup widget - copies text to translate to the clipboard and closes widget.</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>
+    <p>Clone repo under <strong>~/.config/awesome/</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/awesome/
+</code></pre></div>    </div>
+  </li>
+  <li>Get an <a href="https://translate.yandex.com/developers/keys">API key</a> and paste it in <strong>translate.lua</strong> as value of the <code class="language-plaintext highlighter-rouge">API_KEY</code> variable</li>
+  <li>
+    <p>Require widget in <strong>rc.lua</strong>:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">local</span> <span class="n">translate</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"awesome-wm-widgets.translate-widget.translate"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add a shortcut to run translate prompt:</p>
+
+    <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">awful</span><span class="p">.</span><span class="n">key</span><span class="p">({</span> <span class="n">modkey</span> <span class="p">},</span> <span class="s2">"c"</span><span class="p">,</span>
+           <span class="k">function</span><span class="p">()</span>
+               <span class="n">translate</span><span class="p">.</span><span class="n">show_translate_prompt</span><span class="p">()</span>
+           <span class="k">end</span><span class="p">,</span>
+           <span class="p">{</span> <span class="n">description</span> <span class="o">=</span> <span class="s2">"run translate prompt"</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="s2">"launcher"</span> <span class="p">}</span>
+ <span class="p">),</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+:ET

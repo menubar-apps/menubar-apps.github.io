@@ -1,0 +1,19 @@
+I"�<h1 id="pomodoro-widget">Pomodoro Widget</h1>
+
+<p>:construction: This widget is under construction :construction_worker:</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>This widget is based on <a href="https://github.com/jsspencer">@jsspencer</a>’ <a href="https://github.com/jsspencer/pomo">pomo</a> - a simple pomodoro timer.
+So first install/clone it anywhere you like, then either</p>
+<ul>
+  <li>in widget’s code provide path to the pomo.sh, or</li>
+  <li>add pomo.sh to the PATH, or</li>
+  <li>make a soft link in /usr/local/bin/ to it:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">sudo ln</span> <span class="nt">-sf</span> /opt/pomodoro/pomo.sh /usr/local/bin/pomo
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Note that by default widget’s code expects third way and calls script by <code class="language-plaintext highlighter-rouge">pomo</code>.</p>
+:ET
