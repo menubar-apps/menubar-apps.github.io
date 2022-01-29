@@ -27,8 +27,8 @@ $(document).ready(function(){
         event.preventDefault();//stop browser to take action for clicked anchor
 
         let currentPage = $(this).text().trim().replace(/\s+/g, '-').toLowerCase();
-        ga('set', 'page', currentPage);
-        ga('send', 'pageview');
+        // ga('set', 'page', currentPage);
+        // ga('send', 'pageview');
 
         //find actived navigation and remove 'active' css
         let actived_nav = $('li.active');
