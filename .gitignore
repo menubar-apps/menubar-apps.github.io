@@ -1,0 +1,7 @@
+# IDEA files
+.idea
+
+# Jekyll
+.sass-cache
+_site
+.jekyll-cache
