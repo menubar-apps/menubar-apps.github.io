@@ -1,3 +1,6 @@
+---
+layout: page
+---
 # JiraBar
 
 Jira issues in your menubar!
