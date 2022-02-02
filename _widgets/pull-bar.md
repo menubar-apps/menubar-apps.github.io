@@ -15,6 +15,9 @@ GitHub Pull requests in your menu bar! Keep track of created, assigned and revie
  - for each pull request shows title, number, project, author, number of approvals, number of additions/deletions and how long ago this PR was created;
  - shows information about check suites on the PR:
 
+   ![Screen Shot 2022-02-02 at 4 21 41 PM](https://user-images.githubusercontent.com/9363150/152239478-14737f64-85fe-44f2-a769-38b181a299e5.png)
+
+
 # Installation
 
 [Download](https://github.com/menubar-apps/PullBar/releases/latest/download/pullBar.zip) the latest release, extract it and drag-and-drop to the Application folder.
