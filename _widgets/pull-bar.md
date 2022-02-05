@@ -25,5 +25,5 @@ GitHub Pull requests in your menu bar! Keep track of created, assigned and revie
 Then [generate](https://github.com/settings/tokens/new?scopes=repo) a github access token and paste it in the application preferences with your github username:
 
 <p align="center">
-  <img width="612" alt="Screen Shot 2022-01-01 at 5 33 28 PM" src="https://user-images.githubusercontent.com/9363150/147861494-c3803e40-309f-4b5b-8098-51c7d747db52.png">
+  <img width="612" alt="Screen Shot 2022-02-05 at 2 04 51 PM" src="https://user-images.githubusercontent.com/9363150/152655330-109e1e64-433c-49e3-a64a-477676b57dcc.png">
 </p>
