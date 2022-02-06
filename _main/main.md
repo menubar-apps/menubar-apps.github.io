@@ -4,7 +4,7 @@ layout: page
 
 # MacOS menu bar apps
 
-This is a project page of the github [organization](https://github.com/menubar-apps) which contains multiple MacOS application. Most of them are open-source so feel free to download them and boost your productivity!
+This is a project page of the github [organization](https://github.com/menubar-apps) which contains multiple MacOS applications. Most of them are open-source so feel free to download them and boost your productivity!
 
 # Support
 
