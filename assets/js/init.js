@@ -2,6 +2,7 @@
 ---
 
 var hash = window.location.hash;
+var path = window.location.pathname
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (hash)
         $('a[href=' + hash +']').click();
-    else
+    else if (path.indexOf('privacy') < 0)
         $('a[href=#menubar-apps]').click();
 });
 
