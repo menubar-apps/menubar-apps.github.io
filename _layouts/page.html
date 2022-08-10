@@ -39,6 +39,9 @@
                         <li class="tab col s2 sidenav-close">
                             <a class="tab" href="#{{ widget.title | replace: ' ', '-' | downcase }}">
                                 {{ widget.title | replace: 'Cpu', 'CPU' | replace: 'Ram', 'RAM' | replace: 'Fs', 'FS' | replace: 'Todo', 'ToDo'}}
+                            {% if widget.badge != null and widget.badge != "" %}
+                                <span class="new badge" data-badge-caption="{{ widget.badge }}"></span></a></li>
+                            {% endif %}
                             </a>
                         </li>
                         {% endfor %}
