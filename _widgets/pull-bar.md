@@ -17,13 +17,16 @@ badge: free
 Native MacOS menubar application to show GitHub Pull Requests in your menu bar! Keep track of created, assigned and review requested Pull Requests:
 
 <p align="center">
-  <img width="708" alt="Screen Shot 2022-07-17 at 9 06 36 PM" src="https://user-images.githubusercontent.com/9363150/179432557-f3db115e-fe9d-4f91-ac7c-0d85ce3f9e43.png">
+  <img width="708" alt="Screen Shot 2022-07-17 at 9 06 36 PM" src="https://user-images.githubusercontent.com/9363150/179432557-f3db115e-fe9d-4f91-ac7c-0d85ce3f9e43.png" style="border-radius: 10px">
 </p>
 
 # Features
 
  - shows assigned, created and/or review requested pull requests;
- - for each pull request shows title, number, project, author, number of approvals, number of added/deleted lines and how long ago this PR was created;
+ - for each pull request shows title, number, project, author, number of approvals, number of added/deleted lines and how long ago this PR was created:
+<p align="center">
+  <img width="485" alt="PR-screenshot" src="https://user-images.githubusercontent.com/9363150/184937172-595ef896-080b-43fe-bcea-ec70deb26df4.png" style="border-radius: 10px">
+</p>
  - show check suites information.
 
 # Installation
