@@ -18,7 +18,7 @@ badge: free
 Super simple and straightforward todo list app. Just create an item, mark it done and then delete. That's it!
 
 <p align="center">
-  <img width="656" alt="Screen Shot 2022-08-27 at 10 03 26 PM" src="https://user-images.githubusercontent.com/9363150/187054349-5ae9fb37-5bf5-43d5-bbff-6caa13192287.png">
+  <img width="656" alt="Screen Shot 2022-08-27 at 10 03 26 PM" style="border-radius: 13px" src="https://user-images.githubusercontent.com/9363150/187054349-5ae9fb37-5bf5-43d5-bbff-6caa13192287.png">
 </p>
 
 # Features
