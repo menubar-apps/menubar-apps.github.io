@@ -1,6 +1,7 @@
 ---
 layout: page
 badge: free
+iconname: todobar.png
 ---
 
 # ToDoBar
