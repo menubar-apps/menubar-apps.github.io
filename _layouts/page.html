@@ -37,8 +37,9 @@
                     <ul>
                         {% for widget in site.widgets %}
                         <li class="tab col s2 sidenav-close">
-                            <a class="tab" href="#{{ widget.title | replace: ' ', '-' | downcase }}">
-                                {{ widget.title | replace: 'Cpu', 'CPU' | replace: 'Ram', 'RAM' | replace: 'Fs', 'FS' | replace: 'Todo', 'ToDo'}}
+                            <a class="tab" href="#{{ widget.title | replace: ' ', '-' | downcase }}">                              
+                                <img src="https://menubar-apps.github.io/assets/img/{{widget.iconname}}" style="width: 40px; vertical-align: middle;">
+                                <span>{{ widget.title | replace: 'Cpu', 'CPU' | replace: 'Ram', 'RAM' | replace: 'Fs', 'FS' | replace: 'Todo', 'ToDo'}}</span>
                             {% if widget.badge != null and widget.badge != "" %}
                                 <span class="new badge" data-badge-caption="{{ widget.badge }}"></span></a></li>
                             {% endif %}
