@@ -1,7 +1,7 @@
 ---
 layout: page
 badge: free
-iconname: spacehud.png
+iconname: space-hud.png
 ---
 
 # Space HUD
