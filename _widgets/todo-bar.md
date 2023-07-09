@@ -19,16 +19,24 @@ iconname: todobar.png
 Super simple and straightforward todo list app. Just create an item, mark it done and then delete. That's it!
 
 <p align="center">
-  <img width="656" alt="Screen Shot 2022-08-27 at 10 03 26 PM" style="border-radius: 13px" src="https://user-images.githubusercontent.com/9363150/187054349-5ae9fb37-5bf5-43d5-bbff-6caa13192287.png">
+  <img width="472" alt="Screenshot 2023-07-09 at 1 22 47 PM" src="https://github.com/menubar-apps/ToDoBar/assets/9363150/0cc76f58-f4a4-4ac1-b0d1-8c64175b742f">
 </p>
 
 # Features
 
  - create new, mark done and delete a todo item
  - no cloud sync across devices
- - no search, tags, editing, export, reordering
- - not even a preference window - there is nothing to setup!
+ - no search, no tags, no editing, no export, no reordering
+ - not even a preference window!
 
 # Installation
 
-Get it from the [App Store](https://apps.apple.com/ca/app/todobar/id1641624925?mt=12) or download the [latest release](https://github.com/menubar-apps/ToDoBar/releases/download/v1.0/ToDoBar.1.0.dmg) from GitHub.
+There are 3 ways of installing the application: 
+
+ - [Mac App Store](https://apps.apple.com/ca/app/pullbar/id1601913905)
+ - Homebrew:
+    ```shell
+    brew tap menubar-apps/menubar-apps
+    brew install todobar
+    ```
+ - [Download](https://github.com/menubar-apps/ToDoBar/releases) from github releases
