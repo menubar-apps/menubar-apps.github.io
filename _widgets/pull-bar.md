@@ -3,7 +3,10 @@ layout: page
 badge: free
 iconname: pullbar.png
 ---
-# PullBar
+<p align="center">
+  <img src="./assets/pullbar-256.png">
+  <h2>PullBar</h2>
+</p>
 
 <p align="center">
   <a href="https://github.com/menubar-apps/PullBar"><img src="https://img.shields.io/badge/-PullBar-black?logo=github&style=flat"></a>
