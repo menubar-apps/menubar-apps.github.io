@@ -30,7 +30,7 @@ Native MacOS menubar application to show GitHub Pull Requests in your menu bar! 
 <p align="center">
   <img width="485" alt="PR-screenshot" src="https://user-images.githubusercontent.com/9363150/184937172-595ef896-080b-43fe-bcea-ec70deb26df4.png" style="border-radius: 10px">
 </p>
- - show check suites or check runs information.
+ - show check suites or check runs information with links to the correstponding builds.
 
 # Installation
 
