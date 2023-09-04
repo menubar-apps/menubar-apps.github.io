@@ -1,7 +1,7 @@
 ---
 layout: page
 badge: 🧑‍🔧
-iconname: streak-bar.png
+iconname: streak-bar-128.png
 ---
 
 # Streak-bar
