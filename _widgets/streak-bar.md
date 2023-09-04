@@ -1,6 +1,6 @@
 ---
 layout: page
-badge: 🧑‍🔧
+badge: free
 iconname: streak-bar-128.png
 ---
 
