@@ -1,6 +1,6 @@
 ---
 layout: page
-badge: $2.99
+badge: $1.99
 iconname: pullbarpro-128.png
 ---
 <p align="center">
