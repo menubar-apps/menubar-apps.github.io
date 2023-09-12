@@ -10,7 +10,21 @@ iconname: pullbarpro-128.png
 A better PullBar! Easily access GitHub Pull Requests from your menubar with a single click (or a keyboard shortcut 😎).
 
 <p align="center">
-<a href="https://apps.apple.com/us/app/pullbarpro/id6462591649?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/black/en-us?size=250x83&amp;releaseDate=1692835200" alt="Download on the Mac App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+  <a class="badge" href="https://apps.apple.com/us/app/pullbarpro/id6462591649?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
+  <svg class="badge__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5640259,13.8623047
+                    c-0.4133301,0.9155273-0.6115723,1.3251343-1.1437988,2.1346436c-0.7424927,1.1303711-1.7894897,2.5380249-3.086853,2.5500488
+                    c-1.1524048,0.0109253-1.4483032-0.749939-3.0129395-0.741333c-1.5640259,0.008606-1.8909302,0.755127-3.0438843,0.7442017
+                    c-1.296814-0.0120239-2.2891235-1.2833252-3.0321655-2.4136963c-2.0770874-3.1607666-2.2941895-6.8709106-1.0131836-8.8428955
+                    c0.9106445-1.4013062,2.3466187-2.2217407,3.6970215-2.2217407c1.375,0,2.239502,0.7539673,3.3761597,0.7539673
+                    c1.1028442,0,1.7749023-0.755127,3.3641357-0.755127c1.201416,0,2.4744263,0.6542969,3.3816528,1.7846069
+                    C14.0778809,8.4837646,14.5608521,12.7279663,17.5640259,13.8623047z M12.4625244,3.8076782
+                    c0.5775146-0.741333,1.0163574-1.7880859,0.8571167-2.857666c-0.9436035,0.0653076-2.0470581,0.6651611-2.6912842,1.4477539	C10.0437012,3.107605,9.56073,4.1605835,9.7486572,5.1849365C10.7787476,5.2164917,11.8443604,4.6011963,12.4625244,3.8076782z"></path>
+                    </svg>
+                    
+  <span class="badge__text">Download on the</span>
+  <span class="badge__storename">App Store</span>
+</a>
 </p>
 
 ![1280x800bb](https://github.com/menubar-apps/menubar-apps.github.io/assets/9363150/65e7ff2b-cd0b-4c1f-8572-a534c7686c95)
