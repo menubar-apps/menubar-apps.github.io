@@ -1,6 +1,6 @@
 ---
 layout: page
-appstore-badge: $1.99
+badge: $1.99
 iconname: pullbarpro-128.png
 ---
 <p align="center">
