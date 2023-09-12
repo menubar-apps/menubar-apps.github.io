@@ -31,7 +31,6 @@ A better PullBar! Easily access GitHub Pull Requests from your menubar with a si
   </a>
 </p>
 
-## Features
 
 <div class="row">
   <div class="col s6">
