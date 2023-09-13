@@ -1,7 +1,7 @@
 ---
 ---
 
-var hash = window.location.hash;
+var hash = window.location.hash.split("?")[0];
 var path = window.location.pathname
 
 document.addEventListener('DOMContentLoaded', function() {
