@@ -16,7 +16,7 @@ iconname: streak-bar-128.png
 </p>
 
 <p align="center">
-<a class="appstore-badge" href="https://apps.apple.com/us/app/todobar/id6464448808?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
+<a class="appstore-badge" href="https://apps.apple.com/ca/app/streak-bar/id6464448808?mt=12">
     <svg class="appstore-badge__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 20 20">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5640259,13.8623047
                       c-0.4133301,0.9155273-0.6115723,1.3251343-1.1437988,2.1346436c-0.7424927,1.1303711-1.7894897,2.5380249-3.086853,2.5500488
