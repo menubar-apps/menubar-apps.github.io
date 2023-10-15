@@ -30,12 +30,19 @@ A better PullBar! Easily access GitHub Pull Requests from your menubar with a si
     <span class="appstore-badge__storename">14-days trial</span>
   </a>
 </p>
+<div class="row">
+  <div class="col s8 offset-s2">
 
+  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+  </div>
+  </div>
+
+# Features
 
 <div class="row">
   <div class="col s6">
   <p>
-  <img src="https://github.com/menubar-apps/menubar-apps.github.io/assets/9363150/65e7ff2b-cd0b-4c1f-8572-a534c7686c95" alt="1280x800bb">
+  <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
   </p>
   </div>
   <div class="col s6">

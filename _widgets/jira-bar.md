@@ -31,7 +31,7 @@ iconname: jirabar-256.png
 Native MacOS menubar application to show Jira issues in your menu bar:
 
 <p align="center">
-<img width="539" alt="Screen Shot 2022-09-27 at 8 49 39 PM" src="https://user-images.githubusercontent.com/9363150/192662802-a4640dd9-dc7b-4aeb-9aa8-fa0708738b11.png">
+<img width="539" class="rounded-corners" alt="Screen Shot 2022-09-27 at 8 49 39 PM" src="https://user-images.githubusercontent.com/9363150/192662802-a4640dd9-dc7b-4aeb-9aa8-fa0708738b11.png">
 </p>
 
 # Installation
