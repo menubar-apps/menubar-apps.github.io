@@ -5,9 +5,10 @@ iconname: pullbarpro-128.png
 ---
 <p align="center">
   <img src="./assets/img/pullbarpro-128.png">
+  
+  <span style="font-weight: bold;">PullBar Pro</span>
 </p>
 
-A better PullBar! Easily access GitHub Pull Requests from your menubar with a single click (or a keyboard shortcut 😎).
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/pullbarpro/id6462591649?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
@@ -39,21 +40,42 @@ A better PullBar! Easily access GitHub Pull Requests from your menubar with a si
 
 # Features
 
-<div class="row">
+<div class="row" markdown="0">
   <div class="col s6">
-  <p>
-  <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
-  </p>
+    <p>
+      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+    </p>
   </div>
   <div class="col s6">
-  <p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar app provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests. 
-  </p>
+    <p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar app provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests. 
+    </p>
   </div>
 </div>
 
-<div class="row">
+<div class="row" markdown="0">
   <div class="col s6">
+    <p>
+      <h3>Status Checks</h3>
+      Status checks is a code quality feature of GitHub's pull requests, which is based on external processes, like CI pipeline. There are two types of status checks: check and commit status. PullBar supports both of them.</p>
   </div>
   <div class="col s6">
+    <p>
+      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+    </p>
   </div>
+</div>
+
+<div class="row" markdown="0">
+  <div class="col s6">
+    <p>
+      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+    </p>
+  </div>
+    <div class="col s6">
+    <p>
+      <h3>Keyboard Support</h3>
+      <span>Assign a keyboard shorcut to toggle the app. You can also switch between tabs by using <kbd>cmd</kbd><kbd>1/2/3</kbd></p>
+    </p>
+  </div>
+
 </div>
