@@ -33,34 +33,25 @@ iconname: pullbarpro-128.png
 </p>
 <div class="row">
   <div class="col s8 offset-s2">
-
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
   </div>
   </div>
+
+<div class="row" markdown="0">
+<p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar application provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests.</p>
+</div>
 
 # Features
 
 <div class="row" markdown="0">
   <div class="col s6">
     <p>
-      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
-    </p>
-  </div>
-  <div class="col s6">
-    <p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar app provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests. 
-    </p>
-  </div>
-</div>
-
-<div class="row" markdown="0">
-  <div class="col s6">
-    <p>
-      <h3>Status Checks</h3>
+      <h3>Build: Status Checks</h3>
       Status checks is a code quality feature of GitHub's pull requests, which is based on external processes, like CI pipeline. There are two types of status checks: check and commit status. PullBar supports both of them.</p>
   </div>
   <div class="col s6">
     <p>
-      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+      <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-3.png">
     </p>
   </div>
 </div>
@@ -68,13 +59,42 @@ iconname: pullbarpro-128.png
 <div class="row" markdown="0">
   <div class="col s6">
     <p>
-      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+      <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-4.png">
     </p>
   </div>
-    <div class="col s6">
+  <div class="col s6">
+    <p>
+      <h3>Build: Commit Statuses</h3>
+      Status checks is a code quality feature of GitHub's pull requests, which is based on external processes, like CI pipeline. There are two types of status checks: check and commit status. PullBar supports both of them.</p>
+  </div>
+</div>
+
+<div class="row" markdown="0">
+  <div class="col s6">
     <p>
       <h3>Keyboard Support</h3>
-      <span>Assign a keyboard shorcut to toggle the app. You can also switch between tabs by using <kbd>cmd</kbd><kbd>1/2/3</kbd></p>
+      <span>Assign a keyboard shorcut to toggle the app. Additionally you can switch between tabs using <kbd>⌘cmd</kbd> + <kbd>1</kbd> through <kbd>⌘cmd</kbd> + <kbd>3</kbd>, depending on the number of enabled tabs.</span>
+    </p>
+  </div>
+
+  <div class="col s6">
+    <p>
+      <img src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-5.png">
+    </p>
+  </div>
+</div>
+
+<div class="row" markdown="0">
+  <div class="col s6">
+    <p>
+      <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-6.png">
+    </p>
+  </div>
+
+  <div class="col s6">
+    <p>
+      <h3>Reviews</h3>
+      <p>For each pull request you can find number of approvals, comments or change requests, with the name and a direct link to correstponding review.</p>
     </p>
   </div>
 
