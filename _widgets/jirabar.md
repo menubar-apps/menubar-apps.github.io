@@ -1,11 +1,14 @@
 ---
 layout: page
 badge: free
+appname: JiraBar
 iconname: jirabar-256.png
 ---
 
 <p align="center">
-  <img width="128" src="./assets/img/jirabar-256.png">
+  <img class="app-icon" width="128" src="./assets/img/jirabar-256.png">
+  <br>
+  <span style="font-weight: bold;">JiraBar</span>
 </p>
 
 <p align="center">

@@ -1,10 +1,13 @@
 ---
 layout: page
 badge: free
+appname: PullBar
 iconname: pullbar.png
 ---
 <p align="center">
-  <img src="./assets/img/pullbar-128.png">
+  <img class="app-icon" src="./assets/img/pullbar-128.png">
+  <br>
+  <span style="font-weight: bold;">PullBar</span>
 </p>
 
 <p align="center">

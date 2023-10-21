@@ -1,13 +1,14 @@
 ---
 layout: page
 badge: free
+appname: ToDoBar
 iconname: todobar.png
 ---
 
-# ToDoBar
-
 <p align="center">
-  <img src="./assets/img/todobar-256.png" width="128">
+  <img class="app-icon" src="./assets/img/todobar-256.png" width="128">
+  <br>
+  <span style="font-weight: bold;">ToDoBar</span>
 </p>
 <p align="center">
   <a href="https://github.com/menubar-apps/ToDoBar"><img src="https://img.shields.io/badge/-ToDoBar-black?logo=github&style=flat"></a>

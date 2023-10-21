@@ -1,11 +1,14 @@
 ---
 layout: page
 badge: free
+appname: StreakBar
 iconname: streak-bar-128.png
 ---
 
 <p align="center">
-  <img width="128" alt="streak-bar-256" src="https://github.com/menubar-apps/StreakBar/assets/9363150/761b1289-fd1b-43a6-a8f3-1c3b99769a26">
+  <img class="app-icon" width="128" alt="streak-bar-256" src="https://github.com/menubar-apps/StreakBar/assets/9363150/761b1289-fd1b-43a6-a8f3-1c3b99769a26">
+  <br>
+  <span style="font-weight: bold;">StreakBar</span>
 </p>
 
 <p align="center">

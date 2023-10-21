@@ -1,11 +1,12 @@
 ---
 layout: page
 badge: $1.99
+appname: PullBar Pro
 iconname: pullbarpro-128.png
 ---
 <p align="center">
-  <img src="./assets/img/pullbarpro-128.png">
-  
+  <img class="app-icon" src="./assets/img/pullbarpro-128.png">
+  <br>
   <span style="font-weight: bold;">PullBar Pro</span>
 </p>
 

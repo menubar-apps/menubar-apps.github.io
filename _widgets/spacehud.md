@@ -1,10 +1,9 @@
 ---
 layout: page
 badge: free
+appname: Space HUD
 iconname: space-hud.png
 ---
-
-# Space HUD
 
 A MacOS menubar application to quickly access code reviews, issues and todos from [Jetbrains Space](https://www.jetbrains.com/space/)
 
