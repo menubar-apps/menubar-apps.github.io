@@ -23,7 +23,11 @@ kbd {
 .icon-block {
   padding: 0 15px;
 }
-
+.appstore-badge__icon {
+  path {
+      fill: blue;
+  }
+}
 .icon-block .material-icons {
   font-size: inherit;
 }
