@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
 
-    let currentPage = document.location.hash.replace('#tab', '').replace(/[\s+_]/g, '-').toLowerCase();
+    let currentPage = document.location.hash.replace('#tab', '').replace(/[\s+_]/g, '').toLowerCase();
     if (currentPage === 'main') currentPage = '';
     // ga('set', 'page', currentPage);
     // ga('send', 'pageview');
