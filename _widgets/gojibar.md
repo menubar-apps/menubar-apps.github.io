@@ -16,6 +16,11 @@ iconname: gojibar-128.png
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
+<a class="appstore-badge" href="https://github.com/menubar-apps/GojiBar/releases/download/trial.1.1/GojiBar.trial.1.1.dmg">
+    <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/github.svg">
+    <span class="appstore-badge__text">Download</span>
+    <span class="appstore-badge__storename">14-days trial</span>
+  </a>
 </p>
 <div class="row">
   <div class="col s8 offset-s2">
