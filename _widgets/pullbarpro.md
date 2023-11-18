@@ -86,7 +86,7 @@ iconname: pullbarpro-128.png
   <div class="col s6">
     <p>
       <h3>Reviews</h3>
-      <p>For each pull request you can find number of approvals, comments or change requests, with the name and a direct link to correstponding review.</p>
+      <p>For each pull request you can find number of approvals, comments or change requests, with the name and a direct link to corresponding review.</p>
     </p>
   </div>
 
