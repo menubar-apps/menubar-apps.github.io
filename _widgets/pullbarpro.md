@@ -71,7 +71,7 @@ iconname: pullbarpro-128.png
 
   <div class="col s6">
     <p>
-      <img lass="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-7.png">
+      <img сlass="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-7.png">
     </p>
   </div>
 </div>
