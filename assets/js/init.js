@@ -34,7 +34,7 @@ $(document).ready(function(){
     $('li.tab > a').click(function(event){
         event.preventDefault();//stop browser to take action for clicked anchor
 
-        let currentPage = $(this).text().trim().replace(/\s+/g, '-').toLowerCase();
+        let currentPage = $(this).text().trim().replace(/\s+/g, '').toLowerCase();
         // ga('set', 'page', currentPage);
         // ga('send', 'pageview');
 
