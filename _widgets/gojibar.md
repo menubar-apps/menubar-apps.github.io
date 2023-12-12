@@ -23,7 +23,7 @@ iconname: gojibar-128.png
   </a>
 </p>
 <div class="row">
-  <div class="col s8 offset-s2">
+  <div class="col m8 offset-m2">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
   </div>
 </div>
