@@ -70,7 +70,7 @@ iconname: pullbarpro-128.png
   <div class="col m6">
     <p>
       <h3>Keyboard Support</h3>
-      <span>You can assign a keyboard shorcut to toggle the app. Additionally, while the app is open, you can switch between tabs using <kbd>⌘cmd</kbd> + <kbd>1</kbd> through <kbd>⌘cmd</kbd> + <kbd>3</kbd>, depending on the number of enabled tabs.</span>
+      <span>You can assign a keyboard shortcut to toggle the app. Additionally, while the app is open, you can switch between tabs using <kbd>⌘cmd</kbd> + <kbd>1</kbd> through <kbd>⌘cmd</kbd> + <kbd>3</kbd>, depending on the number of enabled tabs.</span>
     </p>
   </div>
 </div>
