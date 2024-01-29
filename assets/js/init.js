@@ -31,7 +31,7 @@ $(document).ready(function(){
         send_to: 'G-KF6GFCEWBS'
       })
 
-    $('li.tab > a').click(function(event){
+    $('a.internal-link').click(function(event){
         event.preventDefault();//stop browser to take action for clicked anchor
 
         let currentPage = $(this).text().trim().replace(/\s+/g, '').toLowerCase();
