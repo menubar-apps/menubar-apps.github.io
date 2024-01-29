@@ -16,6 +16,13 @@ iconname: octospace-128.png
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
+
+  <a class="appstore-badge internal-link" style="background-color:#1d3557" href="#octospacelite">
+    <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/menubar-apps-logo.png">
+    <span class="appstore-badge__text">Check free version</span>
+    <span class="appstore-badge__storename">OctoSpace Lite</span>
+  </a>
+
 </p>
 
 <div class="row">
@@ -25,7 +32,7 @@ iconname: octospace-128.png
 </div>
 
 
-With this app you'll be able to quickly access github's pull requests, issues and repositories of your any organization you're part of. 
+With this app you'll be able to quickly access github's pull requests, issues and repositories of any organization you're part of. 
 
 Ideal for:
  - Developers seeking a more integrated GitHub experience on their macOS.
@@ -34,11 +41,10 @@ Ideal for:
  - Contributors to open-source projects who need to stay updated on various repositories.
 
 
-
 # Features
 
   - simple setup - just generate an access token and paste it in the app.
-  - built in SwiftfUI, for better performance, theming and integration with macOS.
+  - built in SwiftUI, for better performance, theming and integration with macOS.
   - for pull requests you can setup: 
     - what type of pull requests to view: review requested, assigned and/or created.
     - status checks -  is a code quality feature of GitHub's pull requests, which is based on external processes, like CI pipeline. There are two types of status checks: check and commit status. OctoSpace supports both of them.
@@ -53,4 +59,4 @@ Ideal for:
  - add team members view
  - [suggest your feature](https://github.com/menubar-apps/OctoSpace/issues/new?assignees=streetturtle&labels=&projects=&template=feature_request.md&title=)
 
-If you liked the app, please leave a review. In case you didn't like it, please submit an issue, I'll be happy to fix bugs, implement missing functionalities or work on a new features. 
+If you liked the app, please leave a review. In case you didn't like it, please submit an issue, I'll be happy to fix bugs, implement missing functionalities or work on new features.
