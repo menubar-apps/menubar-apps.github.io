@@ -37,7 +37,8 @@ span.badge.new {
 }
 
 .topnav {
-  background-color: #457b9d;
+  // background-color: #457b9d;
+  background-color: #5E81AC;
   border-top: 3px #f1faee solid;
   border-bottom: 1px #080808 solid;
 
@@ -89,8 +90,10 @@ body {
 
 main {
   flex: 1 0 auto;
-  background-color: #a8dadc;
-  color: #1d3557;
+  // background-color: #a8dadc;
+  background-color: #434C5E;
+  // color: #1d3557;
+  color: #ECEFF4;
 }
 
 footer {
@@ -111,10 +114,13 @@ a.sidenav-trigger.top-nav {
 }
 .sidenav {
   background-color: #1d3557;
-  color: white;
+  // color: white;
+  color: #D8DEE9;
 
   li > a {
-    color: #8a9ba1;
+    // color: #8a9ba1;
+    color: #D8DEE9;
+    
   }
   li > a.subheader {
     padding-left: 16px;
@@ -171,6 +177,10 @@ figure.highlight {
 
 .widget {
   transition: all 2s linear;
+}
+
+.page-footer {
+  background-color: #2E3440;
 }
 
 .footer-copyright {
