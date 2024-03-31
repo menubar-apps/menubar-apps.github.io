@@ -12,7 +12,7 @@ iconname: swiftystats-128.png
 
 <div class="row">
   <div class="col m8 offset-m2">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-1.png">
+  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/siwfty-stats/swifty-stats-1.png">
   </div>
 </div>
 
