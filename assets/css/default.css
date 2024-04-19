@@ -3,3 +3,7 @@ span.badge.new {
     color: #000;
     background-color: #88C0D0;
 }
+
+a.sidenav-trigger.top-nav {
+    color: #88C0D0;
+}
