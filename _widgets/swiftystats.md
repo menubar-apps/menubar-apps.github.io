@@ -1,6 +1,6 @@
 ---
 layout: page
-badge: free
+badge: $0.99
 appname: SwiftyStats
 iconname: swiftystats-128.png
 ---
