@@ -23,6 +23,11 @@ iconname: pullbarpro-128.png
     <span class="appstore-badge__storename">14-days trial</span>
   </a>
 </p>
+
+<p alight="center">
+  <img src="{{ site.url | append: site.baseurl}}/assets/img/tab_solid.png">
+</p>
+
 <div class="row">
   <div class="col m8 offset-m2">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
