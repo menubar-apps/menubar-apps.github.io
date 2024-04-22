@@ -26,7 +26,7 @@ iconname: pullbarpro-128.png
 
 <p align="center">
   <a href="https://devhunt.org/tool/pullbar-pro">
-  <img src="{{ site.url | append: site.baseurl}}/assets/img/tab_solid.svg" style="width: 220px;">
+  <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/tab_solid.svg" style="width: 220px;">
   </a>
 </p>
 
