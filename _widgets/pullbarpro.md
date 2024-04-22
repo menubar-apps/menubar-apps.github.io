@@ -24,8 +24,10 @@ iconname: pullbarpro-128.png
   </a>
 </p>
 
-<p alight="center">
-  <img src="{{ site.url | append: site.baseurl}}/assets/img/tab_solid.png">
+<p align="center">
+  <a href="https://devhunt.org/tool/pullbar-pro">
+  <img src="{{ site.url | append: site.baseurl}}/assets/img/tab_solid.png" style="width: 50%;">
+  </a>
 </p>
 
 <div class="row">
