@@ -18,7 +18,7 @@ iconname: octospace-128.png
   </a>
 
   <a class="appstore-badge internal-link" style="background-color:#1d3557" href="#octospacelite">
-    <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/menubar-apps-logo.png">
+    <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/main-logo/menubar-apps-logo.png">
     <span class="appstore-badge__text">Check free version</span>
     <span class="appstore-badge__storename">OctoSpace Lite</span>
   </a>
