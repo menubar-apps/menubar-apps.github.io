@@ -32,4 +32,6 @@ iconname: whosmissing-128.png
 
 
 Native macOS application to show people, who are currently not on Earth 😬
+<p align="center">
 <img width="541" alt="Screenshot 2024-05-06 at 6 21 48 PM" src="https://github.com/menubar-apps/menubar-apps.github.io/assets/9363150/8a5e6455-8bd8-4627-9c34-4779f6473dd7">
+</p>
