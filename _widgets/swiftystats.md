@@ -4,11 +4,7 @@ badge: $0.99
 appname: SwiftyStats
 iconname: swiftystats-128.png
 ---
-<p align="center">
-  <img class="app-icon" src="./assets/img/swiftystats-128.png">
-  <br>
-  <span style="font-weight: bold;">SwiftyStats</span>
-</p>
+{% include icon-name.html app-name="Swifty Stats" icon-path="swifty-stats" %}
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/pullbarpro/id6482977831?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">

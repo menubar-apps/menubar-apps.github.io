@@ -4,11 +4,14 @@ badge: $4.99
 appname: OctoSpace
 iconname: octospace-128.png
 ---
-<p align="center">
+
+{% include icon-name.html app-name="OctoSpace" icon-path="octospace" %}
+
+<!-- <p align="center">
   <img class="app-icon" src="./assets/img/octospace-128.png">
   <br>
   <span style="font-weight: bold;">OctoSpace</span>
-</p>
+</p> -->
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/octospace/id6473707939?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">

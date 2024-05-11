@@ -4,11 +4,15 @@ badge: free
 appname: OctoSpace Lite
 iconname: octospace-lite-128.png
 ---
-<p align="center">
+
+{% include icon-name.html app-name="Octospace Lite" icon-path="octospace-lite" %}
+
+
+<!-- <p align="center">
   <img class="app-icon" src="./assets/img/octospace-lite-128.png">
   <br>
   <span style="font-weight: bold;">OctoSpace Lite</span>
-</p>
+</p> -->
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/ca/app/octospace-lite/id6476446051?mt=12?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">

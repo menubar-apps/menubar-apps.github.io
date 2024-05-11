@@ -4,12 +4,14 @@ badge: free
 appname: ToDoBar
 iconname: todobar.png
 ---
+{% include icon-name.html app-name="ToDoBar" icon-path="todobar" %}
 
-<p align="center">
+
+<!-- <p align="center">
   <img class="app-icon" src="./assets/img/todobar-256.png" width="128">
   <br>
   <span style="font-weight: bold;">ToDoBar</span>
-</p>
+</p> -->
 <p align="center">
   <a href="https://github.com/menubar-apps/ToDoBar"><img src="https://img.shields.io/badge/-ToDoBar-black?logo=github&style=flat"></a>
   <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/menubar-apps/ToDoBar/total">

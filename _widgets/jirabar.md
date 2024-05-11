@@ -5,11 +5,13 @@ appname: JiraBar
 iconname: jirabar-256.png
 ---
 
-<p align="center">
-  <img class="app-icon" width="128" src="./assets/img/jirabar-256.png">
+{% include icon-name.html app-name="JiraBar" icon-path="jirabar" %}
+
+<!-- <p align="center">
+  <img class="app-icon" src="./assets/img/apps/jirabar/256.png">
   <br>
   <span style="font-weight: bold;">JiraBar</span>
-</p>
+</p> -->
 
 <p align="center">
   <a href="https://github.com/menubar-apps/JiraBar"><img src="https://img.shields.io/badge/-JiraBar-black?logo=github&style=flat"></a>

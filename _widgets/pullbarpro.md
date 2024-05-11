@@ -4,11 +4,14 @@ badge: $1.99
 appname: PullBar Pro
 iconname: pullbarpro-128.png
 ---
-<p align="center">
+{% include icon-name.html app-name="PullBar Pro" icon-path="pullbar-pro" %}
+
+
+<!-- <p align="center">
   <img class="app-icon" src="./assets/img/pullbarpro-128.png">
   <br>
   <span style="font-weight: bold;">PullBar Pro</span>
-</p>
+</p> -->
 
 
 <p align="center">

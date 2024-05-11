@@ -5,7 +5,7 @@ appname: GojiBar
 iconname: gojibar-128.png
 ---
 <p align="center">
-  <img class="app-icon" src="./assets/img/gojibar-128.png">
+  <img class="app-icon" src="./assets/img/apps/gojibar/256.png">
   <br>
   <span style="font-weight: bold;">GojiBar</span>
 </p>

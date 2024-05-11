@@ -4,11 +4,7 @@ badge: free
 appname: Who's missing?
 iconname: whosmissing-128.png
 ---
-<p align="center">
-  <img class="app-icon" src="./assets/img/whosmissing-128.png">
-  <br>
-  <span style="font-weight: bold;">Who's Missing?</span>
-</p>
+{% include icon-name.html app-name="Who's missing?" icon-path="who-is-missing" %}
   
 <p align="center">
     <a class="appstore-badge" href="https://apps.apple.com/ca/app/pullbar/id6502242117?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">

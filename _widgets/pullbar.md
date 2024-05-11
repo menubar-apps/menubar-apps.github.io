@@ -4,11 +4,14 @@ badge: free
 appname: PullBar
 iconname: pullbar.png
 ---
-<p align="center">
+
+{% include icon-name.html app-name="PullBar" icon-path="pullbar" %}
+
+<!-- <p align="center">
   <img class="app-icon" src="./assets/img/pullbar-128.png">
   <br>
   <span style="font-weight: bold;">PullBar</span>
-</p>
+</p> -->
 
 <p align="center">
   <a href="https://github.com/menubar-apps/PullBar"><img src="https://img.shields.io/badge/-PullBar-black?logo=github&style=flat"></a>
