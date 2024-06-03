@@ -5,13 +5,8 @@ appname: OctoSpace
 iconname: octospace-128.png
 ---
 
+<div class="row first-row" markdown="0">
 {% include icon-name.html app-name="OctoSpace" icon-path="octospace" %}
-
-<!-- <p align="center">
-  <img class="app-icon" src="./assets/img/octospace-128.png">
-  <br>
-  <span style="font-weight: bold;">OctoSpace</span>
-</p> -->
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/octospace/id6473707939?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
@@ -27,14 +22,13 @@ iconname: octospace-128.png
   </a>
 
 </p>
+</div>
+{% include first-row-divider.html %}
 
-<div class="row">
+<div class="row second-row">
   <div class="col m8 offset-m2">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/octospace/octospace-1.png">
-  </div>
-</div>
-
-
+  
 With this app you'll be able to quickly access github's pull requests, issues and repositories of any organization you're part of. 
 
 Ideal for:
@@ -63,3 +57,5 @@ Ideal for:
  - [suggest your feature](https://github.com/menubar-apps/OctoSpace/issues/new?assignees=streetturtle&labels=&projects=&template=feature_request.md&title=)
 
 If you liked the app, please leave a review. In case you didn't like it, please submit an issue, I'll be happy to fix bugs, implement missing functionalities or work on new features.
+</div>
+</div>

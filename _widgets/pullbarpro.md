@@ -4,15 +4,9 @@ badge: $1.99
 appname: PullBar Pro
 iconname: pullbarpro-128.png
 ---
+<div class="row first-row">
+
 {% include icon-name.html app-name="PullBar Pro" icon-path="pullbar-pro" %}
-
-
-<!-- <p align="center">
-  <img class="app-icon" src="./assets/img/pullbarpro-128.png">
-  <br>
-  <span style="font-weight: bold;">PullBar Pro</span>
-</p> -->
-
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/pullbarpro/id6462591649?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
@@ -32,18 +26,17 @@ iconname: pullbarpro-128.png
   <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/tab_solid.svg" style="width: 220px;">
   </a>
 </p>
-
-<div class="row">
-  <div class="col m8 offset-m2">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
-  </div>
-  </div>
-
-<div class="row" markdown="0">
-<p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar application provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests.</p>
 </div>
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
 
-# Features
+<div class="row second-row" markdown="0">
+  <div class="col m8 offset-m2">
+    <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-2.png">
+
+    <p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar application provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests.</p>
+
+
+<h1>Features</h1>
 
 <div class="row" markdown="0">
   <div class="col m6">
@@ -124,3 +117,5 @@ iconname: pullbarpro-128.png
     </p>
   </div>
 </div>
+<div>
+<div>

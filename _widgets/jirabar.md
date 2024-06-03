@@ -5,13 +5,8 @@ appname: JiraBar
 iconname: jirabar-256.png
 ---
 
+<div class="row first-row" markdown="0">
 {% include icon-name.html app-name="JiraBar" icon-path="jirabar" %}
-
-<!-- <p align="center">
-  <img class="app-icon" src="./assets/img/apps/jirabar/256.png">
-  <br>
-  <span style="font-weight: bold;">JiraBar</span>
-</p> -->
 
 <p align="center">
   <a href="https://github.com/menubar-apps/JiraBar"><img src="https://img.shields.io/badge/-JiraBar-black?logo=github&style=flat"></a>
@@ -32,7 +27,12 @@ iconname: jirabar-256.png
     <span class="appstore-badge__storename">jirabar</span>
   </a>
 </p>
+</div>
 
+{% include first-row-divider.html %}
+
+<div class="row second-row">
+<div class="col m8 offset-m2">
 Native MacOS menubar application to show Jira issues in your menu bar:
 
 <p align="center">
@@ -47,3 +47,5 @@ Native MacOS menubar application to show Jira issues in your menu bar:
 <img width="612" alt="Screen Shot 2022-09-27 at 8 51 13 PM" src="https://user-images.githubusercontent.com/9363150/192662959-5fb0fde2-efe1-4631-a454-f7330315262b.png">
 </p>
 
+</div>
+</div>

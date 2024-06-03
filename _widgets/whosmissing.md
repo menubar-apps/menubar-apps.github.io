@@ -4,6 +4,8 @@ badge: free
 appname: Who's missing?
 iconname: whosmissing-128.png
 ---
+<div class="row first-row">
+
 {% include icon-name.html app-name="Who's missing?" icon-path="who-is-missing" %}
   
 <p align="center">
@@ -26,8 +28,16 @@ iconname: whosmissing-128.png
   </a>
 </p>
 
+</div>
 
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+
+
+<div class="row second-row">
+<div class="col m8 offset-m2">
 Native macOS application to show people, who are currently not on Earth 😬
 <p align="center">
 <img width="541" alt="Screenshot 2024-05-06 at 6 21 48 PM" src="https://github.com/menubar-apps/menubar-apps.github.io/assets/9363150/8a5e6455-8bd8-4627-9c34-4779f6473dd7">
 </p>
+</div>
+</div>

@@ -1,6 +1,9 @@
 ---
 ---
 
+$first-row-color: #4C566A;
+$second-row-color: #3B4252;
+
 kbd {
   border-radius: 4px;
   background-color: #eee;
@@ -29,8 +32,35 @@ span.badge.new {
 }
 
 .app-icon {
-  margin-bottom: -15px
+  margin-bottom: -15px;
+  width: 128px
 }
+
+main .container {
+  width: 100%;
+  margin: 0;
+  max-width: fit-content;
+}
+
+.first-row {
+  background-color: $first-row-color;
+}
+
+.second-row {
+  background-color: $second-row-color;
+}
+
+.custom-shape-divider-top-1716646141 {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  // overflow: hidden;
+  background-color: $second-row-color;
+  fill: $first-row-color;
+  line-height: 0;
+}
+
 
 .icon-block .material-icons {
   font-size: inherit;
@@ -91,7 +121,7 @@ body {
 main {
   flex: 1 0 auto;
   // background-color: #a8dadc;
-  background-color: #434C5E;
+  background-color: #4C566A;
   // color: #1d3557;
   color: #ECEFF4;
 }
@@ -157,6 +187,8 @@ a.sidenav-trigger.top-nav {
 
 
 .section {
+  width: 100%;
+  padding: 0px;
   ul > li {
     list-style-type: disc;
   }
@@ -177,6 +209,10 @@ figure.highlight {
 
 .widget {
   transition: all 2s linear;
+
+  .row {
+    margin: 0px;
+  }
 }
 
 .page-footer {

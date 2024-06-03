@@ -4,11 +4,8 @@ badge: $0.99
 appname: GojiBar
 iconname: gojibar-128.png
 ---
-<p align="center">
-  <img class="app-icon" src="./assets/img/apps/gojibar/256.png">
-  <br>
-  <span style="font-weight: bold;">GojiBar</span>
-</p>
+<div class="row first-row" markdown="0">
+{% include icon-name.html app-name="GojiBar" icon-path="gojibar" %}
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/gojibar/id6471348025?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
@@ -22,13 +19,17 @@ iconname: gojibar-128.png
     <span class="appstore-badge__storename">14-days trial</span>
   </a>
 </p>
-<div class="row">
+</div>
+
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+
+<div class="row second-row">
   <div class="col m8 offset-m2">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
   </div>
-</div>
 
-<div class="row" markdown="0">
+
+<div class="col m8 offset-m2" markdown="0" >
 <p>Access you Jira tickets with a single click from you menu bar!</p>
 
 
@@ -37,7 +38,7 @@ iconname: gojibar-128.png
 
 <p>For instance, you can set up a tab for issues assigned to you, another for the issues you've created, enabling you to monitor their progress. Additionally, you can create a dedicated tab for managing project backlogs, whether it's for a single project or multiple projects.create on tab for issues assigned to you, another one for created issues, to follow their progress. And another one for a backlog of a project (or even multiple projects).</p>
 </div>
-
+<div class="col m8 offset-m2">
 # Step-by-Step Guide to Create a JQL Query
 
 1. ### Log In and Access the Search Interface:
@@ -98,3 +99,6 @@ Issues reported by you that are still open:
 ```
 reporter = currentUser() AND status != Closed
 ```
+
+</div>
+</div>

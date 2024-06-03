@@ -5,13 +5,9 @@ appname: StreakBar
 iconname: streak-bar-128.png
 ---
 
-{% include icon-name.html app-name="StreakBar" icon-path="streakbar" %}
+<div class="row first-row">
 
-<!-- <p align="center">
-  <img class="app-icon" width="128" alt="streak-bar-256" src="https://github.com/menubar-apps/StreakBar/assets/9363150/761b1289-fd1b-43a6-a8f3-1c3b99769a26">
-  <br>
-  <span style="font-weight: bold;">StreakBar</span>
-</p> -->
+{% include icon-name.html app-name="StreakBar" icon-path="streakbar" %}
 
 <p align="center">
   <a href="https://github.com/menubar-apps/StreakBar"><img src="https://img.shields.io/badge/-StreakBar-black?logo=github&style=flat"></a>
@@ -41,6 +37,13 @@ iconname: streak-bar-128.png
 
 </p>
 
+</div>
+
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+
+<div class="row second-row">
+<div class="col m8 offset-m2">
+
 <p align="center">
 Native macOS application to show the GitHub contribution chart in your menu bar!
 </p>
@@ -68,3 +71,5 @@ Highly customizable: choose a day or a week view, color theme, transparency of e
   ```
 - [Download]((https://github.com/menubar-apps/StreakBar/releases)) from github releases
 
+</div>
+</div>

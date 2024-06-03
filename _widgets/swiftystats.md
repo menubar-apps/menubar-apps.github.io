@@ -4,6 +4,9 @@ badge: $0.99
 appname: SwiftyStats
 iconname: swiftystats-128.png
 ---
+
+<div class="row first-row">
+
 {% include icon-name.html app-name="Swifty Stats" icon-path="swifty-stats" %}
 
 <p align="center">
@@ -13,8 +16,12 @@ iconname: swiftystats-128.png
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
 </p>
+</div>
 
-<div class="row">
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+
+
+<div class="row second-row">
   <div class="col m8 offset-m2">
   <div class="col m6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-3.png">
@@ -22,7 +29,7 @@ iconname: swiftystats-128.png
   <div class="col m6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-2.png">
   </div>
-  </div>
-</div>
 
 A native macOS menubar application for app developers, designed to swiftly show download statistics for apps listed on App Store. 
+  </div>
+</div>

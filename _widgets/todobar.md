@@ -4,14 +4,10 @@ badge: free
 appname: ToDoBar
 iconname: todobar.png
 ---
+<div class="row first-row">
+
 {% include icon-name.html app-name="ToDoBar" icon-path="todobar" %}
 
-
-<!-- <p align="center">
-  <img class="app-icon" src="./assets/img/todobar-256.png" width="128">
-  <br>
-  <span style="font-weight: bold;">ToDoBar</span>
-</p> -->
 <p align="center">
   <a href="https://github.com/menubar-apps/ToDoBar"><img src="https://img.shields.io/badge/-ToDoBar-black?logo=github&style=flat"></a>
   <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/menubar-apps/ToDoBar/total">
@@ -38,6 +34,12 @@ iconname: todobar.png
   </a>
 </p>
 
+</div>
+
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+
+<div class="row second-row">
+<div class="col m8 offset-m2">
 Super simple and straightforward todo list app. Just create an item, mark it done and then delete. That's it!
 
 <p align="center">
@@ -62,3 +64,6 @@ There are 3 ways of installing the application:
     brew install todobar
     ```
  - [Download](https://github.com/menubar-apps/ToDoBar/releases) from github releases
+
+</div>
+</div>

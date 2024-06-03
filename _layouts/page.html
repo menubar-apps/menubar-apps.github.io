@@ -21,25 +21,19 @@
             <a href="#" data-target="slide-out" class="top-nav sidenav-trigger full hide-on-large-only"><i class="fa fa-bars"></i></a>
             
         </div>
-
     </div>
 </header>
 
 <main>
 
     <ul id="slide-out" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
-        <!-- <ul class="collapsible collapsible-accordion"> -->
         <li class="tab logo" style="text-align: center">
             <a class="tab white-text internal-link" href="#menubar-apps" style="display: inline">
                 <img src="https://menubar-apps.github.io/assets/img/main-logo/menubar-apps-logo.png" style="width: 200px;">
             </a>
         </li>
-        
-<!--             <li class="tab col s2"><a class="tab white-text" href="#menubar-apps">Menubar Apps</a></li> -->
             <li><div class="divider"></div></li>    
             <li>
-                <!-- <a class="collapsible-hxeader">Widgets</a> -->
-                <!-- <div class="collapsible-body"> -->
                     <ul>
                         {% for widget in site.widgets %}
                         <li class="tab col s2 sidenav-close">
@@ -53,7 +47,6 @@
                         </li>
                         {% endfor %}
                     </ul>
-                <!-- </div> -->
             </li>
             
         <li><div class="divider"></div></li>
@@ -65,20 +58,24 @@
     </ul>
 
     <div class="container">
-        <div class="section">
-            <div class="row">
+        
+            <!-- <div class="row"> -->
 
                 <div id="menubar-apps" class="widget col s12 hide">
+                    <div class="section">
                     {{site.main[0].content}}
+                </div>
                 </div>
 
                 {% for widget in site.widgets %}
-                <div id="{{ widget.title | replace: ' ', '-' | downcase}}" class="widget col s12 hide">
+                <div id="{{ widget.title | replace: ' ', '-' | downcase}}" class="widget hide">
+                    <div class="section"></div>
                     {{widget.content }}
+                </div>
                 </div>
                 {% endfor %}
 
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 

@@ -4,14 +4,9 @@ badge: free
 appname: PullBar
 iconname: pullbar.png
 ---
+<div class="row first-row">
 
 {% include icon-name.html app-name="PullBar" icon-path="pullbar" %}
-
-<!-- <p align="center">
-  <img class="app-icon" src="./assets/img/pullbar-128.png">
-  <br>
-  <span style="font-weight: bold;">PullBar</span>
-</p> -->
 
 <p align="center">
   <a href="https://github.com/menubar-apps/PullBar"><img src="https://img.shields.io/badge/-PullBar-black?logo=github&style=flat"></a>
@@ -39,7 +34,11 @@ iconname: pullbar.png
     <span class="appstore-badge__storename">pullbar</span>
   </a>
 </p>
+<div>
+{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
 
+<div class="row second-row">
+<div class="col m8 offset-m2">
 Native MacOS menubar application to show GitHub Pull Requests in your menu bar! Keep track of created, assigned and review requested Pull Requests:
 
 <p align="center">
@@ -67,3 +66,5 @@ There are 3 ways of installing the application:
     ```
  - [Download](https://github.com/menubar-apps/PullBar/releases) from github releases
 
+</div>
+</div>
