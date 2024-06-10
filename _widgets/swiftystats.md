@@ -24,7 +24,7 @@ iconname: swiftystats-128.png
 <div class="row second-row">
   <div class="col m8 offset-m2">
   <div class="col m6">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-3.png">
+  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-1.png">
   </div>
   <div class="col m6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-2.png">
