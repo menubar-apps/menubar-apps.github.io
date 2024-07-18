@@ -186,8 +186,8 @@ a.sidenav-trigger.top-nav {
 }
 
 
-.section {
-  width: 100%;
+.row {
+  // width: 100%;
   padding: 0px;
   ul > li {
     list-style-type: disc;
@@ -198,7 +198,6 @@ a.sidenav-trigger.top-nav {
   }
 
   .highlighter-rouge {
-    // width: 80%;
     margin: auto;
   }
 }
