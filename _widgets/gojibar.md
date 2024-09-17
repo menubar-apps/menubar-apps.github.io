@@ -25,11 +25,11 @@ iconname: gojibar-128.png
 
 <div class="row second-row">
   <div class="col m8 offset-m2" markdown="0">
-  <div class="col m6">
+  <div class="col l6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
   </div>
 
-<div class="col m6">
+<div class="col l6">
 <p>Access you Jira tickets with a single click from you menu bar!</p>
 
 
