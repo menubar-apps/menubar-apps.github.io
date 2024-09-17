@@ -30,7 +30,7 @@ iconname: whosmissing-128.png
 
 </div>
 
-{% include first-row-divider.html from="#4C566A" to="#434C5E" %}
+{% include first-row-divider.html from="#00202e" to="#434C5E" %}
 
 
 <div class="row second-row">
