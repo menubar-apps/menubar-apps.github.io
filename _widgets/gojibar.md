@@ -23,8 +23,8 @@ iconname: gojibar-128.png
 
 {% include first-row-divider.html from="#00202e" to="#434C5E" %}
 
-<div class="row second-row" markdown="0">
-  <div class="col m8 offset-m2">
+<div class="row second-row">
+  <div class="col m8 offset-m2" markdown="0">
   <div class="col m6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
   </div>
