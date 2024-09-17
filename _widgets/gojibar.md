@@ -23,15 +23,13 @@ iconname: gojibar-128.png
 
 {% include first-row-divider.html from="#00202e" to="#434C5E" %}
 
-<div class="row second-row">
+<div class="row second-row" markdown="0">
   <div class="col m8 offset-m2">
   <div class="col m6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
   </div>
-  </div>
 
-
-<div class="col m6 markdown="0" >
+<div class="col m6">
 <p>Access you Jira tickets with a single click from you menu bar!</p>
 
 
@@ -40,7 +38,7 @@ iconname: gojibar-128.png
 
 <p>For instance, you can set up a tab for issues assigned to you, another for the issues you've created, enabling you to monitor their progress. Additionally, you can create a dedicated tab for managing project backlogs, whether it's for a single project or multiple projects.create on tab for issues assigned to you, another one for created issues, to follow their progress. And another one for a backlog of a project (or even multiple projects).</p>
 </div>
-
+</div>
 
 <div class="col m8 offset-m2">
 # Step-by-Step Guide to Create a JQL Query
