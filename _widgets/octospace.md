@@ -41,7 +41,7 @@ Ideal for:
  - GitHub power users wanting to optimize their workflow.
  - Contributors to open-source projects who need to stay updated on various repositories.
 </div>
-
+</div>
 <div class="col m8 offset-m2">
 # Features
 
