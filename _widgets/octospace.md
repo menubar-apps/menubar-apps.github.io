@@ -27,8 +27,16 @@ iconname: octospace-128.png
 
 <div class="row second-row">
   <div class="col m8 offset-m2">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/octospace/octospace-1.png">
   
+  
+<div class="row second-row">
+  <div class="col m8 offset-m2">
+  <div class="col l6">
+  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/octospace/octospace-1.png">
+  </div>
+
+<div class="col l6">
+
 With this app you'll be able to quickly access github's pull requests, issues and repositories of any organization you're part of. 
 
 Ideal for:
@@ -36,7 +44,7 @@ Ideal for:
  - Project managers who need to keep track of multiple GitHub organizations simultaneously.
  - GitHub power users wanting to optimize their workflow.
  - Contributors to open-source projects who need to stay updated on various repositories.
-
+</div>
 
 # Features
 
