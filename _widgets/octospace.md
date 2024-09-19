@@ -27,10 +27,6 @@ iconname: octospace-128.png
 
 <div class="row second-row">
   <div class="col m8 offset-m2">
-  
-  
-<div class="row second-row">
-  <div class="col m8 offset-m2">
   <div class="col l6">
   <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/octospace/octospace-1.png">
   </div>
@@ -46,6 +42,7 @@ Ideal for:
  - Contributors to open-source projects who need to stay updated on various repositories.
 </div>
 
+<div class="col m8 offset-m2">
 # Features
 
   - simple setup - just generate an access token and paste it in the app.
