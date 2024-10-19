@@ -10,10 +10,15 @@ iconname: swiftystats-128.png
 {% include icon-name.html app-name="Swifty Stats" icon-path="swifty-stats" %}
 
 <p align="center">
-  <a class="appstore-badge" href="https://apps.apple.com/us/app/pullbarpro/id6482977831?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
+  <a class="appstore-badge" href="https://apps.apple.com/us/app/swifty-stats/id6482977831?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/apple.svg">
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
+  </a>
+  <a class="appstore-badge" href="https://apps.apple.com/us/app/swifty-stats/id6482977831?platform=iphone&mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
+    <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/apple.svg">
+    <span class="appstore-badge__text">Download on the</span>
+    <span class="appstore-badge__storename">App Store</span>
   </a>
 </p>
 </div>
