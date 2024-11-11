@@ -21,6 +21,11 @@ iconname: swiftystats-128.png
     <span class="appstore-badge__storename">App Store</span>
   </a>
 </p>
+<p align="center">
+  <a href="https://devhunt.org/tool/swifty-stats">
+  <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/devhunt-2nd.svg" style="width: 220px;">
+  </a>
+</p>
 </div>
 
 {% include first-row-divider.html from="#00202e" to="#434C5E" %}
