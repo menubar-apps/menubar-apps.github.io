@@ -14,7 +14,7 @@ iconname: pullbarpro-128.png
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
-  <a class="appstore-badge" href="https://github.com/menubar-apps/PullBarPro/releases/download/trial.v.1/PullBarPro.trial.dmg">
+  <a class="appstore-badge" href="https://github.com/menubar-apps/PullBarPro/releases/download/trial.1.8/PullBarPro.1.8.trial.dmg">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/github.svg">
     <span class="appstore-badge__text">Download</span>
     <span class="appstore-badge__storename">14-days trial</span>
