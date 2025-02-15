@@ -42,7 +42,14 @@ Ideal for:
  - Contributors to open-source projects who need to stay updated on various repositories.
 </div>
 </div>
+
+<p align="center">
+  <iframe width="420" height="315" src="https://youtu.be/rB6yDg2cgn4"></iframe>
+</p>
+
+
 <div class="col m8 offset-m2">
+  
 # Features
 
   - simple setup - just generate an access token and paste it in the app.
