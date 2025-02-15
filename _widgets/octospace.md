@@ -43,10 +43,6 @@ Ideal for:
 </div>
 </div>
 
-<p align="center">
-  <iframe width="420" height="315" src="https://youtu.be/rB6yDg2cgn4"></iframe>
-</p>
-
 
 <div class="col m8 offset-m2">
   
