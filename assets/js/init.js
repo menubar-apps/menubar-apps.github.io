@@ -34,7 +34,9 @@ $(document).ready(function(){
     $('a.internal-link').click(function(event){
         event.preventDefault();//stop browser to take action for clicked anchor
 
-        let currentPage = $(this).text().trim().replace(/\s+/g, '').toLowerCase();
+        // let currentPage = $(this).text().trim().replace(/\s+/g, '').toLowerCase();
+        let currentPage = $(this).attr('href').replace('#', '').toLowerCase();
+
         // ga('set', 'page', currentPage);
         // ga('send', 'pageview');
 
