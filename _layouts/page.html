@@ -69,7 +69,7 @@
                 </div>
 
                 {% for widget in site.widgets %}
-                <div id="{{ widget.title | replace: ' ', '-' | downcase}}" class="widget hide">
+                <div id="{{ widget.title | replace: ' ', '-' | replace: ',', '-' | replace: '!', ''  | downcase}}" class="widget hide">
                     <div class="section"></div>
                     {{widget.content }}
                 </div>
