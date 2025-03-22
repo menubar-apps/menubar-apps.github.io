@@ -47,4 +47,3 @@ Quotes from The Office show one click away!
 </p>
 
 </div>
-</div>
