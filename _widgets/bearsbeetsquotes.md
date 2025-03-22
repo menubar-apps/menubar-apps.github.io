@@ -6,12 +6,12 @@ iconname: bearsbeetsquotes.png
 ---
 <div class="row first-row">
 
-{% include icon-name.html app-name="Bears, Beets, Quotes!" icon-path="bearsbeetsquotes" %}
+{% include icon-name.html app-name="Bears, Beets, Quotes!" icon-path="bears-beets-quotes" %}
 
 <p align="center">
-  <a href="https://github.com/menubar-apps/ToDoBar"><img src="https://img.shields.io/badge/-ToDoBar-black?logo=github&style=flat"></a>
-  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/menubar-apps/ToDoBar/total">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/menubar-apps/ToDoBar">
+  <a href="https://github.com/menubar-apps/bears-beets-quotes"><img src="https://img.shields.io/badge/-bears-beets-quotes-black?logo=github&style=flat"></a>
+  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/menubar-apps/bears-beets-quotes/total">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/menubar-apps/bears-beets-quotes">
 </p>
   
 <p align="center">
