@@ -2,6 +2,7 @@
 layout: page
 badge: free
 appname: Bears, Beets, Quotes!
+pagelink: bears-beets-quotes
 iconname: bbq-128.png
 ---
 <div class="row first-row">

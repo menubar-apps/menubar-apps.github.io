@@ -2,6 +2,7 @@
 layout: page
 badge: $0.99
 appname: GojiBar
+pagelink: gojibar
 iconname: gojibar-128.png
 ---
 <div class="row first-row" markdown="0">

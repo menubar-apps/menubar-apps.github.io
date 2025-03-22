@@ -37,7 +37,7 @@
                     <ul>
                         {% for widget in site.widgets %}
                         <li class="tab col s2 sidenav-close">
-                            <a class="tab internal-link" href="#{{ widget.title | replace: ' ', '' | downcase }}">                              
+                            <a class="tab internal-link" href="#{{ widget.pagelink }}">                              
                                 <img src="https://menubar-apps.github.io/assets/img/{{widget.iconname}}" style="width: 40px; vertical-align: middle;">
                                 <span>{{ widget.appname }}</span>
                             {% if widget.badge != null and widget.badge != "" %}
@@ -69,7 +69,7 @@
                 </div>
 
                 {% for widget in site.widgets %}
-                <div id="{{ widget.title | replace: ' ', '-' | replace: ',', '-' | replace: '!', ''  | downcase}}" class="widget hide">
+                <div id="{{ widget.pagelink }}" class="widget hide">
                     <div class="section"></div>
                     {{widget.content }}
                 </div>

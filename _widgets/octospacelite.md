@@ -2,6 +2,7 @@
 layout: page
 badge: free
 appname: OctoSpace Lite
+pagelink: octospace-lite
 iconname: octospace-lite-128.png
 ---
 

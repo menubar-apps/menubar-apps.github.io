@@ -2,6 +2,7 @@
 layout: page
 badge: free
 appname: Who's missing?
+pagelink: whos-missing
 iconname: whosmissing-128.png
 ---
 <div class="row first-row">

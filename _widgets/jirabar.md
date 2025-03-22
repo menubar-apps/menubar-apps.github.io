@@ -2,6 +2,7 @@
 layout: page
 badge: free
 appname: JiraBar
+pagelink: jirabar
 iconname: jirabar-256.png
 ---
 

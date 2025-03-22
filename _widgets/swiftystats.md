@@ -2,6 +2,7 @@
 layout: page
 badge: $0.99
 appname: SwiftyStats
+pagelink: swiftystats
 iconname: swiftystats-128.png
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 badge: free
 appname: PullBar
+pagelink: pullbar
 iconname: pullbar.png
 ---
 <div class="row first-row">

@@ -2,6 +2,7 @@
 layout: page
 badge: $4.99
 appname: OctoSpace
+pagelink: octospace
 iconname: octospace-128.png
 ---
 
