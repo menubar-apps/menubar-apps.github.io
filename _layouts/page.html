@@ -58,25 +58,22 @@
     </ul>
 
     <div class="container">
-        
-            <div class="row">
-
-                <div id="menubar-apps" class="widget col m8 offset-m2 hide">
-                    <div class="section">
+        <div class="row">
+            <div id="menubar-apps" class="widget col m8 offset-m2 hide">
+                <div class="section">
                     {{site.main[0].content}}
-                    </div>
                 </div>
-                </div>
+            </div>
+        </div>
 
-                {% for widget in site.widgets %}
-                <div id="{{ widget.pagelink }}" class="widget hide">
-                    <div class="section"></div>
-                    {{widget.content }}
-                </div>
-                </div>
-                {% endfor %}
+        {% for widget in site.widgets %}
+        <div id="{{ widget.pagelink }}" class="widget hide">
+            <div class="section"></div>
+                {{ widget.content }}
+            </div>
+        </div>
+        {% endfor %}
 
-            <!-- </div> -->
         </div>
     </div>
 
