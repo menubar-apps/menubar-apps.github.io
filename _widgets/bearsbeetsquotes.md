@@ -6,7 +6,6 @@ pagelink: bears-beets-quotes
 iconname: bbq-128.png
 ---
 <div class="row first-row">
-
 {% include icon-name.html app-name="Bears, Beets, Quotes!" icon-path="bears-beets-quotes" %}
 
 <p align="center">
