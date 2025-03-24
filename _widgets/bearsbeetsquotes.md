@@ -27,11 +27,11 @@ iconname: bbq-128.png
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">GitHub Releases</span>
   </a>
-  <!--<a class="appstore-badge" href="#" style="background-color: #2e2a24">
+  <a class="appstore-badge" href="#" style="background-color: #2e2a24">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/brew.svg">
     <span class="appstore-badge__text">tap: menubar-apps/menubar-apps</span>
-    <span class="appstore-badge__storename">todobar</span>
-  </a>-->
+    <span class="appstore-badge__storename">bears-beets-quotes</span>
+  </a>
 </p>
 
 </div>
