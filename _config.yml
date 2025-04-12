@@ -15,6 +15,12 @@ kramdown:
   hard_wrap: false
   parse_block_html: true
 
+# SASS/SCSS configuration
+sass:
+  style: compressed
+  sass_dir: assets/css
+  sourcemap: true
+
 # Social links for SEO
 author: 
   name: Menubar Apps

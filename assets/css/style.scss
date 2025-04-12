@@ -1,19 +1,19 @@
 ---
 ---
 
-
-  // Variables
-  $first-row-color: #00202e;
-  $second-row-color: #2c4875;
-  $text-color: #ECEFF4;
-  $link-color: #88C0D0;
-  $hover-color: lighten($link-color, 15%);
-  $dark-bg: #1d3557;
-  $darker-bg: #202020;
+// Variables
+$first-row-color: #00202e;
+$second-row-color: #2c4875;
+$text-color: #ECEFF4;
+$link-color: #88C0D0;
+$hover-color: lighten($link-color, 15%);
+$dark-bg: #1d3557;
+$darker-bg: #202020;
 
 // Mixins
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
   transition: $property $duration $timing;
+}
 
 kbd {
   border-radius: 4px;
@@ -21,7 +21,7 @@ kbd {
   color: #333;
   border: 1px solid #b4b4b4;
   box-shadow:
-  0 1px 1px rgba(0, 0, 0, 0.2),
+    0 1px 1px rgba(0, 0, 0, 0.2),
     0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
   display: inline-block;
   font-size: 0.85em;
@@ -34,6 +34,7 @@ kbd {
 .rounded-corners {
   border-radius: 8px;
 }
+
 .icon-block {
   padding: 0 15px;
 }
@@ -44,7 +45,7 @@ span.badge.new {
 
 .app-icon {
   margin-bottom: -15px;
-  width: 128px
+  width: 128px;
 }
 
 main .container {
@@ -73,7 +74,6 @@ main .container {
   line-height: 0;
 }
 
-
 .icon-block .material-icons {
   font-size: inherit;
 }
@@ -87,7 +87,6 @@ main .container {
   .site-header {
     padding: 50px 0;
   }
-
 }
 
 #header {
@@ -185,6 +184,7 @@ footer {
   padding-top: 0 !important;
   padding-bottom: 12px;
 }
+
 a.sidenav-trigger.top-nav {
   position: absolute;
   text-align: center;
@@ -245,7 +245,6 @@ figure.highlight {
   .cprght {
     padding-top: 12px;
   }
-
 }
 
 header, main, footer {
@@ -336,11 +335,11 @@ img {
   max-width: 100%;
   height: auto;
 }
-img.center-image {
-    margin: 0 auto;
-    display: block;
-}
 
+img.center-image {
+  margin: 0 auto;
+  display: block;
+}
 
 @font-face {
   font-family: awesomewm-font;
@@ -367,10 +366,10 @@ img.center-image {
   }
 }
 
-
 .sidenav .collapsible-body>ul:not(.collapsible)>li.active, .sidenav.sidenav-fixed .collapsible-body>ul:not(.collapsible)>li.active {
   background-color: #202020;
 }
+
 .sidenav .collapsible-body>ul:not(.collapsible)>li.active, .sidenav.sidenav-fixed .collapsible-body>ul:not(.collapsible)>li1 {
   background-color: #202020;
 }
@@ -386,35 +385,43 @@ img.center-image {
 body .gist .highlight {
   background: #272822;
 }
+
 body .gist .blob-num,
 body .gist .blob-code-inner,
 body .gist .pl-s2,
 body .gist .pl-stj {
   color: #f8f8f2;
 }
+
 body .gist .pl-c1 {
   color: #ae81ff;
 }
+
 body .gist .pl-enti {
   color: #a6e22e;
   font-weight: 700;
 }
+
 body .gist .pl-st {
   color: #66d9ef;
 }
+
 body .gist .pl-mdr {
   color: #66d9ef;
   font-weight: 400;
 }
+
 body .gist .pl-ms1 {
   background: #fd971f;
 }
+
 body .gist .pl-c,
 body .gist .pl-c span,
 body .gist .pl-pdc {
   color: #75715e;
   font-style: italic;
 }
+
 body .gist .pl-cce,
 body .gist .pl-cn,
 body .gist .pl-coc,
@@ -441,6 +448,7 @@ body .gist .pl-va,
 body .gist .pl-vpu {
   color: #66d9ef;
 }
+
 body .gist .pl-cos,
 body .gist .pl-ml,
 body .gist .pl-pds,
@@ -449,6 +457,7 @@ body .gist .pl-s1,
 body .gist .pl-sol {
   color: #e6db74;
 }
+
 body .gist .pl-e,
 body .gist .pl-ef,
 body .gist .pl-en,
@@ -467,6 +476,7 @@ body .gist .pl-sr,
 body .gist .pl-vo {
   color: #a6e22e;
 }
+
 body .gist .pl-ent,
 body .gist .pl-eoa,
 body .gist .pl-eoai,
@@ -486,41 +496,49 @@ body .gist .pl-src,
 body .gist .pl-sre {
   color: #f92672;
 }
+
 body .gist .pl-mb,
 body .gist .pl-pdb {
   color: #e6db74;
   font-weight: 700;
 }
+
 body .gist .pl-mi,
 body .gist .pl-pdi {
   color: #f92672;
   font-style: italic;
 }
+
 body .gist .pl-pdc1,
 body .gist .pl-scp {
   color: #ae81ff;
 }
+
 body .gist .pl-sc,
 body .gist .pl-sf,
 body .gist .pl-mo,
 body .gist .pl-entl {
   color: #fd971f;
 }
+
 body .gist .pl-mi1,
 body .gist .pl-mdht {
   color: #a6e22e;
   background: rgba(0, 64, 0, .5);
 }
+
 body .gist .pl-md,
 body .gist .pl-mdhf {
   color: #f92672;
   background: rgba(64, 0, 0, .5);
 }
+
 body .gist .pl-mdh,
 body .gist .pl-mdi {
   color: #a6e22e;
   font-weight: 400;
 }
+
 body .gist .pl-ib,
 body .gist .pl-id,
 body .gist .pl-ii,
@@ -536,6 +554,4 @@ body .gist .pl-iu {
   100% {
     opacity: 1;
   }
-}
-
 }
