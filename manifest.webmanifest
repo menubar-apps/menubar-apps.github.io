@@ -1,23 +1,28 @@
 {
   "name": "Menu Bar Apps",
   "short_name": "Menu Bar Apps",
-  "description":"Collection of macOS menubar application",
+  "description": "Collection of macOS menubar applications",
   "theme_color": "#88C0D0",
   "background_color": "#1d3557",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "assets/img/main-logo/menubar-apps-logo-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "assets/img/main-logo/menubar-apps-logo-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "splash_pages": null
+  "splash_pages": null,
+  "categories": ["utilities", "productivity"],
+  "prefer_related_applications": false
 }

@@ -1,6 +1,7 @@
 <head>
     {% include google-analytics.html %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <meta name="theme-color" content="#222222">
     <title>Menubar Apps | Developer Productivity Tools</title>
@@ -11,13 +12,43 @@
     <meta name="keywords" content="macOS menubar apps, developer tools, coding productivity, programming utilities, software development, mac developer tools">
     
     <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+||||||| parent of cf17891 (new versions)
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta name="theme-color" content="#222222">
+    <title>Menubar Apps</title>
+    <meta name="description" content="MenuBar Apps - collection of macOS apps for developers"/>
+
+    <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0"/>
+    <meta name="theme-color" content="#88C0D0">
+>>>>>>> cf17891 (new versions)
     
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
+    <meta name="author" content="{{ site.author.name }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {% if site.author.twitter %}<meta name="twitter:creator" content="@{{ site.author.twitter }}">{% endif %}
+
+    <!-- PWA -->
+    <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ '/assets/img/favicon-96x96.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16x16.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/img/main-logo/menubar-apps-logo-192.png' | relative_url }}">
     
     <!-- CSS  -->
-    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
     <link href="{{ '/assets/fonts/font-awesome/css/font-awesome.min.css' | relative_url }}" rel="stylesheet">
     <link href="{{ '/assets/css/materialize.min.css' | relative_url }}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{{ '/assets/css/style.css' | relative_url }}" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -26,8 +57,8 @@
     <link href="{{ '/assets/css/default.css' | relative_url }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-          <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -36,4 +67,18 @@
     <script src="{{ '/assets/js/init.js' | relative_url }}"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </head>

@@ -1,7 +1,13 @@
+title: Menubar Apps
+description: A collection of useful menubar applications for your Mac
+url: https://menubar-apps.github.io
+baseurl: ""
+
 collections:
   main:
+    output: true
   widgets:
-#    output: true
+    output: true
 
 markdown: kramdown
 kramdown:
@@ -9,3 +15,8 @@ kramdown:
   hard_wrap: false
   parse_block_html: true
 
+# Social links for SEO
+author: 
+  name: Menubar Apps
+  twitter: # your-twitter-handle
+github_username: menubar-apps

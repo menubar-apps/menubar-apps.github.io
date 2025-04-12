@@ -1,6 +1,7 @@
 ---
 ---
 
+// Variables
 $first-row-color: #00202e;
 $second-row-color: #2c4875;
 
@@ -37,8 +38,10 @@ span.badge.new {
 }
 
 main .container {
-  width: 100%;
-  margin: 0;
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
 .first-row {
@@ -329,10 +332,10 @@ img.center-image {
 
 @font-face {
   font-family: awesomewm-font;
-  src: url({{ '/assets/fonts/awesomewm-font.ttf' | relative_url }});
+  src: url('../fonts/awesomewm-font.ttf');
 }
 
-.filename{
+.filename {
   background-color: #292929;
   color: lightgrey;
   border-top-left-radius: 3px;
