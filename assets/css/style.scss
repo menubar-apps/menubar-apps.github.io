@@ -1,9 +1,19 @@
 ---
 ---
 
-// Variables
-$first-row-color: #00202e;
-$second-row-color: #2c4875;
+
+  // Variables
+  $first-row-color: #00202e;
+  $second-row-color: #2c4875;
+  $text-color: #ECEFF4;
+  $link-color: #88C0D0;
+  $hover-color: lighten($link-color, 15%);
+  $dark-bg: #1d3557;
+  $darker-bg: #202020;
+
+// Mixins
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
 
 kbd {
   border-radius: 4px;
@@ -118,14 +128,57 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text-color;
 }
 
 main {
   flex: 1 0 auto;
-  // background-color: #a8dadc;
-  background-color: #00202e;
-  // color: #1d3557;
-  color: #ECEFF4;
+  background-color: $first-row-color;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  @include transition(color);
+  
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+.sidenav {
+  width: 350px;
+  background-color: $dark-bg;
+  color: $text-color;
+  @include transition(transform);
+
+  li {
+    border-left: 3px solid transparent;
+    @include transition(border-color);
+
+    > a {
+      color: $text-color;
+      @include transition(color);
+      
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+
+  .collapsible-body {
+    background-color: $darker-bg;
+
+    li.active {
+      border-left: 3px solid $link-color;
+      
+      > a {
+        color: white;
+      }
+    }
+  }
 }
 
 footer {
@@ -144,50 +197,6 @@ a.sidenav-trigger.top-nav {
   font-size: 36px;
   z-index: 2;
 }
-.sidenav {
-  width: 350px;
-  background-color: #1d3557;
-  // color: white;
-  color: #D8DEE9;
-
-  li > a {
-    // color: #8a9ba1;
-    color: #D8DEE9;
-    
-  }
-  li > a.subheader {
-    padding-left: 16px;
-  }
-  li {
-    border-left: 3px solid transparent;
-  }
-
-  .collapsible-body li.active {
-    -moz-transition: border-color .5s ease;
-    -o-transition: border-color .5s ease;
-    -webkit-transition: border-color .5s ease;
-    transition: border-color .5s ease;
-    border-left: 3px solid teal;
-    > a {
-      color: white;
-    }
-  }
-
-  .sidenav-footer {
-    li {
-      line-height: normal;
-      padding: 4px 32px;
-      a.social-link {
-        display: inline;
-        height: 0;
-        line-height: 0;
-        padding: 0px;
-      }
-    }
-    
-  }
-}
-
 
 .row {
   // width: 100%;
@@ -274,43 +283,46 @@ table {
   max-width: 100%;
   border-collapse: collapse;
   border-style: hidden;
-  background-color: #333333;
-  margin: 0 auto 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  td {
-    border: 1px solid #5e5e5e;
+  background-color: $darker-bg;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid rgba(94, 94, 94, 0.2);
   }
-}
-
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
+  
+  th {
+    background-color: rgba(0,0,0,0.1);
+    font-weight: 600;
   }
-  100% {
-    opacity: 1;
+  
+  tr:hover {
+    background-color: rgba(255,255,255,0.02);
   }
 }
 
 // scrollbar
 /* width */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #343434;
+  background: $darker-bg;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #171717;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #202020;
+  background: lighten($darker-bg, 10%);
+  border-radius: 6px;
+  border: 3px solid $darker-bg;
+  
+  &:hover {
+    background: lighten($darker-bg, 15%);
+  }
 }
 
 p{
@@ -515,4 +527,15 @@ body .gist .pl-ii,
 body .gist .pl-iu {
   background: #a6e22e;
   color: #272822;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 }
