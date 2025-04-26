@@ -3,7 +3,7 @@ layout: page
 badge: free
 appname: StreakBar
 pagelink: streakbar
-iconname: streak-bar-128.png
+iconfoldername: streakbar
 ---
 
 <div class="row first-row">

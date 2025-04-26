@@ -3,7 +3,7 @@ layout: page
 badge: free
 appname: Bears, Beets, Quotes!
 pagelink: bears-beets-quotes
-iconname: bbq-128.png
+iconfoldername: bears-beets-quotes
 ---
 <div class="row first-row">
 {% include icon-name.html app-name="Bears, Beets, Quotes!" icon-path="bears-beets-quotes" %}

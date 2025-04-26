@@ -3,7 +3,7 @@ layout: page
 badge: $1.99
 appname: PullBar Pro
 pagelink: pullbar-pro
-iconname: pullbarpro-128.png
+iconfoldername: pullbar-pro
 ---
 <div class="row first-row">
 

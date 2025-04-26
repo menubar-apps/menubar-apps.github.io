@@ -3,7 +3,7 @@ layout: page
 badge: free
 appname: OctoSpace Lite
 pagelink: octospace-lite
-iconname: octospace-lite-128.png
+iconfoldername: octospace-lite
 ---
 
 <div class="row first-row" markdown="0">

@@ -3,7 +3,7 @@ layout: page
 badge: free
 appname: JiraBar
 pagelink: jirabar
-iconname: jirabar-256.png
+iconfoldername: jirabar
 ---
 
 <div class="row first-row" markdown="0">

@@ -3,7 +3,7 @@ layout: page
 badge: $0.99
 appname: GojiBar
 pagelink: gojibar
-iconname: gojibar-128.png
+iconfoldername: gojibar
 ---
 <div class="row first-row" markdown="0">
 {% include icon-name.html app-name="GojiBar" icon-path="gojibar" %}

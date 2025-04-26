@@ -3,7 +3,7 @@ layout: page
 badge: free
 appname: ToDoBar
 pagelink: todobar
-iconname: todobar.png
+iconfoldername: todobar
 ---
 <div class="row first-row">
 
