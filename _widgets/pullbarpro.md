@@ -40,9 +40,9 @@ iconfoldername: pullbar-pro
     </div>
   </div>
 
-<h1>Features</h1>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
+  <h1>Features</h1>
   <div class="col m6">
     <p>
       <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-8.png">
@@ -55,7 +55,7 @@ iconfoldername: pullbar-pro
     </div>
 </div>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
   <div class="col m6">
     <p>
       <h3>Tabs</h3>
@@ -68,7 +68,7 @@ iconfoldername: pullbar-pro
   </div>
 </div>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
   <div class="col m6">
     <p>
       <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-7.png">
@@ -82,7 +82,7 @@ iconfoldername: pullbar-pro
   </div>
 </div>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
   <div class="col m6">
     <p>
       <h3>Build: Checks</h3>
@@ -95,7 +95,7 @@ iconfoldername: pullbar-pro
   </div>
 </div>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
   <div class="col m6">
     <p>
       <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-4.png">
@@ -108,7 +108,7 @@ iconfoldername: pullbar-pro
   </div>
 </div>
 
-<div class="row" markdown="0">
+<div class="col m8 offset-m2">
   <div class="col m6">
     <p>
       <h3>Reviews</h3>
