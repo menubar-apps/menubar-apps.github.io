@@ -40,6 +40,7 @@ iconfoldername: pullbar-pro
     <p>Easily stay in the loop with your GitHub pull requests using PullBarPro. This macOS menu bar application provides convenient access to real-time updates on your pull requests. With PullBarPro, you'll have a quick access to Pull Requests which you have to review, or follow the progress of created or assigned Pull Requests.</p>
   </div>
   </div>
+</div>
 
 <h1>Features</h1>
 
