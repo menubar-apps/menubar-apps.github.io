@@ -19,7 +19,7 @@ kramdown:
 sass:
   style: compressed
   sass_dir: assets/css
-  sourcemap: true
+
 
 # Social links for SEO
 author: 
