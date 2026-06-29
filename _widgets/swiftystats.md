@@ -1,14 +1,11 @@
 ---
 layout: page
+description: App Store Connect stats in your menu bar
 badge: $0.99
 appname: SwiftyStats
 pagelink: swiftystats
 iconfoldername: swifty-stats
 ---
-
-<div class="row first-row">
-
-{% include icon-name.html app-name="Swifty Stats" icon-path="swifty-stats" %}
 
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/swifty-stats/id6482977831?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
@@ -24,19 +21,12 @@ iconfoldername: swifty-stats
 </p>
 <p align="center">
   <a href="https://devhunt.org/tool/swifty-stats">
-  <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/devhunt-2nd.svg" style="width: 220px;">
+    <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/devhunt-2nd.svg" style="width: 220px;">
   </a>
 </p>
-</div>
 
-{% include first-row-divider.html from="#00202e" to="#434C5E" %}
+<img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-4.png">
 
-
-<div class="row second-row">
-  <div class="col m8 offset-m2">
-  <div class="col m6">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/swifty-stats/swifty-stats-4.png">
-  </div>
 ### App Store Connect stats in your menubar!
 
 SwiftyStats is a lightweight menubar macOS application designed for indie app developers. It provides easy access to your recent installation data from App Store Connect, all from the convenience of your Mac’s menubar.
@@ -62,5 +52,3 @@ Requirements:
 - At least one app distributed on the App Store
 - An App Store Connect account with permissions to create API keys
 
-</div>
-</div>

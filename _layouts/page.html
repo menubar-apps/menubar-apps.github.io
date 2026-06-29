@@ -4,82 +4,179 @@
 <html lang="en">
 {% include head.html %}
 <body>
-<header>
-    <div class="topnav">
-        <div class="container">
-            <div class="site-header">
-                <div id="header" class="header center white-text">
-                    <a href="{{ site.url | append: site.baseurl}}/"><span
-                            style="font-family: 'Lilita One', cursive;">MENU BAR APPS</span></a>
-                </div>
-                <div id="description" class="header center white-text">
-                    Collection of MacOS menu bar applications
-                </div>
-            </div>
-            <div id="particles-js"></div>
-            
-            <a href="#" data-target="slide-out" class="top-nav sidenav-trigger full hide-on-large-only"><i class="fa fa-bars"></i></a>
-            
-        </div>
-    </div>
-</header>
+<div class="layout">
 
-<main>
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <button class="menu-btn" id="menuToggle" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="18" x2="20" y2="18"/>
+      </svg>
+    </button>
+    <span class="mobile-logo">Menubar Apps</span>
+    <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode">
+      <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
 
-    <ul id="slide-out" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
-        <li class="tab logo" style="text-align: center">
-            <a class="tab white-text internal-link" href="#menubar-apps" style="display: inline">
-                <img src="https://menubar-apps.github.io/assets/img/main-logo/menubar-apps-logo.png" style="width: 200px;">
-            </a>
+  <!-- Sidebar Overlay (mobile) -->
+  <div class="sidenav-overlay" id="sidenavOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <a href="/" class="sidebar-brand">
+      <img src="https://menubar-apps.github.io/assets/img/main-logo/menubar-apps-logo.png"
+           alt="Menubar Apps" class="logo">
+      <div class="brand-name">Menubar Apps</div>
+      <div class="brand-sub">macOS developer tools</div>
+    </a>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Applications</div>
+      <ul class="sidebar-app-list">
+        {% for widget in site.widgets %}
+        <li class="sidebar-app-item" data-app="{{ widget.pagelink }}">
+          <img src="https://menubar-apps.github.io/assets/img/apps/{{widget.iconfoldername}}/128.png"
+               alt="{{ widget.appname }}" class="app-icon-small" loading="lazy">
+          <span>{{ widget.appname }}</span>
+          {% if widget.badge != null and widget.badge != "" %}
+          {% assign badge_class = widget.badge | downcase %}
+          {% if badge_class == "free" %}
+          <span class="badge-tag free">{{ widget.badge }}</span>
+          {% elsif badge_class contains "$" %}
+          <span class="badge-tag paid">{{ widget.badge }}</span>
+          {% else %}
+          <span class="badge-tag">{{ widget.badge }}</span>
+          {% endif %}
+          {% endif %}
         </li>
-            <li><div class="divider"></div></li>    
-            <li>
-                    <ul>
-                        {% for widget in site.widgets %}
-                        <li class="tab col s2 sidenav-close">
-                            <a class="tab internal-link" href="#{{ widget.pagelink }}">                              
-                                <img src="https://menubar-apps.github.io/assets/img/apps/{{widget.iconfoldername}}/128.png" style="width: 40px; vertical-align: middle;">
-                                <span>{{ widget.appname }}</span>
-                            {% if widget.badge != null and widget.badge != "" %}
-                                <span class="new badge" data-badge-caption="{{ widget.badge }}"></span></a></li>
-                            {% endif %}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-            </li>
-            
-        <li><div class="divider"></div></li>
-        <li><a class="subheader white-text">Links</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-        <div class="sidenav-footer">
-            {% include links.html %}
-        </div>
-    </ul>
+    <div class="sidebar-footer">
+      <ul class="sidebar-footer-links">
+        <li><a href="https://github.com/menubar-apps" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/sponsors/streetturtle" target="_blank" rel="noopener">Sponsor</a></li>
+        <li><a href="https://www.buymeacoffee.com/streetturtle" target="_blank" rel="noopener">Buy Coffee</a></li>
+      </ul>
+      <button class="theme-toggle sidebar-theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span class="theme-toggle-label">Dark mode</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
 
     <div class="container">
-        <div class="row">
-            <div id="menubar-apps" class="widget col m8 offset-m2 hide">
-                <div class="section">
-                    {{site.main[0].content}}
-                </div>
+
+      <!-- App Grid -->
+      <section class="app-grid-section" id="apps">
+        <div class="app-grid" id="appGrid">
+          {% for widget in site.widgets %}
+          <div class="app-card" data-app="{{ widget.pagelink }}">
+            <img src="https://menubar-apps.github.io/assets/img/apps/{{widget.iconfoldername}}/256.png"
+                 alt="{{ widget.appname }}" class="card-icon" loading="lazy">
+            <div class="card-name">{{ widget.appname }}</div>
+            <div class="card-desc">{{ widget.description | default: 'A macOS menubar app' }}</div>
+            <div class="card-badges">
+              {% if widget.badge != null and widget.badge != "" %}
+              {% assign bc = widget.badge | downcase %}
+              {% if bc == "free" %}
+              <span class="card-badge" style="background:rgba(61,214,140,0.15);color:var(--accent-green)">{{ widget.badge }}</span>
+              {% elsif bc contains "$" %}
+              <span class="card-badge" style="background:rgba(255,167,89,0.15);color:var(--accent-orange)">{{ widget.badge }}</span>
+              {% endif %}
+              {% endif %}
+              {% if widget.opensource %}<span class="card-badge" style="background:rgba(108,140,255,0.15);color:var(--accent)">open source</span>{% endif %}
             </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- App Detail Sections -->
+      {% for widget in site.widgets %}
+      <div class="app-detail" id="detail-{{ widget.pagelink }}" data-app="{{ widget.pagelink }}">
+        <button class="app-detail-back" onclick="showGrid()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to all apps
+        </button>
+
+        <div class="app-detail-header">
+          <img src="https://menubar-apps.github.io/assets/img/apps/{{widget.iconfoldername}}/256.png"
+               alt="{{ widget.appname }}" class="detail-icon">
+          <div class="detail-info">
+            <div class="detail-name">{{ widget.appname }}</div>
+            <div class="detail-description">{{ widget.description | default: 'A native macOS menubar application.' }}</div>
+            <div class="detail-badges">
+              {% if widget.badge != null and widget.badge != "" %}
+              {% assign bc2 = widget.badge | downcase %}
+              {% if bc2 == "free" %}
+              <span class="card-badge" style="background:rgba(61,214,140,0.15);color:var(--accent-green)">{{ widget.badge }}</span>
+              {% elsif bc2 contains "$" %}
+              <span class="card-badge" style="background:rgba(255,167,89,0.15);color:var(--accent-orange)">{{ widget.badge }}</span>
+              {% endif %}
+              {% endif %}
+              {% if widget.opensource %}<span class="card-badge" style="background:rgba(108,140,255,0.15);color:var(--accent)">open source</span>{% endif %}
+            </div>
+          </div>
         </div>
 
-        {% for widget in site.widgets %}
-        <div id="{{ widget.pagelink }}" class="widget hide">
-            <div class="section">
-                {{ widget.content }}
-            </div>
+        <hr class="section-divider">
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "{{ widget.appname | escape }}",
+          "description": "{{ widget.description | escape | default: 'A macOS menubar application' }}",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "macOS",
+          "image": "{{ '/assets/img/apps/' | append: widget.iconfoldername | append: '/256.png' | absolute_url }}",
+          "offers": {
+            "@type": "Offer",
+            "price": "{% if widget.badge == 'free' %}0{% else %}{{ widget.badge | remove: '$' }}{% endif %}",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Menubar Apps",
+            "url": "https://menubar-apps.github.io"
+          }
+        }
+        </script>
+
+        <div class="detail-content">
+          {{ widget.content }}
         </div>
-        {% endfor %}
+      </div>
+      {% endfor %}
 
     </div>
 
-</main>
-{% include footer.html %}
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>
+        Made with <a href="http://materializecss.com/" target="_blank" rel="noopener"><img src="{{ '/assets/img/materialize-logo.png' | relative_url }}" class="footer-icon materialcss-icon" alt="MaterializeCSS"></a>
+        <a href="https://jekyllrb.com/" target="_blank" rel="noopener"><img src="{{ '/assets/img/jekyll-logo.png' | relative_url }}" class="footer-icon jekyll-icon" alt="Jekyll"></a>
+        and <a href="https://open.spotify.com/user/11133734108/playlist/2431O2512ZRN5OQb0NmokO?si=vwfSWeGBRv6opdJ_V6nvbQ" target="_blank" rel="noopener"><svg class="spotify-icon" width="20" height="20" viewBox="0 0 24 24" fill="#1db954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+        &middot; <a href="https://github.com/menubar-apps" target="_blank" rel="noopener">Menubar Apps</a>
+        &middot; &copy; {{ site.time | date: '%Y' }}
+      </p>
+    </footer>
 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+  </main>
+</div>
+
+<script src="{{ '/assets/js/init.js' | relative_url }}"></script>
 </body>
 </html>

@@ -1,13 +1,12 @@
 ---
 layout: page
+description: Track GitHub pull requests from your menu bar
 badge: free
+opensource: true
 appname: PullBar
 pagelink: pullbar
 iconfoldername: pullbar
 ---
-<div class="row first-row">
-
-{% include icon-name.html app-name="PullBar" icon-path="pullbar" %}
 
 <p align="center">
   <a href="https://github.com/menubar-apps/PullBar"><img src="https://img.shields.io/badge/-PullBar-black?logo=github&style=flat"></a>
@@ -15,32 +14,28 @@ iconfoldername: pullbar
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/menubar-apps/pullbar">
   <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/menubar-apps/pullbar">
 </p>
-  
+
 <p align="center">
-    <a class="appstore-badge" href="https://apps.apple.com/ca/app/pullbar/id1601913905?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
+  <a class="appstore-badge" href="https://apps.apple.com/ca/app/pullbar/id1601913905?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/apple.svg">
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
 
-   <a class="appstore-badge" href="https://github.com/menubar-apps/PullBar/releases">
+  <a class="appstore-badge" href="https://github.com/menubar-apps/PullBar/releases">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/github.svg">
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">GitHub Releases</span>
   </a>
 
-  <a class="appstore-badge" href="#" style="background-color: #2e2a24">
+  <a class="appstore-badge" href="#">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/brew.svg">
     <span class="appstore-badge__text">tap: menubar-apps/menubar-apps</span>
     <span class="appstore-badge__storename">pullbar</span>
   </a>
 </p>
-<div>
-{% include first-row-divider.html from="#00202e" to="#434C5E" %}
 
-<div class="row second-row">
-<div class="col m8 offset-m2">
-Native MacOS menubar application to show GitHub Pull Requests in your menu bar! Keep track of created, assigned and review requested Pull Requests:
+Native macOS menubar application to show GitHub Pull Requests in your menu bar! Keep track of created, assigned and review requested Pull Requests:
 
 <p align="center">
   <img width="708" alt="Screen Shot 2022-07-17 at 9 06 36 PM" src="https://user-images.githubusercontent.com/9363150/179432557-f3db115e-fe9d-4f91-ac7c-0d85ce3f9e43.png" style="border-radius: 10px">
@@ -53,7 +48,7 @@ Native MacOS menubar application to show GitHub Pull Requests in your menu bar! 
 <p align="center">
   <img width="485" alt="PR-screenshot" src="https://user-images.githubusercontent.com/9363150/184937172-595ef896-080b-43fe-bcea-ec70deb26df4.png" style="border-radius: 10px">
 </p>
- - show check suites or check runs information with links to the correstponding builds.
+ - show check suites or check runs information with links to the corresponding builds.
 
 # Installation
 
@@ -66,6 +61,3 @@ There are 3 ways of installing the application:
     brew install pullbar
     ```
  - [Download](https://github.com/menubar-apps/PullBar/releases) from github releases
-
-</div>
-</div>

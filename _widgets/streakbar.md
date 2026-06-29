@@ -1,14 +1,12 @@
 ---
 layout: page
+description: GitHub contribution chart in your menu bar
 badge: free
+opensource: true
 appname: StreakBar
 pagelink: streakbar
 iconfoldername: streakbar
 ---
-
-<div class="row first-row">
-
-{% include icon-name.html app-name="StreakBar" icon-path="streakbar" %}
 
 <p align="center">
   <a href="https://github.com/menubar-apps/StreakBar"><img src="https://img.shields.io/badge/-StreakBar-black?logo=github&style=flat"></a>
@@ -18,7 +16,7 @@ iconfoldername: streakbar
 </p>
 
 <p align="center">
-<a class="appstore-badge" href="https://apps.apple.com/ca/app/streak-bar/id6464448808?mt=12">
+  <a class="appstore-badge" href="https://apps.apple.com/ca/app/streak-bar/id6464448808?mt=12">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/apple.svg">
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
@@ -30,24 +28,14 @@ iconfoldername: streakbar
     <span class="appstore-badge__storename">GitHub Releases</span>
   </a>
 
-  <a class="appstore-badge" href="#streak-bar" style="background-color: #2e2a24">
+  <a class="appstore-badge" href="#streak-bar">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/brew.svg">
     <span class="appstore-badge__text">tap: menubar-apps/menubar-apps</span>
     <span class="appstore-badge__storename">streakbar</span>
   </a>
-
 </p>
 
-</div>
-
-{% include first-row-divider.html from="#00202e" to="#434C5E" %}
-
-<div class="row second-row">
-<div class="col m8 offset-m2">
-
-<p align="center">
 Native macOS application to show the GitHub contribution chart in your menu bar!
-</p>
 
 <p align="center">
   <img width="622" alt="Screenshot 2023-09-07 at 9 52 13 PM" src="https://github.com/menubar-apps/StreakBar/assets/9363150/3c393aff-cb82-4e1b-9ded-ada8ce28fc75">
@@ -70,7 +58,4 @@ Highly customizable: choose a day or a week view, color theme, transparency of e
   brew tap menubar-apps/menubar-apps
   brew install streakbar
   ```
-- [Download]((https://github.com/menubar-apps/StreakBar/releases)) from github releases
-
-</div>
-</div>
+- [Download](https://github.com/menubar-apps/StreakBar/releases) from github releases

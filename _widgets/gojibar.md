@@ -1,47 +1,33 @@
 ---
 layout: page
+description: Access Jira tickets with one click from your menu bar
 badge: $0.99
 appname: GojiBar
 pagelink: gojibar
 iconfoldername: gojibar
 ---
-<div class="row first-row" markdown="0">
-{% include icon-name.html app-name="GojiBar" icon-path="gojibar" %}
-
 <p align="center">
   <a class="appstore-badge" href="https://apps.apple.com/us/app/gojibar/id6471348025?mt=12&amp;itsct=apps_box_badge&amp;itscg=30200">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/apple.svg">
     <span class="appstore-badge__text">Download on the</span>
     <span class="appstore-badge__storename">Mac App Store</span>
   </a>
-<a class="appstore-badge" href="https://github.com/menubar-apps/GojiBar/releases/download/trial.1.1/GojiBar.trial.1.1.dmg">
+  <a class="appstore-badge" href="https://github.com/menubar-apps/GojiBar/releases/download/trial.1.1/GojiBar.trial.1.1.dmg">
     <img class="appstore-badge__icon" src="{{ site.url | append: site.baseurl}}/assets/img/badges/github.svg">
     <span class="appstore-badge__text">Download</span>
     <span class="appstore-badge__storename">14-days trial</span>
   </a>
 </p>
-</div>
 
-{% include first-row-divider.html from="#00202e" to="#434C5E" %}
+<img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
 
-<div class="row second-row">
-  <div class="col m8 offset-m2" markdown="0">
-  <div class="col l6">
-  <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/gojibar/gojibar-1.png">
-  </div>
-
-<div class="col l6">
-<p>Access you Jira tickets with a single click from you menu bar!</p>
+Access your Jira tickets with a single click from your menu bar!
 
 
 <p>This menu bar application streamlines your Jira interactions, making it easier to manage your tasks. You can create customized views to swiftly access issues from various projects, statuses, or any other category you prefer.</p>
 
 
-<p>For instance, you can set up a tab for issues assigned to you, another for the issues you've created, enabling you to monitor their progress. Additionally, you can create a dedicated tab for managing project backlogs, whether it's for a single project or multiple projects.create on tab for issues assigned to you, another one for created issues, to follow their progress. And another one for a backlog of a project (or even multiple projects).</p>
-</div>
-</div>
-
-<div class="col m8 offset-m2">
+<p>For instance, you can set up a tab for issues assigned to you, another for the issues you've created, enabling you to monitor their progress. Additionally, you can create a dedicated tab for managing project backlogs, whether it's for a single project or multiple projects.</p>
 # Step-by-Step Guide to Create a JQL Query
 
 1. ### Log In and Access the Search Interface:
@@ -102,6 +88,3 @@ Issues reported by you that are still open:
 ```
 reporter = currentUser() AND status != Closed
 ```
-
-</div>
-</div>
