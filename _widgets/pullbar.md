@@ -50,6 +50,8 @@ Native macOS menubar application to show GitHub Pull Requests in your menu bar! 
 </p>
  - show check suites or check runs information with links to the corresponding builds.
 
+Need more? [PullBar Pro](#pullbar-pro) adds Mentioned and Reviewed tabs, editable tab searches, per-tab sorting and filters, and Sign in with GitHub.
+
 # Installation
 
 There are 3 ways of installing the application: 

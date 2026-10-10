@@ -38,13 +38,13 @@
       <div class="sidebar-nav-label">Applications</div>
       <ul class="sidebar-app-list">
         {% for widget in site.widgets %}
-        <li class="sidebar-app-item" data-app="{{ widget.pagelink }}">
+        <li class="sidebar-app-item" data-app="{{ widget.pagelink }}" data-aliases="{{ widget.aliases }}" data-url="{{ widget.url }}">
           <img src="https://menubar-apps.github.io/assets/img/apps/{{widget.iconfoldername}}/128.png"
                alt="{{ widget.appname }}" class="app-icon-small" loading="lazy">
           <span>{{ widget.appname }}</span>
           {% if widget.badge != null and widget.badge != "" %}
           {% assign badge_class = widget.badge | downcase %}
-          {% if badge_class == "free" %}
+          {% if badge_class contains "free" %}
           <span class="badge-tag free">{{ widget.badge }}</span>
           {% elsif badge_class contains "$" %}
           <span class="badge-tag paid">{{ widget.badge }}</span>
@@ -88,7 +88,7 @@
             <div class="card-badges">
               {% if widget.badge != null and widget.badge != "" %}
               {% assign bc = widget.badge | downcase %}
-              {% if bc == "free" %}
+              {% if bc contains "free" %}
               <span class="card-badge" style="background:rgba(61,214,140,0.15);color:var(--accent-green)">{{ widget.badge }}</span>
               {% elsif bc contains "$" %}
               <span class="card-badge" style="background:rgba(255,167,89,0.15);color:var(--accent-orange)">{{ widget.badge }}</span>
@@ -120,7 +120,7 @@
             <div class="detail-badges">
               {% if widget.badge != null and widget.badge != "" %}
               {% assign bc2 = widget.badge | downcase %}
-              {% if bc2 == "free" %}
+              {% if bc2 contains "free" %}
               <span class="card-badge" style="background:rgba(61,214,140,0.15);color:var(--accent-green)">{{ widget.badge }}</span>
               {% elsif bc2 contains "$" %}
               <span class="card-badge" style="background:rgba(255,167,89,0.15);color:var(--accent-orange)">{{ widget.badge }}</span>
@@ -144,7 +144,7 @@
           "image": "{{ '/assets/img/apps/' | append: widget.iconfoldername | append: '/256.png' | absolute_url }}",
           "offers": {
             "@type": "Offer",
-            "price": "{% if widget.badge == 'free' %}0{% else %}{{ widget.badge | remove: '$' }}{% endif %}",
+            "price": "{% if widget.price != nil %}{{ widget.price }}{% elsif widget.badge == 'free' %}0{% else %}{{ widget.badge | remove: '$' }}{% endif %}",
             "priceCurrency": "USD"
           },
           "author": {

@@ -194,19 +194,31 @@
   function handleNavigation() {
     var appId = resolveAppId();
     if (appId) {
-      var found = false;
+      var found = null;
+      var path = window.location.pathname;
       sidebarItems.forEach(function (item) {
-        if (item.getAttribute('data-app') === appId) {
-          found = true;
+        var aliases = (item.getAttribute('data-aliases') || '').split(' ');
+        if (item.getAttribute('data-app') === appId ||
+            aliases.indexOf(appId) !== -1 ||
+            item.getAttribute('data-url') === path) {
+          found = item.getAttribute('data-app');
         }
       });
       if (found) {
-        showApp(appId);
+        showApp(found);
       }
     }
   }
 
   handleNavigation();
+
+  window.addEventListener('hashchange', function () {
+    var hash = window.location.hash.replace('#', '');
+    var active = document.querySelector('.app-detail.active');
+    if (hash && !(active && active.getAttribute('data-app') === hash)) {
+      handleNavigation();
+    }
+  });
 
   // Open sidebar on desktop widths (if it was closed by mobile)
   function handleResize() {

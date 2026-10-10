@@ -8,7 +8,7 @@
   </url>
 {% for widget in site.widgets %}
   <url>
-    <loc>{{ site.url }}/widgets/{{ widget.pagelink }}.html</loc>
+    <loc>{{ site.url }}{{ widget.url }}</loc>
     <priority>0.8</priority>
   </url>
 {% endfor %}
