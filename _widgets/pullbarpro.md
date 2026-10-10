@@ -18,6 +18,12 @@ iconfoldername: pullbar-pro
 
 <p align="center">Free download · Pro Unlock is a $1.99 one-time purchase, no subscription · macOS 14 or later</p>
 
+<p align="center">
+  <a href="https://devhunt.org/tool/pullbar-pro">
+    <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/tab_solid.svg" style="width: 220px;">
+  </a>
+</p>
+
 <img class="rounded-corners" src="{{ site.url | append: site.baseurl}}/assets/img/screenshots/pull-bar-pro/pull-bar-pro-8.png">
 
 PullBar Pro keeps your GitHub pull requests one click away in the macOS menu bar. See which PRs are waiting for your review, and follow the reviews and CI status of the PRs you created, are assigned to, or were mentioned in.
@@ -97,9 +103,3 @@ GitHub Enterprise Cloud works with Sign in with GitHub. For GitHub Enterprise Se
 **Where is my token stored?**
 
 In the macOS Keychain. PullBar Pro doesn't collect any data. See the [privacy policy]({{ site.url | append: site.baseurl}}/privacy/pull-bar-pro.html).
-
-<p align="center">
-  <a href="https://devhunt.org/tool/pullbar-pro">
-    <img src="{{ site.url | append: site.baseurl}}/assets/img/badges/tab_solid.svg" style="width: 220px;">
-  </a>
-</p>
